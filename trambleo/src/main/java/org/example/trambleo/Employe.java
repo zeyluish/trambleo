@@ -89,8 +89,8 @@ public class Employe {
 
     // </editor-fold>
 
-    /*public String toString() {
-        String str = "Nom : " + nom + "\nPrénom : " + prenom ;
+    public String toString() {
+        String str = "Identifiant : " + idUtilisateur + "\nNom : " + nom + "\nPrénom : " + prenom + "\nEmail : " + email + "\nMot de passe : " + motDePasse + "\nPoste : " + poste + "\nRôle : " + role + "\nListe des projets : " + listeProjet;
         return str;
-    }*/
+    }
 }
