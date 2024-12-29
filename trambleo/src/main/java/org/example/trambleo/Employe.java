@@ -90,6 +90,6 @@ public class Employe {
     // </editor-fold>
 
     public String toString() {
-        return "Identifiant : " + idUtilisateur + "\nNom : " + nom + "\nPrénom : " + prenom + "\nEmail : " + email + "\nMot de passe : " + motDePasse + "\nPoste : " + poste + "\nRôle : " + role + "\nListe des projets : " + listeProjet;
+        return "Identifiant : " + idUtilisateur + "\nNom : " + nom + "\nPrénom : " + prenom + "\nEmail : " + email + "\nMot de passe : " + motDePasse + "\nPoste : " + poste + "\nRôle : " + role + "\nListe des projets : " + listeProjet + "\n";
     }
 }
