@@ -8,15 +8,26 @@ public class sousTache {
     String descriptionSousTache;
     boolean isChecked;
 
-    public sousTache(UUID idSousTache, String nomSousTache, String descriptionSousTache, boolean isChecked) {
-        this.idSousTache = idSousTache;
+    public sousTache(String nomSousTache, String descriptionSousTache) {
+        this.idSousTache = UUID.randomUUID();
         this.nomSousTache = nomSousTache;
         this.descriptionSousTache = descriptionSousTache;
-        this.isChecked = isChecked;
+        this.isChecked = false;
     }
 
     public String toString(){
         return "identifiant : " + idSousTache + ", nom :" + nomSousTache + ", description :" + descriptionSousTache + ", est completé ?  :" + isChecked;
+    }
+
+    public void modifierSousTache(){
+
+    }
+    public void supprimerSousTache(){
+
+    }
+    public void terminerSousTache(){
+        this.isChecked = true;
+        System.out.println("La sous tâche a été terminée");
     }
 
     // <editor-fold desc="Getter and setter">

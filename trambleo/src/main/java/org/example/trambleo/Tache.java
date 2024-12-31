@@ -14,21 +14,42 @@ public class Tache {
     Categorie categorie;
     ArrayList<Employe> listeEmployeTache;
 
-    public Tache(UUID idTache, String nomTache, String descriptionTache, String commentaire, String priorite, Date dateFinTache, Categorie categorie, ArrayList<Employe> listeEmployeTache) {
-        this.idTache = idTache;
+    public Tache( String nomTache, String descriptionTache, String priorite, Date dateFinTache, Categorie categorie) {
+        this.idTache = UUID.randomUUID();
         this.nomTache = nomTache;
         this.descriptionTache = descriptionTache;
-        this.commentaire = commentaire;
         this.priorite = priorite;
         this.dateFinTache = dateFinTache;
         this.categorie = categorie;
-        this.listeEmployeTache = listeEmployeTache;
     }
 
     public String toString() {
-        return "identifiant : " + idTache + ", nom : " + nomTache + ", description : " + descriptionTache + ", commentaire : " + commentaire + ", priorité : " + priorite + ", date de fin : " + dateFinTache + ", categorie : " + categorie;
+        return "identifiant : " + idTache + ", nom : " + nomTache + ", description : " + descriptionTache + ", priorité : " + priorite + ", date de fin : " + dateFinTache + ", categorie : " + categorie;
     }
 
+    public void modifierTache() {
+    }
+
+    public void supprimerTache() {
+
+    }
+
+    public void attribuerEmploye(){
+
+    }
+
+    public void creerSousTache(){
+
+    }
+
+    public void changerDateFin(){
+
+    }
+
+    public void ajouterCommentaire(String commentaire) {
+        this.commentaire = commentaire;
+        System.out.println("Le commentaire est : " + commentaire);
+    }
     // <editor-fold desc="Getter and setter">
     public UUID getIdTache() {
         return idTache;
