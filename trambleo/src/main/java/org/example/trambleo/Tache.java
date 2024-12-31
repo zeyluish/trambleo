@@ -1,5 +1,7 @@
 package org.example.trambleo;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
@@ -27,14 +29,38 @@ public class Tache {
         return "identifiant : " + idTache + ", nom : " + nomTache + ", description : " + descriptionTache + ", priorité : " + priorite + ", date de fin : " + dateFinTache + ", categorie : " + categorie;
     }
 
-    public void modifierTache() {
+    public void modifierTache(String attribut, String nouvelleValeur) {
+        switch (attribut.toLowerCase()){
+            case "nom":
+                this.nomTache = nouvelleValeur;
+                break;
+            case "description" :
+                this.descriptionTache = nouvelleValeur;
+                break;
+            case "priorite":
+                this.priorite = nouvelleValeur;
+                break;
+            case "date" : //Pas sure de ça
+                try {
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+                    this.dateFinTache = sdf.parse(nouvelleValeur);
+                } catch (ParseException e) {
+                    System.out.println("Format de date invalide.'dd-MM-yyyy'.");
+                }
+                break;
+            case "categorie" :
+                this.categorie = getCategorie(); //A changer
+                break;
+        }
     }
 
     public void supprimerTache() {
 
     }
 
-    public void attribuerEmploye(){
+    public void attribuerEmploye(Employe employe){
+        listeEmployeTache.add(employe);
+        System.out.println(listeEmployeTache);
 
     }
 

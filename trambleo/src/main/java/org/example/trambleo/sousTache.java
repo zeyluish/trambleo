@@ -19,9 +19,17 @@ public class sousTache {
         return "identifiant : " + idSousTache + ", nom :" + nomSousTache + ", description :" + descriptionSousTache + ", est completé ?  :" + isChecked;
     }
 
-    public void modifierSousTache(){
-
+    public void modifierSousTache(String attribut, String nouvelleValeur){
+        switch (attribut.toLowerCase()){
+            case "nom":
+                this.nomSousTache = nouvelleValeur;
+                break;
+            case "description" :
+                this.descriptionSousTache = nouvelleValeur;
+                break;
+        }
     }
+
     public void supprimerSousTache(){
 
     }
