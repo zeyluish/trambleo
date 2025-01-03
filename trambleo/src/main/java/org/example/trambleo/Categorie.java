@@ -43,4 +43,14 @@ public class Categorie {
     public String toString() {
         return "Identifiant : " + idCategorie + "\nNom du categorie : " + nomCategorie + "\nListe de tache : " + listeTache;
     }
+
+    public void creerCategorie(String nomCategorie) {
+        this.nomCategorie = nomCategorie;
+    }
+
+    public void modifierCategrie(String nouveauNom) {
+        this.nomCategorie = nouveauNom;
+    }
+
+    //public void supprimerCategorie(String nomCategorie) {}
 }
