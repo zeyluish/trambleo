@@ -12,6 +12,7 @@ public class Employe {
     String poste; // au sein de l'entreprise
     String role; // au sein du projet
     ArrayList<Projet> listeProjet;
+    boolean isSupprime;
 
     public Employe(String nom, String prenom, String email, String motDePasse, String poste) {
         this.nom = nom;
@@ -19,6 +20,7 @@ public class Employe {
         this.email = email;
         this.motDePasse = motDePasse;
         this.poste = poste;
+        this.isSupprime = false;
     }
 
     // <editor-fold desc="Getters and setters">
