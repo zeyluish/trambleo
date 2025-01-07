@@ -11,8 +11,8 @@ public class Projet {
     Date dateDebutProjet;
     Date dateFinProjet;
     boolean statutProjet;
-    ArrayList<Tache> listeTache;
-    ArrayList<Employe> listeEmploye;
+    ArrayList<Tache> listeTache = new ArrayList<>();
+    ArrayList<Employe> listeEmploye = new ArrayList<>();
 
     public Projet(String nomProjet, String descriptionProjet, Date dateDebutProjet, Date dateFinProjet) {
         this.nomProjet = nomProjet;
@@ -92,4 +92,6 @@ public class Projet {
     public String toString() {
         return "Identifiant : " + idProjet + "\nNom du Projet : " + nomProjet + "\nDescription du Projet : " + descriptionProjet + "\nDate de début : " + dateDebutProjet + "\nDate de fin : " + dateFinProjet + "\nStatut : " + statutProjet + "\nListe des tâches : " + listeTache + "\nListe des employes : " + listeEmploye + "\n";
     }
+
+
 }

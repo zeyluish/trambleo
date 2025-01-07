@@ -11,7 +11,7 @@ public class Employe {
     String motDePasse;
     String poste; // au sein de l'entreprise
     String role; // au sein du projet
-    ArrayList<Projet> listeProjet;
+    ArrayList<Projet> listeProjet = new ArrayList<>();
     boolean isSupprime;
 
     public Employe(String nom, String prenom, String email, String motDePasse, String poste) {

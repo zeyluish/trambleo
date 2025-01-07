@@ -6,7 +6,7 @@ import java.util.UUID;
 public class Categorie {
     UUID idCategorie = UUID.randomUUID();
     String nomCategorie;
-    ArrayList<Tache> listeTache;
+    ArrayList<Tache> listeTache = new ArrayList<>();
     boolean isSupprime;
 
     public Categorie(String nomCategorie) {
@@ -44,11 +44,6 @@ public class Categorie {
 
     public String toString() {
         return "Identifiant : " + idCategorie + "\nNom du categorie : " + nomCategorie + "\nListe de tache : " + listeTache;
-    }
-
-    public void creerCategorie(String nomCategorie) {
-        this.nomCategorie = nomCategorie;
-        System.out.println("La catégorie " + this.nomCategorie + " a été créée.");
     }
 
     public void modifierCategrie(String nouveauNom) {
