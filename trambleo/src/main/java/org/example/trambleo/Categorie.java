@@ -7,9 +7,11 @@ public class Categorie {
     UUID idCategorie = UUID.randomUUID();
     String nomCategorie;
     ArrayList<Tache> listeTache;
+    boolean isSupprime;
 
     public Categorie(String nomCategorie) {
         this.nomCategorie = nomCategorie;
+        this.isSupprime = false;
     }
 
     // <editor-fold desc="Getters and setters">
@@ -52,5 +54,7 @@ public class Categorie {
         this.nomCategorie = nouveauNom;
     }
 
-    //public void supprimerCategorie(String nomCategorie) {}
+    public void supprimerCategorie(String nomCategorie) {
+        this.isSupprime = true;
+    }
 }
