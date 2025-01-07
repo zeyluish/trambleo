@@ -5,35 +5,32 @@ import java.util.UUID;
 public class sousTache {
     UUID idSousTache;
     String nomSousTache;
-    String descriptionSousTache;
+
     boolean isChecked;
+    boolean isSupprime;
     public Tache tacheAssociee;
 
-    public sousTache(String nomSousTache, String descriptionSousTache) {
+    public sousTache(String nomSousTache) {
         this.idSousTache = UUID.randomUUID();
         this.nomSousTache = nomSousTache;
-        this.descriptionSousTache = descriptionSousTache;
         this.isChecked = false;
+        this.isSupprime = false;
     }
 
     public String toString(){
-        return "identifiant : " + idSousTache + ", nom :" + nomSousTache + ", description :" + descriptionSousTache + ", est completé ?  :" + isChecked;
+        return "identifiant : " + idSousTache + ", nom :" + nomSousTache + ", est completé ?  :" + isChecked;
     }
 
-    public void modifierSousTache(String attribut, String nouvelleValeur){
-        switch (attribut.toLowerCase()){
-            case "nom":
-                this.nomSousTache = nouvelleValeur;
-                break;
-            case "description" :
-                this.descriptionSousTache = nouvelleValeur;
-                break;
-        }
+    public void modifierNom(String nouveauNom){
+        this.nomSousTache = nouveauNom;
+        System.out.println("Le nom a bien été modifié");
     }
 
     public void supprimerSousTache(){
-
+        this.isSupprime = true;
+        System.out.println("La sous tâche a été supprimée");
     }
+
     public void terminerSousTache(){
         this.isChecked = true;
         System.out.println("La sous tâche a été terminée");
@@ -56,13 +53,6 @@ public class sousTache {
         this.nomSousTache = nomSousTache;
     }
 
-    public String getDescriptionSousTache() {
-        return descriptionSousTache;
-    }
-
-    public void setDescriptionSousTache(String descriptionSousTache) {
-        this.descriptionSousTache = descriptionSousTache;
-    }
 
     public boolean isChecked() {
         return isChecked;

@@ -14,7 +14,7 @@ public class Tache {
     String priorite;
     Date dateFinTache;
     Categorie categorie;
-    boolean isSupprime
+    boolean isSupprime;
     ArrayList<String> listeCommentaire;
     ArrayList<Employe> listeEmployeTache;
     ArrayList<sousTache> listeSousTache;
@@ -71,9 +71,7 @@ public class Tache {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Entrez le nom de la sous-tâche : ");
         String nomSousTache = scanner.nextLine();
-        System.out.println("Entrez la description de la sous-tâche");
-        String descriptionSousTache = scanner.nextLine();
-        sousTache nouvelleSousTache = new sousTache(nomSousTache, descriptionSousTache);
+        sousTache nouvelleSousTache = new sousTache(nomSousTache);
         listeSousTache.add(nouvelleSousTache);
         sousTache.tacheAssociee = this;
         System.out.println("La sous tâche a été créer");
