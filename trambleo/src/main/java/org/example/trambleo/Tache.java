@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 import java.util.UUID;
 
 public class Tache {
@@ -15,6 +16,7 @@ public class Tache {
     Date dateFinTache;
     Categorie categorie;
     ArrayList<Employe> listeEmployeTache;
+    ArrayList<sousTache> listeSousTache;
 
     public Tache( String nomTache, String descriptionTache, String priorite, Date dateFinTache, Categorie categorie) {
         this.idTache = UUID.randomUUID();
@@ -23,6 +25,8 @@ public class Tache {
         this.priorite = priorite;
         this.dateFinTache = dateFinTache;
         this.categorie = categorie;
+        this.listeEmployeTache = new ArrayList<>();
+        this.listeSousTache = new ArrayList<>();
     }
 
     public String toString() {
@@ -59,13 +63,24 @@ public class Tache {
     }
 
     public void attribuerEmploye(Employe employe){
-        listeEmployeTache.add(employe);
-        System.out.println(listeEmployeTache);
-
+        if (!listeEmployeTache.contains(employe)) {
+            listeEmployeTache.add(employe);
+            System.out.println(listeEmployeTache);
+        } else {
+            System.out.println("L'employé est déjà dans la liste");
+        }
     }
 
-    public void creerSousTache(){
-
+    public void creerSousTache(sousTache sousTache){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Entrez le nom de la sous-tâche : ");
+        String nomSousTache = scanner.nextLine();
+        System.out.println("Entrez la description de la sous-tâche");
+        String descriptionSousTache = scanner.nextLine();
+        sousTache nouvelleSousTache = new sousTache(nomSousTache, descriptionSousTache);
+        listeSousTache.add(nouvelleSousTache);
+        sousTache.tacheAssociee = this;
+        System.out.println("La sous tâche a été créer");
     }
 
     public void changerDateFin(){

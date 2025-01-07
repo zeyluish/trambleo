@@ -7,6 +7,7 @@ public class sousTache {
     String nomSousTache;
     String descriptionSousTache;
     boolean isChecked;
+    public Tache tacheAssociee;
 
     public sousTache(String nomSousTache, String descriptionSousTache) {
         this.idSousTache = UUID.randomUUID();
