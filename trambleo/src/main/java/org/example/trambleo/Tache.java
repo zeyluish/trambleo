@@ -11,10 +11,11 @@ public class Tache {
     UUID idTache;
     String nomTache;
     String descriptionTache;
-    String commentaire;
     String priorite;
     Date dateFinTache;
     Categorie categorie;
+    boolean isSupprime
+    ArrayList<String> listeCommentaire;
     ArrayList<Employe> listeEmployeTache;
     ArrayList<sousTache> listeSousTache;
 
@@ -27,6 +28,8 @@ public class Tache {
         this.categorie = categorie;
         this.listeEmployeTache = new ArrayList<>();
         this.listeSousTache = new ArrayList<>();
+        this.listeCommentaire = new ArrayList<>();
+        this.isSupprime = false;
     }
 
     public String toString() {
@@ -44,22 +47,15 @@ public class Tache {
             case "priorite":
                 this.priorite = nouvelleValeur;
                 break;
-            case "date" : //Pas sure de ça
-                try {
-                    SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-                    this.dateFinTache = sdf.parse(nouvelleValeur);
-                } catch (ParseException e) {
-                    System.out.println("Format de date invalide.'dd-MM-yyyy'.");
-                }
-                break;
             case "categorie" :
                 this.categorie = getCategorie(); //A changer
                 break;
         }
     }
 
-    public void supprimerTache() {
-
+    public void supprimerTache() { //Sur l'interface graphique on fera disparaitre la tache
+        this.isSupprime = true;
+        System.out.println("La tâche a bien été supprimée");
     }
 
     public void attribuerEmploye(Employe employe){
@@ -83,13 +79,15 @@ public class Tache {
         System.out.println("La sous tâche a été créer");
     }
 
-    public void changerDateFin(){
+    public void changerDateFin(Date nouvelleDateFin){
+        this.dateFinTache = nouvelleDateFin;
+        System.out.println("La date de fin a été modifié au : " + this.dateFinTache);
 
     }
 
-    public void ajouterCommentaire(String commentaire) {
-        this.commentaire = commentaire;
-        System.out.println("Le commentaire est : " + commentaire);
+    public void ajouterCommentaire(String nouveauCommentaire) {
+        this.listeCommentaire.add(nouveauCommentaire);
+        System.out.println("Le commentaire est : " + nouveauCommentaire);
     }
     // <editor-fold desc="Getter and setter">
     public UUID getIdTache() {
@@ -116,13 +114,6 @@ public class Tache {
         this.descriptionTache = descriptionTache;
     }
 
-    public String getCommentaire() {
-        return commentaire;
-    }
-
-    public void setCommentaire(String commentaire) {
-        this.commentaire = commentaire;
-    }
 
     public String getPriorite() {
         return priorite;
@@ -155,5 +146,22 @@ public class Tache {
     public void setListeEmployeTache(ArrayList<Employe> listeEmployeTache) {
         this.listeEmployeTache = listeEmployeTache;
     }
+
+    public ArrayList<String> getCommentaire() {
+        return listeCommentaire;
+    }
+
+    public void setCommentaire(ArrayList<String> commentaire) {
+        this.listeCommentaire = commentaire;
+    }
+
+    public ArrayList<sousTache> getListeSousTache() {
+        return listeSousTache;
+    }
+
+    public void setListeSousTache(ArrayList<sousTache> listeSousTache) {
+        this.listeSousTache = listeSousTache;
+    }
+
     // </editor-fold>
 }
