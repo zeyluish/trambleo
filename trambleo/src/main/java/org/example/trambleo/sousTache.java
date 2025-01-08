@@ -17,6 +17,10 @@ public class sousTache {
         this.isSupprime = false;
     }
 
+    public void creerSousTache(String nom) {
+        sousTache sousTacheCreer = new sousTache(nom);
+    }
+
     public String toString(){
         return "identifiant : " + idSousTache + ", nom :" + nomSousTache + ", est completé ?  :" + isChecked;
     }

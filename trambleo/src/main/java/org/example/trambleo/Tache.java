@@ -15,6 +15,7 @@ public class Tache {
     Date dateFinTache;
     Categorie categorie;
     boolean isSupprime;
+    Projet projetAssocie;
     ArrayList<String> listeCommentaire;
     ArrayList<Employe> listeEmployeTache;
     ArrayList<sousTache> listeSousTache;
@@ -67,13 +68,13 @@ public class Tache {
         }
     }
 
-    public void creerSousTache(sousTache sousTache){
+    public void creerSousTache(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Entrez le nom de la sous-tâche : ");
         String nomSousTache = scanner.nextLine();
         sousTache nouvelleSousTache = new sousTache(nomSousTache);
         listeSousTache.add(nouvelleSousTache);
-        sousTache.tacheAssociee = this;
+        nouvelleSousTache.tacheAssociee = this;
         System.out.println("La sous tâche a été créer");
     }
 
