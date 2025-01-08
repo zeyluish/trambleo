@@ -46,12 +46,16 @@ public class Categorie {
         return "Identifiant : " + idCategorie + "\nNom du categorie : " + nomCategorie + "\nListe de tache : " + listeTache;
     }
 
+    public void creerCategorie(String nomCategorie) {
+        Categorie categorie = new Categorie(nomCategorie);
+    }
+
     public void modifierCategrie(String nouveauNom) {
         this.nomCategorie = nouveauNom;
         System.out.println("Le nouveau nom de cette catégorie est " + this.nomCategorie + ".");
     }
 
-    public void supprimerCategorie(String nomCategorie) {
+    public void supprimerCategorie() {
         this.isSupprime = true;
         System.out.println("La catégorie " + nomCategorie + " a bien été supprimée.");
     }

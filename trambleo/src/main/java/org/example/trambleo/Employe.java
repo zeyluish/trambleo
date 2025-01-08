@@ -94,4 +94,41 @@ public class Employe {
     public String toString() {
         return "Identifiant : " + idUtilisateur + "\nNom : " + nom + "\nPrénom : " + prenom + "\nEmail : " + email + "\nMot de passe : " + motDePasse + "\nPoste : " + poste + "\nRôle : " + role + "\nListe des projets : " + listeProjet + "\n";
     }
+
+    public void creerEmploye(String nom, String prenom, String email, String motDePasse, String poste) {
+        Employe newEmploye = new Employe(nom, prenom, email, motDePasse, poste);
+    }
+
+    public void modifierEmploye(String attribut, String nouvelleValeur) {
+        switch (attribut.toLowerCase()) {
+            case "nom":
+                this.nom = nouvelleValeur;
+                break;
+            case "prenom":
+                this.prenom = nouvelleValeur;
+                break;
+            case "email":
+                this.email = nouvelleValeur;
+                break;
+            case "motDePasse":
+                this.motDePasse = nouvelleValeur;
+                break;
+            case "poste":
+                this.poste = nouvelleValeur;
+                break;
+        }
+    }
+
+    public void supprimerEmploye() {
+        this.isSupprime = true;
+        System.out.println("L'employé " + prenom + " " + nom + " a bien été supprimé");
+    }
+
+    public void afficherInfo() {
+        System.out.println("Les informations de " + this.prenom + " " + this.nom + " sont :" + "\nIdentifiant : " + idUtilisateur + "\nNom : " + nom + "\nPrénom : " + prenom + "\nEmail : " + email + "\nMot de passe : " + motDePasse + "\nPoste : " + poste + "\n");
+    }
+
+    public void afficherHistorique() {
+        System.out.println("L'historique de travail de " + this.prenom + " " + this.nom + " est :" + "\n" + listeProjet);
+    }
 }

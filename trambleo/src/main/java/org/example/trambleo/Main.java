@@ -16,5 +16,7 @@ public class Main {
 
         System.out.println(employe1.toString());
         System.out.println(projet1.toString());
+
+        employe1.afficherInfo();
     }
 }
