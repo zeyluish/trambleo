@@ -128,7 +128,7 @@ public class Employe {
         System.out.println("Les informations de " + this.prenom + " " + this.nom + " sont :" + "\nIdentifiant : " + idUtilisateur + "\nNom : " + nom + "\nPrénom : " + prenom + "\nEmail : " + email + "\nMot de passe : " + motDePasse + "\nPoste : " + poste + "\n");
     }
 
-    public void afficherHisstorique() {
+    public void afficherHistorique() {
         System.out.println("L'historique de travail de " + this.prenom + " " + this.nom + " est :" + "\n" + listeProjet);
     }
 }
