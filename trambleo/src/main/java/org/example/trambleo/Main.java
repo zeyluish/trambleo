@@ -1,16 +1,18 @@
 package org.example.trambleo;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
 
-        Date dateActuelle = new Date();
-        long timestamp =  1672531200000L;
-        Date date2 = new Date(timestamp);
+        LocalDate today = LocalDate.now();
+        System.out.println(today);
+        LocalDate demain = today.minusDays(1);
 
         Employe employe1 = new Employe("Gaudin", "Téo", "teogdn.pro@gmail.com", "motDePasse123", "PDG");
-        Projet projet1 = new Projet("Test", "description", dateActuelle, date2);
+        Projet projet1 = new Projet("Test", "description", today, demain);
 
 
 
@@ -18,5 +20,7 @@ public class Main {
         System.out.println(projet1.toString());
 
         employe1.afficherInfo();
+
+
     }
 }

@@ -1,24 +1,27 @@
 package org.example.trambleo;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.UUID;
 
 public class Projet {
     UUID idProjet = UUID.randomUUID();
     String nomProjet;
     String descriptionProjet;
-    Date dateDebutProjet;
-    Date dateFinProjet;
-    boolean statutProjet;
+    LocalDate dateDebutProjet;
+    LocalDate dateFinProjet;
+    String statutProjet;
     ArrayList<Tache> listeTache = new ArrayList<>();
     ArrayList<Employe> listeEmploye = new ArrayList<>();
+    boolean isSupprime;
 
-    public Projet(String nomProjet, String descriptionProjet, Date dateDebutProjet, Date dateFinProjet) {
+    public Projet(String nomProjet, String descriptionProjet, LocalDate dateDebutProjet, LocalDate dateFinProjet) {
         this.nomProjet = nomProjet;
         this.descriptionProjet = descriptionProjet;
         this.dateDebutProjet = dateDebutProjet;
         this.dateFinProjet = dateFinProjet;
+        this.isSupprime = false;
+        this.statutProjet = "Nouveau Projet";
     }
 
     // <editor-fold desc="Getters and setters">
@@ -47,27 +50,27 @@ public class Projet {
         this.descriptionProjet = descriptionProjet;
     }
 
-    public Date getDateDebutProjet() {
+    public LocalDate getDateDebutProjet() {
         return dateDebutProjet;
     }
 
-    public void setDateDebutProjet(Date dateDebutProjet) {
+    public void setDateDebutProjet(LocalDate dateDebutProjet) {
         this.dateDebutProjet = dateDebutProjet;
     }
 
-    public Date getDateFinProjet() {
+    public LocalDate getDateFinProjet() {
         return dateFinProjet;
     }
 
-    public void setDateFinProjet(Date dateFinProjet) {
+    public void setDateFinProjet(LocalDate dateFinProjet) {
         this.dateFinProjet = dateFinProjet;
     }
 
-    public boolean isStatutProjet() {
+    public String isStatutProjet() {
         return statutProjet;
     }
 
-    public void setStatutProjet(boolean statutProjet) {
+    public void setStatutProjet(String statutProjet) {
         this.statutProjet = statutProjet;
     }
 
@@ -93,5 +96,37 @@ public class Projet {
         return "Identifiant : " + idProjet + "\nNom du Projet : " + nomProjet + "\nDescription du Projet : " + descriptionProjet + "\nDate de début : " + dateDebutProjet + "\nDate de fin : " + dateFinProjet + "\nStatut : " + statutProjet + "\nListe des tâches : " + listeTache + "\nListe des employes : " + listeEmploye + "\n";
     }
 
+    public void creerProjet(String nomProjet, String descriptionProjet, LocalDate dateDebutProjet, LocalDate dateFinProjet) {
+        Projet newProjet = new Projet(nomProjet, descriptionProjet, dateDebutProjet, dateFinProjet);
+    }
 
+    public void modifierProjet(String attribut, String nouvelleValeur) {
+        switch (attribut.toLowerCase()) {
+            case "nomprojet":
+                this.nomProjet = nouvelleValeur;
+                break;
+            case "descriptionprojet":
+                this.descriptionProjet = nouvelleValeur;
+                break;
+        }
+    }
+
+    public void modifierDateProjet(String attribut, LocalDate nouvelleDate) {
+        switch (attribut.toLowerCase()) {
+            case "datedebut":
+                this.dateDebutProjet = nouvelleDate;
+                break;
+            case "datefin":
+                this.dateFinProjet = nouvelleDate;
+        }
+    }
+
+    public void supprimerProjet() {
+        this.isSupprime = true;
+        System.out.println("Le projet " + nomProjet + "a bien été supprimée.");
+    }
+
+    public void creerTache() {
+        //faire scanner comme dans la classe tache  
+    }
 }
