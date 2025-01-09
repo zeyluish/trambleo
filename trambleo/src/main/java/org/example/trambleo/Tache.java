@@ -37,6 +37,10 @@ public class Tache {
         return "identifiant : " + idTache + ", nom : " + nomTache + ", description : " + descriptionTache + ", priorité : " + priorite + ", date de fin : " + dateFinTache + ", categorie : " + categorie;
     }
 
+    public void creerTache(String nomTache, String descriptionTache, String priorite, Date dateFinTache, Categorie categorie) {
+        Tache nouvelleTache = new Tache(nomTache, descriptionTache, priorite, dateFinTache, categorie);
+    }
+
     public void modifierTache(String attribut, String nouvelleValeur) {
         switch (attribut.toLowerCase()){
             case "nom":
