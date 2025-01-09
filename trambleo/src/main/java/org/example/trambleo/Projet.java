@@ -2,6 +2,7 @@ package org.example.trambleo;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.UUID;
 
 public class Projet {
@@ -127,6 +128,19 @@ public class Projet {
     }
 
     public void creerTache() {
-        //faire scanner comme dans la classe tache  
+        // en attente
+    }
+
+    public  void attribuerEmploye(Employe employe) {
+        listeEmploye.add(employe);
+        employe.listeProjet.add(this);
+    }
+
+    public void changerDateDebut(LocalDate dateDebut) {
+        this.dateDebutProjet = dateDebut;
+    }
+
+    public void changerDateFin(LocalDate dateFin) {
+        this.dateFinProjet = dateFin;
     }
 }
