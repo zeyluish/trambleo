@@ -8,33 +8,37 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="222.0" prefWidth="275.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.trambleo.HelloControllerLoginPage">
+<VBox alignment="CENTER" prefHeight="396.0" prefWidth="302.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="org.example.trambleo.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
-    <Label fx:id="welcomeText" alignment="TOP_CENTER" contentDisplay="TOP" text="Bienvenue sur Trambleo !">
+    <Label fx:id="welcomeText" alignment="TOP_CENTER" text="Bienvenue sur Trambleo !">
       <font>
          <Font name="System Bold" size="18.0" />
       </font></Label>
-   <Label text="Se connecter :">
+   <Label text="Créer un compte  :">
       <font>
          <Font size="16.0" />
       </font>
    </Label>
-   <VBox prefHeight="360.0" prefWidth="235.0">
+   <VBox prefHeight="414.0" prefWidth="262.0">
       <children>
+         <Label text="Nom :" />
+         <TextField promptText="Entrez votre nom" />
+         <Label text="Prénom :" />
+         <TextField promptText="Entrez votre prénom" />
          <Label text="Adresse Email :" />
          <TextField promptText="Entrez votre e-mail" />
          <Label text="Mot de passe :" />
          <TextField promptText="Entrez votre mot de passe" />
-         <HBox prefHeight="100.0" prefWidth="235.0">
+         <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
-               <Label text="Pas de compte ?" />
-               <Button mnemonicParsing="false" text="Créer un compte" />
+               <Label text="Déjà connecté ?" />
+               <Button mnemonicParsing="false" text="Se connecter" />
             </children>
          </HBox>
       </children>
    </VBox>
-   <Button mnemonicParsing="false" text="Se connecter" />
+   <Button mnemonicParsing="false" text="Créer un compte" />
 </VBox>
