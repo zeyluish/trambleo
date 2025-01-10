@@ -7,9 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <fx:include source="hello-navbar.fxml" />
    <children>
       <Label prefHeight="56.0" prefWidth="149.0" text="Mon compte">
          <font>
@@ -51,11 +49,6 @@
             <Insets bottom="15.0" />
          </VBox.margin>
       </HBox>
-      <Button mnemonicParsing="false" style="-fx-background-color: #847CAE;" text="Modifier le mot de passe">
-         <VBox.margin>
-            <Insets bottom="15.0" left="15.0" />
-         </VBox.margin>
-      </Button>
       <HBox prefHeight="50.0" prefWidth="200.0">
          <children>
             <Label prefHeight="30.0" prefWidth="78.0" text="Email">
@@ -72,6 +65,11 @@
             <Insets bottom="15.0" />
          </VBox.margin>
       </HBox>
+      <Button mnemonicParsing="false" style="-fx-background-color: #847CAE;" text="Modifier le mot de passe">
+         <VBox.margin>
+            <Insets bottom="15.0" left="15.0" />
+         </VBox.margin>
+      </Button>
       <HBox prefHeight="50.0" prefWidth="200.0">
          <children>
             <Label prefHeight="30.0" prefWidth="78.0" text="Poste">
