@@ -127,10 +127,6 @@ public class Projet {
         System.out.println("Le projet " + nomProjet + "a bien été supprimée.");
     }
 
-    public void creerTache() {
-        // en attente
-    }
-
     public  void attribuerEmploye(Employe employe) {
         listeEmploye.add(employe);
         employe.listeProjet.add(this);

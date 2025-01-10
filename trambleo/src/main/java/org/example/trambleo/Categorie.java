@@ -1,5 +1,6 @@
 package org.example.trambleo;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -58,5 +59,9 @@ public class Categorie {
     public void supprimerCategorie() {
         this.isSupprime = true;
         System.out.println("La catégorie " + nomCategorie + " a bien été supprimée.");
+    }
+
+    public void creerTache(String nomTache, String description, String priorite, LocalDate dateFin) {
+        Tache tache = new Tache(nomTache, description, priorite, dateFin, this);
     }
 }

@@ -2,6 +2,7 @@ package org.example.trambleo;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
@@ -12,7 +13,7 @@ public class Tache {
     String nomTache;
     String descriptionTache;
     String priorite;
-    Date dateFinTache;
+    LocalDate dateFinTache;
     Categorie categorie;
     boolean isSupprime;
     Projet projetAssocie;
@@ -20,7 +21,7 @@ public class Tache {
     ArrayList<Employe> listeEmployeTache;
     ArrayList<sousTache> listeSousTache;
 
-    public Tache( String nomTache, String descriptionTache, String priorite, Date dateFinTache, Categorie categorie) {
+    public Tache( String nomTache, String descriptionTache, String priorite, LocalDate dateFinTache, Categorie categorie) {
         this.idTache = UUID.randomUUID();
         this.nomTache = nomTache;
         this.descriptionTache = descriptionTache;
@@ -37,7 +38,7 @@ public class Tache {
         return "identifiant : " + idTache + ", nom : " + nomTache + ", description : " + descriptionTache + ", priorité : " + priorite + ", date de fin : " + dateFinTache + ", categorie : " + categorie;
     }
 
-    public void creerTache(String nomTache, String descriptionTache, String priorite, Date dateFinTache, Categorie categorie) {
+    public void creerTache(String nomTache, String descriptionTache, String priorite, LocalDate dateFinTache, Categorie categorie) {
         Tache nouvelleTache = new Tache(nomTache, descriptionTache, priorite, dateFinTache, categorie);
     }
 
@@ -82,7 +83,7 @@ public class Tache {
         System.out.println("La sous tâche a été créer");
     }
 
-    public void changerDateFin(Date nouvelleDateFin){
+    public void changerDateFin(LocalDate nouvelleDateFin){
         this.dateFinTache = nouvelleDateFin;
         System.out.println("La date de fin a été modifié au : " + this.dateFinTache);
 
@@ -126,11 +127,11 @@ public class Tache {
         this.priorite = priorite;
     }
 
-    public Date getDateFinTache() {
+    public LocalDate getDateFinTache() {
         return dateFinTache;
     }
 
-    public void setDateFinTache(Date dateFinTache) {
+    public void setDateFinTache(LocalDate dateFinTache) {
         this.dateFinTache = dateFinTache;
     }
 
