@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="720.0" prefWidth="1280.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.trambleo.HelloController">
+    <fx:include source="hello-navbar.fxml" />
+   <HBox prefHeight="46.0" prefWidth="1280.0">
+      <children>
+         <Label text="Nom du projet :">
+            <font>
+               <Font name="System Bold" size="13.0" />
+            </font>
+         </Label>
+         <HBox prefHeight="65.0" prefWidth="200.0" style="-fx-background-color: #cfdffb;">
+            <children>
+               <Circle fill="DODGERBLUE" radius="23.0" stroke="BLACK" strokeType="INSIDE" />
+               <Circle fill="DODGERBLUE" radius="23.0" stroke="BLACK" strokeType="INSIDE">
+                  <HBox.margin>
+                     <Insets left="5.0" />
+                  </HBox.margin>
+               </Circle>
+            </children>
+         </HBox>
+         <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+               <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="111.0" prefWidth="221.0" style="-fx-background-color: #cfdffb;" text="Vue Calendrier" />
+            </children>
+            <HBox.margin>
+               <Insets left="5.0" />
+            </HBox.margin>
+         </HBox>
+      </children>
+   </HBox>
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #cfdffb;">
+            <children>
+               <Label alignment="TOP_CENTER" text="A faire :">
+                  <font>
+                     <Font name="System Bold" size="13.0" />
+                  </font>
+               </Label>
+            </children>
+         </VBox>
+         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #cfdffb;">
+            <children>
+               <Label text="En cours :">
+                  <font>
+                     <Font name="System Bold" size="13.0" />
+                  </font>
+               </Label>
+            </children>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+         </VBox>
+         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #cfdffb;">
+            <children>
+               <Label text="Fait :">
+                  <font>
+                     <Font name="System Bold" size="13.0" />
+                  </font>
+               </Label>
+            </children>
+            <opaqueInsets>
+               <Insets />
+            </opaqueInsets>
+         </VBox>
+      </children>
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+   </HBox>
+</VBox>
