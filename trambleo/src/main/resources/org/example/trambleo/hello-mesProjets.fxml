@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -15,6 +16,20 @@
          <Font name="System Bold" size="25.0" />
       </font>
    </Label>
-    <children>
+   <HBox prefHeight="638.0" prefWidth="1280.0">
+      <VBox.margin>
+         <Insets left="15.0" right="15.0" />
+      </VBox.margin>
+      <padding>
+         <Insets bottom="15.0" left="15.0" right="50.0" top="15.0" />
+      </padding>
+      <fx:include source="hello-carteProjet.fxml" />
+      <fx:include source="hello-carteProjet.fxml" />
+      <fx:include source="hello-carteProjet.fxml" />
+      <fx:include source="hello-carteProjet.fxml" />
+      <fx:include source="hello-carteProjet.fxml" />
+
+   </HBox>
+   <children>
    </children>
 </VBox>
