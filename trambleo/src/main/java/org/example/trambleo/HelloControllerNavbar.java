@@ -21,4 +21,13 @@ public class HelloControllerNavbar {
         stage.setScene(new Scene(pageCompte));
         stage.show();
     }
+
+    public void onProjetButtonClick(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-mesProjets.fxml"));
+        VBox pageProjet = loader.load();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Mon Compte");
+        stage.setScene(new Scene(pageProjet));
+        stage.show();
+    }
 }
