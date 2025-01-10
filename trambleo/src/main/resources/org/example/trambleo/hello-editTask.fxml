@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="299.0" prefWidth="380.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.trambleo.HelloControllerEditProject">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label fx:id="welcomeText" text="Modifier la tâche">
+      <font>
+         <Font name="System Bold" size="13.0" />
+      </font></Label>
+   <VBox prefHeight="200.0" prefWidth="100.0">
+      <children>
+         <Label text="Nom :" />
+         <TextField promptText="Entrez le nom" />
+         <Label text="Description :" />
+         <TextField promptText="Entrez la description" />
+         <Label prefHeight="18.0" prefWidth="54.0" text="Priorité :" />
+         <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+               <CheckBox mnemonicParsing="false" text="Faible" />
+               <CheckBox mnemonicParsing="false" text="Moyenne" />
+               <CheckBox mnemonicParsing="false" text="Elevée" />
+            </children>
+         </HBox>
+         <Label text="Date de fin:" />
+         <DatePicker />
+         <Label text="Employés :" />
+         <ComboBox prefWidth="150.0" />
+      </children>
+   </VBox>
+   <Button mnemonicParsing="false" text="Créer le projet" />
+</VBox>
