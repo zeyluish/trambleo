@@ -123,27 +123,6 @@ public class Projet {
         Projet newProjet = new Projet(nomProjet, descriptionProjet, dateDebutProjet, dateFinProjet);
     }
 
-    public void modifierProjet(String attribut, String nouvelleValeur) {
-        switch (attribut.toLowerCase()) {
-            case "nomprojet":
-                this.nomProjet = nouvelleValeur;
-                break;
-            case "descriptionprojet":
-                this.descriptionProjet = nouvelleValeur;
-                break;
-        }
-    }
-
-    public void modifierDateProjet(String attribut, LocalDate nouvelleDate) {
-        switch (attribut.toLowerCase()) {
-            case "datedebut":
-                this.dateDebutProjet = nouvelleDate;
-                break;
-            case "datefin":
-                this.dateFinProjet = nouvelleDate;
-        }
-    }
-
     public void supprimerProjet() {
         this.isSupprime = true;
         System.out.println("Le projet " + nomProjet + "a bien été supprimée.");

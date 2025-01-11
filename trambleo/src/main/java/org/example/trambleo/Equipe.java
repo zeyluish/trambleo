@@ -6,11 +6,12 @@ import java.util.UUID;
 public class Equipe {
     UUID idEquipe = UUID.randomUUID();
     String nomEquipe;
-    ArrayList<Employe> listeMembre;
+    ArrayList<Employe> listeMembre = new ArrayList<>();
     boolean isProjetAssocie;
 
     public Equipe(String nomEquipe) {
         this.nomEquipe = nomEquipe;
+        this.isProjetAssocie = false;
     }
 
     // <editor-fold desc="Getters and setters">

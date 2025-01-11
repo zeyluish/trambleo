@@ -14,20 +14,18 @@ public class Tache {
     String descriptionTache;
     String priorite;
     LocalDate dateFinTache;
-    Categorie categorie;
     boolean isSupprime;
     Projet projetAssocie;
     ArrayList<String> listeCommentaire;
     ArrayList<Employe> listeEmployeTache;
     ArrayList<sousTache> listeSousTache;
 
-    public Tache( String nomTache, String descriptionTache, String priorite, LocalDate dateFinTache, Categorie categorie) {
+    public Tache( String nomTache, String descriptionTache, String priorite, LocalDate dateFinTache) {
         this.idTache = UUID.randomUUID();
         this.nomTache = nomTache;
         this.descriptionTache = descriptionTache;
         this.priorite = priorite;
         this.dateFinTache = dateFinTache;
-        this.categorie = categorie;
         this.listeEmployeTache = new ArrayList<>();
         this.listeSousTache = new ArrayList<>();
         this.listeCommentaire = new ArrayList<>();
@@ -35,28 +33,7 @@ public class Tache {
     }
 
     public String toString() {
-        return "identifiant : " + idTache + ", nom : " + nomTache + ", description : " + descriptionTache + ", priorité : " + priorite + ", date de fin : " + dateFinTache + ", categorie : " + categorie;
-    }
-
-    public void creerTache(String nomTache, String descriptionTache, String priorite, LocalDate dateFinTache, Categorie categorie) {
-        Tache nouvelleTache = new Tache(nomTache, descriptionTache, priorite, dateFinTache, categorie);
-    }
-
-    public void modifierTache(String attribut, String nouvelleValeur) {
-        switch (attribut.toLowerCase()){
-            case "nom":
-                this.nomTache = nouvelleValeur;
-                break;
-            case "description" :
-                this.descriptionTache = nouvelleValeur;
-                break;
-            case "priorite":
-                this.priorite = nouvelleValeur;
-                break;
-            case "categorie" :
-                this.categorie = getCategorie(); //A changer
-                break;
-        }
+        return "identifiant : " + idTache + ", nom : " + nomTache + ", description : " + descriptionTache + ", priorité : " + priorite + ", date de fin : " + dateFinTache;
     }
 
     public void supprimerTache() { //Sur l'interface graphique on fera disparaitre la tache
@@ -133,14 +110,6 @@ public class Tache {
 
     public void setDateFinTache(LocalDate dateFinTache) {
         this.dateFinTache = dateFinTache;
-    }
-
-    public Categorie getCategorie() {
-        return categorie;
-    }
-
-    public void setCategorie(Categorie categorie) {
-        this.categorie = categorie;
     }
 
     public ArrayList<Employe> getListeEmployeTache() {
