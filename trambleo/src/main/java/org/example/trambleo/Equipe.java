@@ -5,8 +5,13 @@ import java.util.UUID;
 
 public class Equipe {
     UUID idEquipe = UUID.randomUUID();
+    String nomEquipe;
     ArrayList<Employe> listeMembre;
     boolean isProjetAssocie;
+
+    public Equipe(String nomEquipe) {
+        this.nomEquipe = nomEquipe;
+    }
 
     // <editor-fold desc="Getters and setters">
 
@@ -32,6 +37,14 @@ public class Equipe {
 
     public void setProjetAssocie(boolean projetAssocie) {
         isProjetAssocie = projetAssocie;
+    }
+
+    public String getNomEquipe() {
+        return nomEquipe;
+    }
+
+    public void setNomEquipe(String nomEquipe) {
+        this.nomEquipe = nomEquipe;
     }
 
     // </editor-fold>

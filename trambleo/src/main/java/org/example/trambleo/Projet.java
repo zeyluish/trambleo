@@ -93,6 +93,26 @@ public class Projet {
         this.listeEmploye = listeEmploye;
     }
 
+    public boolean isEquipeAssocie() {
+        return isEquipeAssocie;
+    }
+
+    public void setEquipeAssocie(boolean equipeAssocie) {
+        isEquipeAssocie = equipeAssocie;
+    }
+
+    public boolean isSupprime() {
+        return isSupprime;
+    }
+
+    public void setSupprime(boolean supprime) {
+        isSupprime = supprime;
+    }
+
+    public String getStatutProjet() {
+        return statutProjet;
+    }
+
     // </editor-fold>
 
     public String toString() {

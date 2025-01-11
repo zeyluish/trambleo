@@ -13,6 +13,7 @@ public class Employe {
     String role; // au sein du projet
     ArrayList<Projet> listeProjet = new ArrayList<>();
     boolean isSupprime;
+    boolean isDansEquipe;
 
     public Employe(String nom, String prenom, String email, String motDePasse, String poste) {
         this.nom = nom;
@@ -21,6 +22,7 @@ public class Employe {
         this.motDePasse = motDePasse;
         this.poste = poste;
         this.isSupprime = false;
+        this.isDansEquipe = false;
     }
 
     // <editor-fold desc="Getters and setters">
@@ -87,6 +89,22 @@ public class Employe {
 
     public void setListeProjet(ArrayList<Projet> listeProjet) {
         this.listeProjet = listeProjet;
+    }
+
+    public boolean isSupprime() {
+        return isSupprime;
+    }
+
+    public void setSupprime(boolean supprime) {
+        isSupprime = supprime;
+    }
+
+    public boolean isDansEquipe() {
+        return isDansEquipe;
+    }
+
+    public void setDansEquipe(boolean dansEquipe) {
+        isDansEquipe = dansEquipe;
     }
 
     // </editor-fold>
