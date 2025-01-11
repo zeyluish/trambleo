@@ -15,6 +15,7 @@ public class Projet {
     ArrayList<Tache> listeTache = new ArrayList<>();
     ArrayList<Employe> listeEmploye = new ArrayList<>();
     boolean isSupprime;
+    boolean isEquipeAssocie;
 
     public Projet(String nomProjet, String descriptionProjet, LocalDate dateDebutProjet, LocalDate dateFinProjet) {
         this.nomProjet = nomProjet;
@@ -22,6 +23,7 @@ public class Projet {
         this.dateDebutProjet = dateDebutProjet;
         this.dateFinProjet = dateFinProjet;
         this.isSupprime = false;
+        this.isEquipeAssocie = false;
         this.statutProjet = "Nouveau Projet";
     }
 
