@@ -19,7 +19,7 @@
             <Insets left="15.0" />
          </padding>
       </Label>
-      
+
       <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" onMouseClicked="#onCompteButtonClick" prefHeight="66.0" prefWidth="1128.0" text="Mon compte" textFill="WHITE">
          <font>
             <Font name="System Bold" size="25.0" />
