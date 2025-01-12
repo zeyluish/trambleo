@@ -8,4 +8,6 @@ module org.example.trambleo {
 
     opens org.example.trambleo to javafx.fxml;
     exports org.example.trambleo;
+    exports org.example.trambleo.Controller;
+    opens org.example.trambleo.Controller to javafx.fxml;
 }

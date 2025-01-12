@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="196.0" style="-fx-background-radius: 30; -fx-background-color: #CFDFFB;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.trambleo.HelloControllerCarteProjet">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="196.0" style="-fx-background-radius: 30; -fx-background-color: #CFDFFB;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.trambleo.Controller.HelloControllerCarteProjet">
    <padding>
       <Insets />
    </padding>
