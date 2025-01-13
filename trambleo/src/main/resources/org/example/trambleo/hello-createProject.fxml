@@ -52,4 +52,5 @@
          </Button>
       </children>
    </HBox>
+   <Label fx:id="messageConfirmation" style="-fx-text-fill: #FF0000;" />
 </VBox>
