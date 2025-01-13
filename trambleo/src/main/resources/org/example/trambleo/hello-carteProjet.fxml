@@ -7,13 +7,12 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="196.0" style="-fx-background-radius: 30; -fx-background-color: #CFDFFB;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.trambleo.HelloControllerCarteProjet">
    <padding>
       <Insets />
    </padding>
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="64.0" prefWidth="196.0" text="Projet 1">
+      <Label fx:id="titreProjetCarte" alignment="CENTER" contentDisplay="CENTER" prefHeight="64.0" prefWidth="196.0" text="Projet 1">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>

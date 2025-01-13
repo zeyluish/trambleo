@@ -1,5 +1,8 @@
 package org.example.trambleo;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -14,6 +17,7 @@ public class Projet {
     String statutProjet;
     ArrayList<Tache> listeTache = new ArrayList<>();
     ArrayList<Employe> listeEmploye = new ArrayList<>();
+    static ArrayList<Projet> listeProjet = new ArrayList<>();
     boolean isSupprime;
     boolean isEquipeAssocie;
 
@@ -121,6 +125,31 @@ public class Projet {
 
     public String toCSV(){
         return idProjet + ";" + nomProjet + ";" + descriptionProjet + ";" + dateDebutProjet + ";" + dateFinProjet;
+    }
+
+    public static void  importProjet() {
+        String filePath = "src/main/resources/Projet.csv";
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(";");
+                if (parts.length >= 4) {
+                    try {
+                        String nom = parts[0];
+                        String description = parts[1];
+                        LocalDate dateDebut = LocalDate.parse(parts[2]);
+                        LocalDate dateFin = LocalDate.parse(parts[3]);
+                        listeProjet.add(new Projet(nom, description, dateDebut, dateFin));
+                    } catch (NumberFormatException e) {
+                        System.out.println("Erreur de conversion sur cette ligne : " + line);
+                    }
+                } else {
+                    System.out.println("Ligne mal formée, ignorée : " + line);
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Erreur lors de la lecture du fichier : " + e.getMessage());
+        }
     }
 
     public void creerProjet(String nomProjet, String descriptionProjet, LocalDate dateDebutProjet, LocalDate dateFinProjet) {
