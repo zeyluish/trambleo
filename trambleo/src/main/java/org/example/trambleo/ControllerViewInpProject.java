@@ -1,4 +1,4 @@
-package org.example.trambleo.Controller;
+package org.example.trambleo;
 
 public class ControllerViewInpProject {
 }

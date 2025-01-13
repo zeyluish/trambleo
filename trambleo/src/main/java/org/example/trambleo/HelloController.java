@@ -1,9 +1,9 @@
-package org.example.trambleo.Controller;
+package org.example.trambleo;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloControllerSignUp {
+public class HelloController {
     @FXML
     private Label welcomeText;
 
