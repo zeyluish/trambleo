@@ -6,7 +6,6 @@ public class ChefProjet extends Employe {
 
     public ChefProjet(String nom, String prenom, String email, String motDePasse, String poste) {
         super(nom, prenom, email, motDePasse, poste);
-        this.poste = "chef de projet";
     }
 
     @Override
