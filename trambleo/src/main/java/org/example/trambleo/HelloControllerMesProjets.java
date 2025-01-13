@@ -3,6 +3,7 @@ package org.example.trambleo;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -26,6 +27,20 @@ public class HelloControllerMesProjets {
 
                 HelloControllerCarteProjet controller = loader.getController();
                 controller.adapterTitre(projet); //Changer l'apparence de la carte selon le projet
+
+                carte.setOnMouseClicked(event -> {
+                    try {
+                        FXMLLoader loader2 = new FXMLLoader(getClass().getResource("viewInProject.fxml"));
+                        Parent projectView = loader2.load();
+
+                        ControllerViewInpProject controllerViewInpProject = loader2.getController();
+                        controllerViewInpProject.adapterProjet(projet.nomProjet,projet.dateFinProjet);
+                        Stage currentStage = (Stage) carteProjet.getScene().getWindow();
+                        currentStage.setScene(new Scene(projectView));
+                    } catch (IOException e) {
+                        System.out.println("Erreur de l'application");
+                    }
+                });
 
                 carteProjet.getChildren().add(carte);
             } catch (IOException e){
