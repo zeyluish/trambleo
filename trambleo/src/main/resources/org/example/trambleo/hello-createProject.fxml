@@ -6,6 +6,7 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -29,8 +30,26 @@
          <Label text="Date de fin:" />
          <DatePicker fx:id="dateFinProjet" />
          <Label text="Employés :" />
-         <ComboBox prefWidth="150.0" />
+         <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+               <ComboBox fx:id="choixEmploye" prefWidth="150.0" />
+               <Button mnemonicParsing="false" onAction="#onAssocierEmployeButtonClick" text="Associer un employé">
+                  <HBox.margin>
+                     <Insets left="15.0" />
+                  </HBox.margin>
+               </Button>
+            </children>
+         </HBox>
       </children>
    </VBox>
-   <Button mnemonicParsing="false" onAction="#onCreerProjetButtonClick" text="Créer le projet" />
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Button mnemonicParsing="false" onAction="#onCreerProjetButtonClick" text="Créer le projet" />
+         <Button mnemonicParsing="false" onAction="#onAnnulerButtonClick" text="Annuler">
+            <HBox.margin>
+               <Insets left="15.0" />
+            </HBox.margin>
+         </Button>
+      </children>
+   </HBox>
 </VBox>

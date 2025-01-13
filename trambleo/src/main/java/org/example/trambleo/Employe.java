@@ -1,5 +1,8 @@
 package org.example.trambleo;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -12,6 +15,7 @@ public class Employe {
     String poste; // au sein de l'entreprise
     String role; // au sein du projet
     ArrayList<Projet> listeProjet = new ArrayList<>();
+    static ArrayList<Employe> listeEmploye = new ArrayList<>();
     boolean isSupprime;
     boolean isDansEquipe;
 
@@ -23,6 +27,34 @@ public class Employe {
         this.poste = poste;
         this.isSupprime = false;
         this.isDansEquipe = false;
+    }
+
+    public static void  importEmploye() {
+        String filePath = "src/main/resources/Employe.csv";
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(";");
+                if (parts.length >= 5) {
+                    try {
+                        UUID idUtilisateur = UUID.randomUUID();
+                        String nom = parts[0];
+                        String prenom = parts[1];
+                        String email = parts[2];
+                        String motDePasse = parts[3];
+                        String poste = parts[4];
+                        Employe employe = new Employe(nom, prenom, email, motDePasse, poste);
+                        listeEmploye.add(employe);
+                    } catch (NumberFormatException e) {
+                        System.out.println("Erreur de conversion sur cette ligne : " + line);
+                    }
+                } else {
+                    System.out.println("Ligne mal formée, ignorée : " + line);
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Erreur lors de la lecture du fichier : " + e.getMessage());
+        }
     }
 
     // <editor-fold desc="Getters and setters">
