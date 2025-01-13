@@ -18,6 +18,7 @@ public class ControllerEditEmailPopUp {
     public void onModifierEmailBoutonClick() throws IOException {
         String ancienEmailText = ancienEmail.getText();
         String nouveauEmailText = nouveauEmail.getText();
+        String confirmerEmailText = confirmerEmail.getText();
 
     }
 }
