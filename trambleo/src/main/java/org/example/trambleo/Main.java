@@ -6,8 +6,6 @@ import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-        FirebaseConfig.initializeFirebase();
-        FirestoreExample.addUser("user123", "John Doe", "john.doe@example.com");
 
         LocalDate today = LocalDate.now();
         System.out.println(today);
