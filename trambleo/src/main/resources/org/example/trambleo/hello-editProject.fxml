@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="500.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.trambleo.HelloControllerEditProject">
+<VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="500.0" spacing="20.0" style="-fx-background-color: #E9EFFF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.trambleo.HelloControllerEditProject">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -23,22 +23,31 @@
    <VBox prefHeight="200.0" prefWidth="100.0">
       <children>
          <Label text="Nom :" />
-         <TextField promptText="Entrez le nom" />
+         <TextField fx:id="nomProjet" promptText="Entrez le nom" />
          <Label text="Description :" />
-         <TextField promptText="Entrez la description" />
+         <TextField fx:id="descriptionProjet" promptText="Entrez la description" />
          <Label text="Statut :" />
          <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
-               <CheckBox mnemonicParsing="false" text="En cours" />
-               <CheckBox mnemonicParsing="false" text="En retard" />
-               <CheckBox mnemonicParsing="false" text="Terminé" />
+               <CheckBox fx:id="statutEnCours" mnemonicParsing="false" text="En cours" />
+               <CheckBox fx:id="statutEnRetard" mnemonicParsing="false" text="En retard" />
+               <CheckBox fx:id="statutTermine" mnemonicParsing="false" text="Terminé" />
             </children>
          </HBox>
          <Label text="Date de fin:" />
-         <DatePicker />
+         <DatePicker fx:id="dateFinProjet" />
          <Label text="Employés :" />
          <ComboBox prefWidth="150.0" />
       </children>
    </VBox>
-   <Button mnemonicParsing="false" text="Modifier la tâche" />
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Button mnemonicParsing="false" onAction="#onAnnulerButtonClick" style="-fx-background-color: #ea767c;" text="Annuler" />
+         <Button mnemonicParsing="false" style="-fx-background-color: #847CAE;" text="Modifier le projet">
+            <HBox.margin>
+               <Insets left="15.0" />
+            </HBox.margin>
+         </Button>
+      </children>
+   </HBox>
 </VBox>
