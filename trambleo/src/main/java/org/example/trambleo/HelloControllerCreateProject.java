@@ -25,6 +25,5 @@ public class HelloControllerCreateProject {
         LocalDate dateFinProjetDate = dateFinProjet.getValue();
         Projet nouveauProjet = Administrateur.creerProjet(nomProjetText,descriptionProjetText,dateDebutProjetDate,dateFinProjetDate);
         System.out.println(nouveauProjet);
-
     }
 }
