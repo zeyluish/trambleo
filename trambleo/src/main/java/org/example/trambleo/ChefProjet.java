@@ -124,6 +124,5 @@ public class ChefProjet extends Employe {
     public static void modifierStatutProjet(Projet projet, String statutProjet) {
         projet.statutProjet = statutProjet;
     }
-
     
 }
