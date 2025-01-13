@@ -68,12 +68,12 @@
          <Insets left="15.0" />
       </VBox.margin>
    </HBox>
-   <Button mnemonicParsing="false" style="-fx-background-color: #847CAE;" text="Modifier l'adresse mail">
+   <Button mnemonicParsing="false" onMouseClicked="#onEditEmailBouton" style="-fx-background-color: #847CAE;" text="Modifier l'adresse mail">
       <VBox.margin>
          <Insets bottom="15.0" left="15.0" top="15.0" />
       </VBox.margin>
    </Button>
-   <Button mnemonicParsing="false" style="-fx-background-color: #847CAE;" text="Modifier le mot de passe">
+   <Button mnemonicParsing="false" onMouseClicked="#onEditPasswordBouton" style="-fx-background-color: #847CAE;" text="Modifier le mot de passe">
       <VBox.margin>
          <Insets left="15.0" top="15.0" />
       </VBox.margin>

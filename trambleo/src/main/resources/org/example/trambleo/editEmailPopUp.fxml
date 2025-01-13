@@ -22,5 +22,5 @@
          <TextField fx:id="confirmerEmail" promptText="Entrez votre nouvelle adresse e-mail" />
       </children>
    </VBox>
-    <Button onAction="#onModifierEmailBoutonClick" text="Valider" />
+    <Button text="Valider" />
 </VBox>
