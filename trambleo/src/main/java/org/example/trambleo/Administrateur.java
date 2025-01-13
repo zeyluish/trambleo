@@ -9,9 +9,10 @@ public class Administrateur extends Employe {
         this.poste = "administrateur";
     }
 
-    public void creerProjet(String nomProjet, String descriptionProjet, LocalDate dateDebutProjet, LocalDate dateFinProjet) {
+    public static Projet creerProjet(String nomProjet, String descriptionProjet, LocalDate dateDebutProjet, LocalDate dateFinProjet) {
         Projet nouveauProjet = new Projet(nomProjet,descriptionProjet,dateDebutProjet,dateFinProjet);
         System.out.println("Le projet a bien été créé");
+        return nouveauProjet;
     }
     public static void modifierProjet(Projet projet, String attribut, String nouvelleValeur) {
         switch (attribut.toLowerCase()) {

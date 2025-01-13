@@ -21,16 +21,16 @@
    <VBox prefHeight="200.0" prefWidth="100.0">
       <children>
          <Label text="Nom :" />
-         <TextField promptText="Entrez le nom" />
+         <TextField fx:id="nomProjet" promptText="Entrez le nom" />
          <Label text="Description :" />
-         <TextField promptText="Entrez la description" />
+         <TextField fx:id="descriptionProjet" promptText="Entrez la description" />
          <Label text="Date de début :" />
-         <DatePicker />
+         <DatePicker fx:id="dateDebutProjet" />
          <Label text="Date de fin:" />
-         <DatePicker />
+         <DatePicker fx:id="dateFinProjet" />
          <Label text="Employés :" />
          <ComboBox prefWidth="150.0" />
       </children>
    </VBox>
-   <Button mnemonicParsing="false" text="Créer le projet" />
+   <Button mnemonicParsing="false" onAction="#onCreerProjetButtonClick" text="Créer le projet" />
 </VBox>
