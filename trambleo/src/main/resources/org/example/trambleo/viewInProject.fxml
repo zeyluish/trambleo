@@ -36,9 +36,9 @@
          </HBox>
       </children>
    </HBox>
-   <HBox prefHeight="100.0" prefWidth="200.0">
+   <HBox prefHeight="414.0" prefWidth="1280.0">
       <children>
-         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #cfdffb;">
+         <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="420.0" style="-fx-background-color: FF6961;">
             <children>
                <Label alignment="TOP_CENTER" text="A faire :">
                   <font>
@@ -46,8 +46,11 @@
                   </font>
                </Label>
             </children>
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
          </VBox>
-         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #cfdffb;">
+         <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="420.0" style="-fx-background-color: #FFC067;">
             <children>
                <Label text="En cours :">
                   <font>
@@ -58,8 +61,11 @@
             <opaqueInsets>
                <Insets />
             </opaqueInsets>
+            <HBox.margin>
+               <Insets left="10.0" />
+            </HBox.margin>
          </VBox>
-         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #cfdffb;">
+         <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="420.0" style="-fx-background-color: #98FB98;">
             <children>
                <Label text="Fait :">
                   <font>
@@ -70,6 +76,9 @@
             <opaqueInsets>
                <Insets />
             </opaqueInsets>
+            <HBox.margin>
+               <Insets left="10.0" />
+            </HBox.margin>
          </VBox>
       </children>
       <opaqueInsets>

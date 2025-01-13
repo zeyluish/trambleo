@@ -15,12 +15,12 @@
    <VBox prefHeight="200.0" prefWidth="100.0">
       <children>
          <Label text="Ancienne adresse e-mail :" />
-         <TextField promptText="Entrez votre ancienne adresse e-mail" />
+         <TextField fx:id="ancienEmail" promptText="Entrez votre ancienne adresse e-mail" />
          <Label text="Nouvelle adresse e-mail :" />
-         <TextField promptText="Entrez votre nouvelle adresse e-mail" />
+         <TextField fx:id="nouveauEmail" promptText="Entrez votre nouvelle adresse e-mail" />
          <Label text="Confirmer  nouvelle adresse e-mail :" />
-         <TextField promptText="Entrez votre nouvelle adresse e-mail" />
+         <TextField fx:id="confirmerEmail" promptText="Entrez votre nouvelle adresse e-mail" />
       </children>
    </VBox>
-    <Button onAction="#onHelloButtonClick" text="Valider" />
+    <Button onAction="#onModifierEmailBoutonClick" text="Valider" />
 </VBox>

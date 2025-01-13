@@ -58,7 +58,7 @@
                <Font size="20.0" />
             </font>
          </Label>
-         <Label prefHeight="62.0" prefWidth="72.0" text="Label">
+         <Label fx:id="email" prefHeight="62.0" prefWidth="72.0" text="Label">
             <font>
                <Font size="20.0" />
             </font>
