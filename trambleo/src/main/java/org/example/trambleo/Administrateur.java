@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Locale;
+import java.util.UUID;
 
 public class Administrateur extends Employe {
     public Administrateur(String nom, String prenom, String email, String motDePasse, String poste) {
@@ -13,7 +14,8 @@ public class Administrateur extends Employe {
     }
 
     public static Projet creerProjet(String nomProjet, String descriptionProjet, LocalDate dateDebutProjet, LocalDate dateFinProjet) {
-        Projet nouveauProjet = new Projet(nomProjet,descriptionProjet,dateDebutProjet,dateFinProjet);
+        UUID idProjet = UUID.randomUUID();
+        Projet nouveauProjet = new Projet(idProjet, nomProjet,descriptionProjet,dateDebutProjet,dateFinProjet);
         System.out.println("Le projet a bien été créé");
         saveProjet(nouveauProjet);
         return nouveauProjet;

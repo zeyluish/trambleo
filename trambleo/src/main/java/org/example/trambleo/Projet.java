@@ -9,7 +9,7 @@ import java.util.Scanner;
 import java.util.UUID;
 
 public class Projet {
-    UUID idProjet = UUID.randomUUID();
+    UUID idProjet;
     String nomProjet;
     String descriptionProjet;
     LocalDate dateDebutProjet;
@@ -21,7 +21,8 @@ public class Projet {
     boolean isSupprime;
     boolean isEquipeAssocie;
 
-    public Projet(String nomProjet, String descriptionProjet, LocalDate dateDebutProjet, LocalDate dateFinProjet) {
+    public Projet(UUID idProjet, String nomProjet, String descriptionProjet, LocalDate dateDebutProjet, LocalDate dateFinProjet) {
+        this.idProjet = idProjet;
         this.nomProjet = nomProjet;
         this.descriptionProjet = descriptionProjet;
         this.dateDebutProjet = dateDebutProjet;
@@ -127,7 +128,7 @@ public class Projet {
         return idProjet + ";" + nomProjet + ";" + descriptionProjet + ";" + dateDebutProjet + ";" + dateFinProjet + ";" + statutProjet + ";" + isSupprime + ";" + isEquipeAssocie + ";" + listeEmploye;
     }
 
-    public static void  importProjet() {
+    public static void  importProjet() { //récupérer les projets depuis le CSV
         String filePath = "src/main/resources/Projet.csv";
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
@@ -144,7 +145,7 @@ public class Projet {
                         boolean isSupprime = Boolean.parseBoolean(parts[6]);
                         boolean isEquipeAssocie = Boolean.parseBoolean(parts[7]);
 
-                        boolean exists = false;
+                        boolean exists = false; //Vérifie que le projet n'existe pas déjà pour pas le réafficher
                         for (Projet projet : listeProjet) {
                             if (projet.getIdProjet().equals(idProjet)) {
                                 exists = true;
@@ -153,7 +154,7 @@ public class Projet {
                             }
                         }
                         if (!exists) {
-                            listeProjet.add(new Projet(nom, description, dateDebut, dateFin));
+                            listeProjet.add(new Projet(idProjet, nom, description, dateDebut, dateFin));
 
                         }
                     } catch (NumberFormatException e) {
@@ -168,9 +169,6 @@ public class Projet {
         }
     }
 
-    public void creerProjet(String nomProjet, String descriptionProjet, LocalDate dateDebutProjet, LocalDate dateFinProjet) {
-        Projet newProjet = new Projet(nomProjet, descriptionProjet, dateDebutProjet, dateFinProjet);
-    }
 
     public void supprimerProjet() {
         this.isSupprime = true;

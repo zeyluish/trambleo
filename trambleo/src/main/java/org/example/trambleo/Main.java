@@ -12,12 +12,10 @@ public class Main {
         LocalDate demain = today.minusDays(1);
 
         Employe employe1 = new Employe("Gaudin", "Téo", "teogdn.pro@gmail.com", "motDePasse123", "PDG");
-        Projet projet1 = new Projet("Test", "description", today, demain);
 
 
 
         System.out.println(employe1.toString());
-        System.out.println(projet1.toString());
 
         employe1.afficherInfo();
 
