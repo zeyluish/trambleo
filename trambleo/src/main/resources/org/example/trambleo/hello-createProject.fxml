@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="500.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.trambleo.HelloControllerCreateProject">
+<VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="500.0" spacing="20.0" style="-fx-background-color: #E9EFFF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.trambleo.HelloControllerCreateProject">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -33,7 +33,7 @@
          <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
                <ComboBox fx:id="choixEmploye" prefWidth="150.0" />
-               <Button mnemonicParsing="false" onAction="#onAssocierEmployeButtonClick" text="Associer un employé">
+               <Button mnemonicParsing="false" onAction="#onAssocierEmployeButtonClick" style="-fx-background-color: #847CAE;" text="Associer un employé">
                   <HBox.margin>
                      <Insets left="15.0" />
                   </HBox.margin>
@@ -44,12 +44,15 @@
    </VBox>
    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
       <children>
-         <Button mnemonicParsing="false" onAction="#onCreerProjetButtonClick" text="Créer le projet" />
-         <Button mnemonicParsing="false" onAction="#onAnnulerButtonClick" text="Annuler">
+         <Button mnemonicParsing="false" onAction="#onAnnulerButtonClick" style="-fx-background-color: #ea767c;" text="Annuler">
             <HBox.margin>
                <Insets left="15.0" />
             </HBox.margin>
          </Button>
+         <Button mnemonicParsing="false" onAction="#onCreerProjetButtonClick" style="-fx-background-color: #847CAE;" text="Créer le projet">
+            <HBox.margin>
+               <Insets left="15.0" />
+            </HBox.margin></Button>
       </children>
    </HBox>
    <Label fx:id="messageConfirmation" style="-fx-text-fill: #FF0000;" />
