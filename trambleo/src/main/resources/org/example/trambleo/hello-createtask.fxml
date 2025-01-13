@@ -2,10 +2,10 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -23,7 +23,7 @@
    <VBox prefHeight="200.0" prefWidth="100.0">
       <children>
          <Label text="Nom :" />
-         <TextField promptText="Entrez le nom">
+         <TextField fx:id="nomTache" promptText="Entrez le nom">
             <VBox.margin>
                <Insets top="5.0" />
             </VBox.margin></TextField>
@@ -31,7 +31,7 @@
             <VBox.margin>
                <Insets top="20.0" />
             </VBox.margin></Label>
-         <TextField promptText="Entrez la description">
+         <TextField fx:id="descTache" promptText="Entrez la description">
             <VBox.margin>
                <Insets top="5.0" />
             </VBox.margin></TextField>
@@ -41,15 +41,17 @@
             </VBox.margin></Label>
          <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
-               <CheckBox mnemonicParsing="false" text="Faible" />
-               <CheckBox mnemonicParsing="false" text="Moyenne">
+               <RadioButton fx:id="radFaible" mnemonicParsing="false" onAction="#onFaible" text="Faible" />
+               <RadioButton fx:id="radMoyenne" mnemonicParsing="false" onAction="#onMoyenne" text="Moyenne">
                   <HBox.margin>
                      <Insets left="10.0" />
-                  </HBox.margin></CheckBox>
-               <CheckBox mnemonicParsing="false" text="Elevé">
+                  </HBox.margin>
+               </RadioButton>
+               <RadioButton fx:id="radEleve" mnemonicParsing="false" onAction="#onEleve" text="Elevé">
                   <HBox.margin>
                      <Insets left="10.0" />
-                  </HBox.margin></CheckBox>
+                  </HBox.margin>
+               </RadioButton>
             </children>
             <VBox.margin>
                <Insets top="5.0" />
@@ -59,7 +61,7 @@
             <VBox.margin>
                <Insets top="20.0" />
             </VBox.margin></Label>
-         <DatePicker>
+         <DatePicker fx:id="dateFin">
             <VBox.margin>
                <Insets top="5.0" />
             </VBox.margin></DatePicker>
@@ -69,8 +71,8 @@
             </VBox.margin></Label>
          <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
-               <ComboBox prefWidth="150.0" />
-               <Button mnemonicParsing="false" style="-fx-background-color: #847CAE;" text="Attribuer employé">
+               <ComboBox fx:id="comboEmploye" prefWidth="150.0" />
+               <Button mnemonicParsing="false" onAction="#onAttribuerEmployeBouton" style="-fx-background-color: #847CAE;" text="Attribuer employé">
                   <HBox.margin>
                      <Insets left="20.0" />
                   </HBox.margin>
@@ -79,14 +81,15 @@
          </HBox>
       </children>
    </VBox>
+   <Label fx:id="messageConfirmation" />
    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
       <children>
-         <Button mnemonicParsing="false" style="-fx-background-color: #ea767c;" text="Annuler">
+         <Button mnemonicParsing="false" onAction="#onAnnulerTacheBouton" style="-fx-background-color: #ea767c;" text="Annuler">
             <HBox.margin>
                <Insets right="5.0" />
             </HBox.margin>
          </Button>
-         <Button mnemonicParsing="false" style="-fx-background-color: #847CAE;" text="Créer Tâche">
+         <Button mnemonicParsing="false" onAction="#onCreerTacheBouton" style="-fx-background-color: #847CAE;" text="Créer Tâche">
             <HBox.margin>
                <Insets left="5.0" />
             </HBox.margin>
