@@ -31,10 +31,10 @@
          <HBox prefHeight="100.0" prefWidth="235.0">
             <children>
                <Label text="Pas de compte ?" />
-               <Button mnemonicParsing="false" text="Créer un compte" />
+               <Button mnemonicParsing="false" onMouseClicked="#onBoutonCreer1" text="Créer un compte" />
             </children>
          </HBox>
       </children>
    </VBox>
-   <Button mnemonicParsing="false" text="Se connecter" />
+   <Button mnemonicParsing="false" onMouseClicked="#onBoutonConnecter1" text="Se connecter" />
 </VBox>

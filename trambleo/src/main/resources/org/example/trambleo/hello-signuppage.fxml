@@ -25,20 +25,20 @@
    <VBox prefHeight="414.0" prefWidth="262.0">
       <children>
          <Label text="Nom :" />
-         <TextField promptText="Entrez votre nom" />
+         <TextField fx:id="nom" promptText="Entrez votre nom" />
          <Label text="Prénom :" />
-         <TextField promptText="Entrez votre prénom" />
+         <TextField fx:id="prenom" promptText="Entrez votre prénom" />
          <Label text="Adresse Email :" />
-         <TextField promptText="Entrez votre e-mail" />
+         <TextField fx:id="email" promptText="Entrez votre e-mail" />
          <Label text="Mot de passe :" />
-         <TextField promptText="Entrez votre mot de passe" />
+         <TextField fx:id="mdp" promptText="Entrez votre mot de passe" />
          <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
                <Label text="Déjà connecté ?" />
-               <Button mnemonicParsing="false" text="Se connecter" />
+               <Button mnemonicParsing="false" onMouseClicked="#onBoutonConnecter" text="Se connecter" />
             </children>
          </HBox>
       </children>
    </VBox>
-   <Button mnemonicParsing="false" text="Créer un compte" />
+   <Button mnemonicParsing="false" onMouseClicked="#onBoutonCreer" text="Créer un compte" />
 </VBox>
