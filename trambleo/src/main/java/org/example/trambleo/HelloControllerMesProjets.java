@@ -17,17 +17,16 @@ public class HelloControllerMesProjets {
     HBox carteProjet;
 
     public void initialize() {
-        Projet.importProjet();
+        Projet.importProjet(); //Récupérer les projets du CSV
         carteProjet.getChildren().clear();
         for (Projet projet : Projet.listeProjet){
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-carteProjet.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-carteProjet.fxml")); //Ajouter une carte pour chaque projet
                 VBox carte = loader.load();
 
                 HelloControllerCarteProjet controller = loader.getController();
-                controller.adapterTitre(projet);
+                controller.adapterTitre(projet); //Changer l'apparence de la carte selon le projet
 
-                // Ajouter la carte au conteneur
                 carteProjet.getChildren().add(carte);
             } catch (IOException e){
                 System.out.println(e.getMessage());

@@ -64,7 +64,7 @@ public class HelloControllerCreateProject {
     }
 
     public void onAnnulerButtonClick(){ //Fermer la pop up
-        Stage stage = (Stage) nomProjet.getScene().getWindow();
+        Stage stage = (Stage) dateFinProjet.getScene().getWindow();
         stage.close();
     }
 }

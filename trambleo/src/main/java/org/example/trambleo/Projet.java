@@ -124,7 +124,7 @@ public class Projet {
     }
 
     public String toCSV(){
-        return idProjet + ";" + nomProjet + ";" + descriptionProjet + ";" + dateDebutProjet + ";" + dateFinProjet;
+        return idProjet + ";" + nomProjet + ";" + descriptionProjet + ";" + dateDebutProjet + ";" + dateFinProjet + ";" + statutProjet + ";" + isSupprime + ";" + isEquipeAssocie + ";" + listeEmploye;
     }
 
     public static void  importProjet() {
@@ -135,11 +135,27 @@ public class Projet {
                 String[] parts = line.split(";");
                 if (parts.length >= 4) {
                     try {
-                        String nom = parts[0];
-                        String description = parts[1];
-                        LocalDate dateDebut = LocalDate.parse(parts[2]);
-                        LocalDate dateFin = LocalDate.parse(parts[3]);
-                        listeProjet.add(new Projet(nom, description, dateDebut, dateFin));
+                        UUID idProjet = UUID.fromString(parts[0]);
+                        String nom = parts[1];
+                        String description = parts[2];
+                        LocalDate dateDebut = LocalDate.parse(parts[3]);
+                        LocalDate dateFin = LocalDate.parse(parts[4]);
+                        String statutProjet = parts[5];
+                        boolean isSupprime = Boolean.parseBoolean(parts[6]);
+                        boolean isEquipeAssocie = Boolean.parseBoolean(parts[7]);
+
+                        boolean exists = false;
+                        for (Projet projet : listeProjet) {
+                            if (projet.getIdProjet().equals(idProjet)) {
+                                exists = true;
+                                System.out.println("Meme id trouvé");
+                                break;
+                            }
+                        }
+                        if (!exists) {
+                            listeProjet.add(new Projet(nom, description, dateDebut, dateFin));
+
+                        }
                     } catch (NumberFormatException e) {
                         System.out.println("Erreur de conversion sur cette ligne : " + line);
                     }
