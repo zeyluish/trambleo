@@ -51,8 +51,16 @@ public class HelloControllerCreateProject {
     @FXML
     public void onAssocierEmployeButtonClick(){
         Employe employeSelectionne = choixEmploye.getSelectionModel().getSelectedItem();
-        employeChoisi.add(employeSelectionne);
-        messageConfirmation.setText("L'employé " + employeSelectionne.prenom + " " + employeSelectionne.nom + " a bien été ajouté");
+        if (employeSelectionne == null) {
+            messageConfirmation.setText("Veuillez sélectionner un employé.");
+            return;
+        }
+        if (employeChoisi.contains(employeSelectionne)) {
+            messageConfirmation.setText("L'employé " + employeSelectionne.prenom + " " + employeSelectionne.nom + " est déjà dans la liste.");
+        } else {
+            employeChoisi.add(employeSelectionne);
+            messageConfirmation.setText("L'employé " + employeSelectionne.prenom + " " + employeSelectionne.nom + " a bien été ajouté.");
+        }
     }
 
     public void onAnnulerButtonClick(){ //Fermer la pop up

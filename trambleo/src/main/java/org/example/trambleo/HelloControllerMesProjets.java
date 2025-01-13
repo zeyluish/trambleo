@@ -10,7 +10,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HelloControllerMesProjets {
-    public void onNouveauProjetButtonClick() throws IOException { //Ouvrir la page du compte
+
+    public void onNouveauProjetButtonClick() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation((this.getClass().getResource("hello-createProject.fxml")));
         Scene scene = new Scene(loader.load());
