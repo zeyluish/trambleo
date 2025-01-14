@@ -7,6 +7,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class HelloControllerEditProject {
     @FXML
@@ -41,6 +42,10 @@ public class HelloControllerEditProject {
     }
 
     public void onModifierButtonClick(){
-
+        String nouveauNomProjet = nomProjet.getText();
+        String nouvelleDescriptionProjet = descriptionProjet.getText();
+        LocalDate nouvelleDateFinProjet = dateFinProjet.getValue();
+        String nouveauStatutProjet = statutEnCours.isSelected() ? "En cours" : statutEnRetard.isSelected() ? "En retard" : statutTermine.isSelected() ? "Termine" : null;
+        ChefProjet.modifierProjet(projet, nouveauNomProjet, nouvelleDescriptionProjet,nouvelleDateFinProjet, nouveauStatutProjet);
     }
 }

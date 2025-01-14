@@ -1,8 +1,12 @@
 package org.example.trambleo;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.UUID;
 
@@ -126,26 +130,43 @@ public class Projet {
     public String toCSV(){
         return idProjet + ";" + nomProjet + ";" + descriptionProjet + ";" + dateDebutProjet + ";" + dateFinProjet + ";" + statutProjet + ";" + isSupprime + ";" + isEquipeAssocie + ";" + listeEmploye;
     }
-/*
-    public static void modifierCSV(){
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("projets.csv"))) {
-            for (Projet projet : listeProjet) {
-                writer.write(String.format("%s,%s,%s,%s,%s,%s,%b,%b\n",
-                        projet.getIdProjet(),
-                        projet.getNom(),
-                        projet.getDescription(),
-                        projet.getDateDebut(),
-                        projet.getDateFin(),
-                        projet.getStatut(),
-                        projet.isSupprime(),
-                        projet.isEquipeAssocie()
-                ));
+
+    public static void modifierCSV(Projet projet) {
+        Path filePath = Paths.get("src/main/resources/Projet.csv");
+
+        try {
+            List<String> lignes = Files.readAllLines(filePath);
+
+            for (int i = 0; i < lignes.size(); i++) {
+                String[] elements = lignes.get(i).split(";");
+                if (elements[0].equals(projet.getIdProjet().toString())) {
+                    lignes.set(i, String.join(";",
+                            projet.getIdProjet().toString(),
+                            projet.getNomProjet(),
+                            projet.getDescriptionProjet(),
+                            projet.getDateDebutProjet().toString(),
+                            projet.getDateFinProjet().toString(),
+                            projet.getStatutProjet(),
+                            "false",
+                            "false",
+                            "[]"
+                    ));
+                    break;
+                }
             }
+            try (BufferedWriter writer = Files.newBufferedWriter(filePath)) {
+                for (String ligne : lignes) {
+                    writer.write(ligne);
+                    writer.newLine();
+                }
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Erreur lors de la mise à jour du fichier CSV.");
         }
     }
-*/
+
     public static void  importProjet() { //récupérer les projets depuis le CSV
         String filePath = "src/main/resources/Projet.csv";
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
