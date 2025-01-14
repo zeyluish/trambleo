@@ -81,17 +81,17 @@ public class ControllerViewInpProject {
     }
 
     public void onRefreshBoutonClick() throws IOException {
-        Projet projet = Projet.projetSelected;
-        ArrayList<Tache> listeTache = projet.listeTache;
-        VBox VBoxAFaire = new VBox();
-
-        for (Tache tache : listeTache) {
-            VBoxAFaire.getChildren().add(new Button(tache.nomTache));
-        }
-        Scene scene = new Scene(VBoxAFaire);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
+//        Projet projet = Projet.projetSelected;
+//        ArrayList<Tache> listeTache = projet.listeTache;
+//        VBox VBoxAFaire = new VBox();
+//
+//        for (Tache tache : listeTache) {
+//            VBoxAFaire.getChildren().add(new Button(tache.nomTache));
+//        }
+//        Scene scene = new Scene(VBoxAFaire);
+//        Stage stage = new Stage();
+//        stage.setScene(scene);
+//        stage.show();
     }
 
 }
