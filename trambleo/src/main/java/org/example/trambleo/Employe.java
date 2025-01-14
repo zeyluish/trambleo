@@ -1,8 +1,6 @@
 package org.example.trambleo;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -39,11 +37,11 @@ public class Employe {
                 if (parts.length >= 5) {
                     try {
                         UUID idUtilisateur = UUID.randomUUID();
-                        String nom = parts[0];
-                        String prenom = parts[1];
-                        String email = parts[2];
-                        String motDePasse = parts[3];
-                        String poste = parts[4];
+                        String nom = parts[1];
+                        String prenom = parts[2];
+                        String email = parts[3];
+                        String motDePasse = parts[4];
+                        String poste = parts[5];
                         Employe employe = new Employe(nom, prenom, email, motDePasse, poste);
                         listeEmploye.add(employe);
                     } catch (NumberFormatException e) {
@@ -55,6 +53,22 @@ public class Employe {
             }
         } catch (IOException e) {
             System.out.println("Erreur lors de la lecture du fichier : " + e.getMessage());
+        }
+    }
+
+    public String toCSV(){
+        return idUtilisateur + ";" + nom + ";" + prenom + ";" + email + ";" + motDePasse + ";" + poste;
+    }
+    public static void saveEmploye(Employe employe) {
+        String filePath = "src/main/resources/Employe.csv";
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) // `true` pour ajouter à la fin
+        {
+            writer.write(employe.toCSV());
+            writer.newLine();
+            System.out.println("Le CSV a été mis à jour");
+
+        } catch (IOException e) {
+            System.err.println("Erreur lors de l'écriture dans le fichier : " + e.getMessage());
         }
     }
 

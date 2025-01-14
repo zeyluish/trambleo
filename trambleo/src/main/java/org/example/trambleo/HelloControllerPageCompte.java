@@ -29,7 +29,6 @@ public class HelloControllerPageCompte {
 
     @FXML
     public void initialize() {
-        
         nomCompte.setText(employeSelected.getNom());
         prenomCompte.setText(employeSelected.getPrenom());
         email.setText(employeSelected.getEmail());

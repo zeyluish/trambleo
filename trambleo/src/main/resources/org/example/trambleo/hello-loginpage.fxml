@@ -25,9 +25,9 @@
    <VBox prefHeight="360.0" prefWidth="235.0">
       <children>
          <Label text="Adresse Email :" />
-         <TextField promptText="Entrez votre e-mail" />
+         <TextField fx:id="emailLogin" promptText="Entrez votre e-mail" />
          <Label text="Mot de passe :" />
-         <TextField promptText="Entrez votre mot de passe" />
+         <TextField fx:id="passwordLogin" promptText="Entrez votre mot de passe" />
          <HBox prefHeight="100.0" prefWidth="235.0">
             <children>
                <Label text="Pas de compte ?" />
