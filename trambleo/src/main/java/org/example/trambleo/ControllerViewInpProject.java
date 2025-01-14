@@ -48,7 +48,7 @@ public class ControllerViewInpProject {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-vueCalendrier.fxml"));
         VBox pageCalendrier = loader.load();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow(); //Récupérer la fenetre actuelle.
-        stage.setTitle("Mon Compte");
+        stage.setTitle("Vue calendrier");
         stage.setScene(new Scene(pageCalendrier));
         stage.show();
     }
