@@ -43,7 +43,7 @@
    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
       <children>
          <Button mnemonicParsing="false" onAction="#onAnnulerButtonClick" style="-fx-background-color: #ea767c;" text="Annuler" />
-         <Button mnemonicParsing="false" style="-fx-background-color: #847CAE;" text="Modifier le projet">
+         <Button mnemonicParsing="false" onAction="#onModifierButtonClick" style="-fx-background-color: #847CAE;" text="Modifier le projet">
             <HBox.margin>
                <Insets left="15.0" />
             </HBox.margin>

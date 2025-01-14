@@ -58,15 +58,13 @@ public class ChefProjet extends Employe {
         System.out.println("L'équipe " + equipe.nomEquipe + " a bien été retirée du projet " + projet.nomProjet + ".");
     }
 
-    public static void modifierProjet(Projet projet, String attribut, String nouvelleValeur) {
-        switch (attribut.toLowerCase()) {
-            case "nomprojet":
-                projet.nomProjet = nouvelleValeur;
-                break;
-            case "descriptionprojet":
-                projet.descriptionProjet = nouvelleValeur;
-                break;
-        }
+    public static void modifierProjet(Projet projet, String nouveauNom, String nouvelleDescription, LocalDate nouvelleDateFin,String nouveauStatut) {
+        projet.nomProjet = nouveauNom;
+        projet.descriptionProjet = nouvelleDescription;
+        projet.dateFinProjet = nouvelleDateFin;
+        projet.statutProjet = nouveauStatut;
+
+
     }
 
     public static void modifierDateProjet(Projet projet, String attribut, LocalDate nouvelleDate) {

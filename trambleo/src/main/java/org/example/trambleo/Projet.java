@@ -1,8 +1,6 @@
 package org.example.trambleo;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -15,6 +13,7 @@ public class Projet {
     LocalDate dateDebutProjet;
     LocalDate dateFinProjet;
     String statutProjet;
+    static Projet projetSelected;
     ArrayList<Tache> listeTache = new ArrayList<>();
     ArrayList<Employe> listeEmploye = new ArrayList<>();
     static ArrayList<Projet> listeProjet = new ArrayList<>();
@@ -127,7 +126,26 @@ public class Projet {
     public String toCSV(){
         return idProjet + ";" + nomProjet + ";" + descriptionProjet + ";" + dateDebutProjet + ";" + dateFinProjet + ";" + statutProjet + ";" + isSupprime + ";" + isEquipeAssocie + ";" + listeEmploye;
     }
-
+/*
+    public static void modifierCSV(){
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("projets.csv"))) {
+            for (Projet projet : listeProjet) {
+                writer.write(String.format("%s,%s,%s,%s,%s,%s,%b,%b\n",
+                        projet.getIdProjet(),
+                        projet.getNom(),
+                        projet.getDescription(),
+                        projet.getDateDebut(),
+                        projet.getDateFin(),
+                        projet.getStatut(),
+                        projet.isSupprime(),
+                        projet.isEquipeAssocie()
+                ));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+*/
     public static void  importProjet() { //récupérer les projets depuis le CSV
         String filePath = "src/main/resources/Projet.csv";
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {

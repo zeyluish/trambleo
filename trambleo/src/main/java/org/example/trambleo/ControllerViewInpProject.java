@@ -31,6 +31,8 @@ public class ControllerViewInpProject {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation((this.getClass().getResource("hello-editProject.fxml")));
         Scene scene = new Scene(loader.load());
+        HelloControllerEditProject controller = loader.getController();
+        controller.setProjet(Projet.projetSelected);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
