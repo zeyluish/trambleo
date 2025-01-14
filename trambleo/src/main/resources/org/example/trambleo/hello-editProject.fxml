@@ -50,4 +50,5 @@
          </Button>
       </children>
    </HBox>
+   <Label fx:id="messageConfirmation" />
 </VBox>

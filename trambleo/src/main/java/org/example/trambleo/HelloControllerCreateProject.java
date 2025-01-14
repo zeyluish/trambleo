@@ -40,12 +40,21 @@ public class HelloControllerCreateProject {
         String descriptionProjetText = descriptionProjet.getText();
         LocalDate dateDebutProjetDate = dateDebutProjet.getValue();
         LocalDate dateFinProjetDate = dateFinProjet.getValue();
+        if (nomProjetText.equals("") || descriptionProjetText.equals("") || dateDebutProjetDate == null || dateFinProjetDate == null) {
+            messageConfirmation.setText("Il faut que tout les champs soient remplis");
+            return;
+        }
+        if (dateDebutProjetDate.isAfter(dateFinProjetDate)) {
+            messageConfirmation.setText("La date de fin doit être après la date de début");
+            return;
+        }
         Projet nouveauProjet = Administrateur.creerProjet(nomProjetText,descriptionProjetText,dateDebutProjetDate,dateFinProjetDate);//Appel de la fonction pour créer un projet
         for (Employe employe : employeChoisi) {
             nouveauProjet.listeEmploye.add(employe);
         }
         System.out.println(nouveauProjet);
-        messageConfirmation.setText("Le projet a bien été créé");
+        Stage stage = (Stage) nomProjet.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
