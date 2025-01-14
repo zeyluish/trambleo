@@ -11,14 +11,6 @@ public class Main {
         System.out.println(today);
         LocalDate demain = today.minusDays(1);
 
-        Employe employe1 = new Employe("Gaudin", "Téo", "teogdn.pro@gmail.com", "motDePasse123", "PDG");
-
-
-
-        System.out.println(employe1.toString());
-
-        employe1.afficherInfo();
-
 
     }
 }

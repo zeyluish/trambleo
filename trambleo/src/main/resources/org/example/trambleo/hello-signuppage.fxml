@@ -25,13 +25,13 @@
    <VBox prefHeight="414.0" prefWidth="262.0">
       <children>
          <Label text="Nom :" />
-         <TextField fx:id="nom" promptText="Entrez votre nom" />
+         <TextField fx:id="nomCompte" promptText="Entrez votre nom" />
          <Label text="Prénom :" />
-         <TextField fx:id="prenom" promptText="Entrez votre prénom" />
+         <TextField fx:id="prenomCompte" promptText="Entrez votre prénom" />
          <Label text="Adresse Email :" />
-         <TextField fx:id="email" promptText="Entrez votre e-mail" />
+         <TextField fx:id="emailCompte" promptText="Entrez votre e-mail" />
          <Label text="Mot de passe :" />
-         <TextField fx:id="mdp" promptText="Entrez votre mot de passe" />
+         <TextField fx:id="passwordCompte" promptText="Entrez votre mot de passe" />
          <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
                <Label text="Déjà connecté ?" />

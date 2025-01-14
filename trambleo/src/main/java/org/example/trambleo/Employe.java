@@ -18,12 +18,11 @@ public class Employe {
     boolean isSupprime;
     boolean isDansEquipe;
 
-    public Employe(String nom, String prenom, String email, String motDePasse, String poste) {
+    public Employe(String nom, String prenom, String email, String motDePasse) {
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
         this.motDePasse = motDePasse;
-        this.poste = poste;
         this.isSupprime = false;
         this.isDansEquipe = false;
     }
@@ -42,7 +41,7 @@ public class Employe {
                         String email = parts[3];
                         String motDePasse = parts[4];
                         String poste = parts[5];
-                        Employe employe = new Employe(nom, prenom, email, motDePasse, poste);
+                        Employe employe = new Employe(nom, prenom, email, motDePasse);
                         listeEmploye.add(employe);
                     } catch (NumberFormatException e) {
                         System.out.println("Erreur de conversion sur cette ligne : " + line);
@@ -161,7 +160,7 @@ public class Employe {
     }
 
     public void creerEmploye(String nom, String prenom, String email, String motDePasse, String poste) {
-        Employe newEmploye = new Employe(nom, prenom, email, motDePasse, poste);
+        Employe newEmploye = new Employe(nom, prenom, email, motDePasse);
     }
 
     public void modifierEmploye(String attribut, String nouvelleValeur) {

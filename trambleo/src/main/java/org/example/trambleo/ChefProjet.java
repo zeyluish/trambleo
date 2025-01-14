@@ -6,8 +6,8 @@ import static org.example.trambleo.Projet.projetSelected;
 
 public class ChefProjet extends Employe {
 
-    public ChefProjet(String nom, String prenom, String email, String motDePasse, String poste) {
-        super(nom, prenom, email, motDePasse, poste);
+    public ChefProjet(String nom, String prenom, String email, String motDePasse) {
+        super(nom, prenom, email, motDePasse);
     }
 
     @Override

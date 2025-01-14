@@ -27,14 +27,14 @@ public class HelloControllerPageCompte {
 
     private Employe employeSelected;
 
-    @FXML
-    public void initialize() {
+    //@FXML
+    /*public void initialize() {
         nomCompte.setText(employeSelected.getNom());
         prenomCompte.setText(employeSelected.getPrenom());
         email.setText(employeSelected.getEmail());
         posteCompte.setText(employeSelected.getPoste());
 
-    }
+    }*/
     @FXML
     public void onEditEmailBouton() throws IOException {
         FXMLLoader loader = new FXMLLoader();

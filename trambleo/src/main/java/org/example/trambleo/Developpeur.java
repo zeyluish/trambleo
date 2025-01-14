@@ -1,8 +1,8 @@
 package org.example.trambleo;
 
 public class Developpeur extends Employe{
-    public Developpeur(String nom, String prenom, String email, String motDePasse, String poste) {
-        super(nom, prenom, email, motDePasse, poste);
+    public Developpeur(String nom, String prenom, String email, String motDePasse) {
+        super(nom, prenom, email, motDePasse);
         this.poste = "developpeur";
     }
 
