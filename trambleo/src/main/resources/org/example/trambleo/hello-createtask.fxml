@@ -42,21 +42,13 @@
             </VBox.margin></Label>
          <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
-               <RadioButton fx:id="radFaible" mnemonicParsing="false" onAction="#onFaible" text="Faible">
+               <RadioButton mnemonicParsing="false" text="Faible">
                   <toggleGroup>
                      <ToggleGroup fx:id="groupPriorite" />
                   </toggleGroup>
                </RadioButton>
-               <RadioButton fx:id="radMoyenne" mnemonicParsing="false" onAction="#onMoyenne" text="Moyenne" toggleGroup="$groupPriorite">
-                  <HBox.margin>
-                     <Insets left="10.0" />
-                  </HBox.margin>
-               </RadioButton>
-               <RadioButton fx:id="radEleve" mnemonicParsing="false" onAction="#onEleve" text="Elevé" toggleGroup="$groupPriorite">
-                  <HBox.margin>
-                     <Insets left="10.0" />
-                  </HBox.margin>
-               </RadioButton>
+               <RadioButton mnemonicParsing="false" text="Moyenne" toggleGroup="$groupPriorite" />
+               <RadioButton mnemonicParsing="false" text="Elevé" toggleGroup="$groupPriorite" />
             </children>
             <VBox.margin>
                <Insets top="5.0" />

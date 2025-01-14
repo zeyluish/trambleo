@@ -20,15 +20,6 @@ public class HelloControllerCreateTask {
     TextField descTache;
 
     @FXML
-    RadioButton radFaible;
-
-    @FXML
-    RadioButton radMoyenne;
-
-    @FXML
-    RadioButton radEleve;
-
-    @FXML
     DatePicker dateFin;
 
     @FXML
@@ -36,6 +27,11 @@ public class HelloControllerCreateTask {
 
     @FXML
     Label messageConfirmation;
+
+    @FXML
+    ToggleGroup groupPriorite;
+
+    Projet projetSelected;
 
     @FXML
     public void initialize() {
@@ -60,39 +56,29 @@ public class HelloControllerCreateTask {
 
     String prioriteTache;
 
-    @FXML
-    public void onFaible() throws IOException {
-        String prioriteTache = "Faible";
+    public String getSelectedValue() throws IOException {
+        RadioButton selectedRadioButton = (RadioButton) groupPriorite.getSelectedToggle();
+        prioriteTache = selectedRadioButton.getText();
+        System.out.println(prioriteTache);
+        return prioriteTache;
+
     }
 
-    @FXML
-    public void onMoyenne() throws IOException {
-        String prioriteTache = "Moyenne";
-    }
 
-    @FXML
-    public void onEleve() throws IOException {
-        String prioriteTache = "Eleve";
-    }
-
-    //^^^^^^^^^^^^^^^^^^//
-    //Essayer de voir si c'est possible de selectionner d'un radiobutton
 
     @FXML
     public void onCreerTacheBouton() throws IOException {
-        /*String nomTacheText = nomTache.getText();
+        String nomTacheText = nomTache.getText();
         String descriptionTacheText = descTache.getText();
+        String prioriteTacheText = getSelectedValue();
         LocalDate dateFinTacheDate = dateFin.getValue();
-        Tache nouvelleTache = ChefProjet.creerTache(nomProjet,nomTacheText,descriptionTacheText,prioriteTache,dateFinTacheDate);
+        Tache nouvelleTache = ChefProjet.creerTache(nomTacheText,descriptionTacheText,prioriteTacheText,dateFinTacheDate);
         for (Employe employe : employeChoisi) {
             nouvelleTache.listeEmployeTache.add(employe);
         }
-        System.out.println(nouvelleTache);*/
+        System.out.println(nouvelleTache);
         messageConfirmation.setText("La tâche a bien été créée");
     }
-
-    //^^^^^^^^^^^^^^^^^^^//
-    // Faire en sorte que le nomProjet soit défini et ça devrait marcher
 
     public void onAnnulerTacheBouton(){ //Fermer la pop up
         Stage stage = (Stage) dateFin.getScene().getWindow();

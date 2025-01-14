@@ -2,6 +2,8 @@ package org.example.trambleo;
 
 import java.time.LocalDate;
 
+import static org.example.trambleo.Projet.projetSelected;
+
 public class ChefProjet extends Employe {
 
     public ChefProjet(String nom, String prenom, String email, String motDePasse, String poste) {
@@ -76,10 +78,12 @@ public class ChefProjet extends Employe {
         }
     }
 
-    public static void creerTache(Projet projet, String nomTache, String description, String priorite, LocalDate dateFin) {
+    public static Tache creerTache(Projet projet, String nomTache, String description, String priorite, LocalDate dateFin) {
+        projet = projetSelected;
         Tache tache = new Tache(nomTache, description, priorite, dateFin);
         tache.projetAssocie = projet;
         projet.listeTache.add(tache);
+        return tache;
     }
 
     public static void modifierTache(Tache tache, String attribut, String nouvelleValeur) {
