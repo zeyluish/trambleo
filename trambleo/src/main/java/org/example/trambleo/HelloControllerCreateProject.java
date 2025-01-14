@@ -40,7 +40,7 @@ public class HelloControllerCreateProject {
         String descriptionProjetText = descriptionProjet.getText();
         LocalDate dateDebutProjetDate = dateDebutProjet.getValue();
         LocalDate dateFinProjetDate = dateFinProjet.getValue();
-        if (nomProjetText.equals("") || descriptionProjetText.equals("") || dateDebutProjetDate == null || dateFinProjetDate == null) {
+        if (nomProjetText.equals("") || descriptionProjetText.equals("") || dateDebutProjetDate == null || dateFinProjetDate == null) { //Vérification de mise en forme
             messageConfirmation.setText("Il faut que tout les champs soient remplis");
             return;
         }
@@ -52,9 +52,10 @@ public class HelloControllerCreateProject {
         for (Employe employe : employeChoisi) {
             nouveauProjet.listeEmploye.add(employe);
         }
+        Projet.saveProjet(nouveauProjet);
         System.out.println(nouveauProjet);
         Stage stage = (Stage) nomProjet.getScene().getWindow();
-        stage.close();
+        stage.close(); //Fermer la pop up
     }
 
     @FXML

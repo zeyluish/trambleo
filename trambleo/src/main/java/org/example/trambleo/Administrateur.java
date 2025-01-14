@@ -17,21 +17,7 @@ public class Administrateur extends Employe {
         UUID idProjet = UUID.randomUUID();
         Projet nouveauProjet = new Projet(idProjet, nomProjet,descriptionProjet,dateDebutProjet,dateFinProjet);
         System.out.println("Le projet a bien été créé");
-        saveProjet(nouveauProjet);
         return nouveauProjet;
-    }
-
-    public static void saveProjet(Projet projet) {
-        String filePath = "src/main/resources/Projet.csv";
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) // `true` pour ajouter à la fin
-        {
-                writer.write(projet.toCSV());
-                writer.newLine();
-                System.out.println("Le CSV a été mis à jour");
-
-        } catch (IOException e) {
-            System.err.println("Erreur lors de l'écriture dans le fichier : " + e.getMessage());
-        }
     }
 
     public static void modifierProjet(Projet projet, String attribut, String nouvelleValeur) {
