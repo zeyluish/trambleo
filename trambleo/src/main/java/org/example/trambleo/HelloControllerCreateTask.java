@@ -77,7 +77,7 @@ public class HelloControllerCreateTask {
         LocalDate dateFinTacheDate = dateFin.getValue();
         Projet projet = projetSelected;
         Tache nouvelleTache = ChefProjet.creerTache(projet, nomTacheText,descriptionTacheText,prioriteTacheText,dateFinTacheDate);
-        projet.listeTache.add(nouvelleTache);
+        //projet.listeTache.add(nouvelleTache);
         for (Employe employe : employeChoisi) {
             nouvelleTache.listeEmployeTache.add(employe);
         }
