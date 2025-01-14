@@ -2,7 +2,9 @@ package org.example.trambleo;
 
 
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -30,6 +32,9 @@ public class HelloControllerCreateTask {
 
     @FXML
     ToggleGroup groupPriorite;
+
+    @FXML
+    Button addTacheAFaire = new Button();
 
     Projet projetSelected;
 
@@ -64,8 +69,6 @@ public class HelloControllerCreateTask {
 
     }
 
-
-
     @FXML
     public void onCreerTacheBouton() throws IOException {
         String nomTacheText = nomTache.getText();
@@ -74,6 +77,7 @@ public class HelloControllerCreateTask {
         LocalDate dateFinTacheDate = dateFin.getValue();
         Projet projet = projetSelected;
         Tache nouvelleTache = ChefProjet.creerTache(projet, nomTacheText,descriptionTacheText,prioriteTacheText,dateFinTacheDate);
+        projet.listeTache.add(nouvelleTache);
         for (Employe employe : employeChoisi) {
             nouvelleTache.listeEmployeTache.add(employe);
         }

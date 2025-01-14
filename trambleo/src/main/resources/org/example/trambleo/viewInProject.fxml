@@ -58,7 +58,21 @@
                      <Font name="System Bold" size="13.0" />
                   </font>
                </Label>
-               <Button mnemonicParsing="false" onAction="#onAddTacheAFaire" text="Ajouter une tache" />
+               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                     <Button fx:id="addTacheAFaire" mnemonicParsing="false" onAction="#onAddTacheAFaire" text="Ajouter une tache">
+                        <HBox.margin>
+                           <Insets right="30.0" />
+                        </HBox.margin>
+                     </Button>
+                     <Button fx:id="refresh" alignment="CENTER" mnemonicParsing="false" onAction="#onRefreshBoutonClick" text="Refresh">
+                        <HBox.margin>
+                           <Insets left="30.0" />
+                        </HBox.margin>
+                     </Button>
+                  </children>
+               </HBox>
+               <VBox fx:id="VBoxAFaire" prefHeight="377.0" prefWidth="420.0" />
             </children>
             <HBox.margin>
                <Insets />

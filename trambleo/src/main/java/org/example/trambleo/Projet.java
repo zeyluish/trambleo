@@ -121,6 +121,22 @@ public class Projet {
         return statutProjet;
     }
 
+    public static Projet getProjetSelected() {
+        return projetSelected;
+    }
+
+    public static void setProjetSelected(Projet projetSelected) {
+        Projet.projetSelected = projetSelected;
+    }
+
+    public static ArrayList<Projet> getListeProjet() {
+        return listeProjet;
+    }
+
+    public static void setListeProjet(ArrayList<Projet> listeProjet) {
+        Projet.listeProjet = listeProjet;
+    }
+
     // </editor-fold>
 
     public String toString() {
