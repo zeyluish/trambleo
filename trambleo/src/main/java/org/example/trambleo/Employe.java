@@ -12,7 +12,7 @@ public class Employe {
     String motDePasse;
     String poste; // au sein de l'entreprise
     String role; // au sein du projet
-    Employe employeSelected;
+    static Employe employeSelected;
     ArrayList<Projet> listeProjet = new ArrayList<Projet>();
     static ArrayList<Employe> listeEmploye = new ArrayList<>();
     boolean isSupprime;
@@ -72,6 +72,15 @@ public class Employe {
     }
 
     // <editor-fold desc="Getters and setters">
+
+
+    public static void setEmployeSelected(Employe employeSelected) {
+        Employe.employeSelected = employeSelected;
+    }
+
+    public static Employe getEmployeSelected() {
+        return employeSelected;
+    }
 
     public UUID getIdUtilisateur() {
         return idUtilisateur;

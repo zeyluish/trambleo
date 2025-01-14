@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="500.0" prefWidth="500.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.trambleo.HelloControllerSignUp">
+<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" spacing="20.0" style="-fx-background-color: #E9EFFF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.trambleo.HelloControllerSignUp">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -25,20 +25,36 @@
    <VBox prefHeight="414.0" prefWidth="262.0">
       <children>
          <Label text="Nom :" />
-         <TextField fx:id="nomCompte" promptText="Entrez votre nom" />
-         <Label text="Prénom :" />
-         <TextField fx:id="prenomCompte" promptText="Entrez votre prénom" />
-         <Label text="Adresse Email :" />
-         <TextField fx:id="emailCompte" promptText="Entrez votre e-mail" />
-         <Label text="Mot de passe :" />
-         <TextField fx:id="passwordCompte" promptText="Entrez votre mot de passe" />
-         <HBox prefHeight="100.0" prefWidth="200.0">
+         <TextField fx:id="nomCompte" maxWidth="500.0" promptText="Entrez votre nom" />
+         <Label text="Prénom :">
+            <VBox.margin>
+               <Insets top="15.0" />
+            </VBox.margin></Label>
+         <TextField fx:id="prenomCompte" maxWidth="500.0" promptText="Entrez votre prénom" />
+         <Label text="Adresse Email :">
+            <VBox.margin>
+               <Insets top="15.0" />
+            </VBox.margin></Label>
+         <TextField fx:id="emailCompte" maxWidth="500.0" promptText="Entrez votre e-mail" />
+         <Label text="Mot de passe :">
+            <VBox.margin>
+               <Insets top="15.0" />
+            </VBox.margin></Label>
+         <TextField fx:id="passwordCompte" maxWidth="500.0" promptText="Entrez votre mot de passe" />
+         <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="1240.0">
             <children>
                <Label text="Déjà connecté ?" />
-               <Button mnemonicParsing="false" onMouseClicked="#onBoutonConnecter" text="Se connecter" />
+               <Button mnemonicParsing="false" onMouseClicked="#onBoutonConnecter" style="-fx-background-color: #847CAE;" text="Se connecter">
+                  <HBox.margin>
+                     <Insets left="15.0" />
+                  </HBox.margin></Button>
             </children>
+            <VBox.margin>
+               <Insets top="15.0" />
+            </VBox.margin>
          </HBox>
+         <Label fx:id="messageConfirmation" prefHeight="62.0" prefWidth="234.0" style="-fx-text-fill: #FF0000;" />
       </children>
    </VBox>
-   <Button mnemonicParsing="false" onMouseClicked="#onBoutonCreer" text="Créer un compte" />
+   <Button mnemonicParsing="false" onMouseClicked="#onBoutonCreer" style="-fx-background-color: #847CAE;" text="Créer un compte" />
 </VBox>
