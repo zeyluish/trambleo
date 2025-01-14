@@ -72,7 +72,8 @@ public class HelloControllerCreateTask {
         String descriptionTacheText = descTache.getText();
         String prioriteTacheText = getSelectedValue();
         LocalDate dateFinTacheDate = dateFin.getValue();
-        Tache nouvelleTache = ChefProjet.creerTache(nomTacheText,descriptionTacheText,prioriteTacheText,dateFinTacheDate);
+        Projet projet = projetSelected;
+        Tache nouvelleTache = ChefProjet.creerTache(projet, nomTacheText,descriptionTacheText,prioriteTacheText,dateFinTacheDate);
         for (Employe employe : employeChoisi) {
             nouvelleTache.listeEmployeTache.add(employe);
         }
