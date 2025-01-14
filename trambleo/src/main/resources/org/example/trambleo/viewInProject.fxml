@@ -10,12 +10,15 @@
 
 <VBox prefHeight="720.0" prefWidth="1280.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.trambleo.ControllerViewInpProject">
     <fx:include source="hello-navbar.fxml" />
-   <HBox prefHeight="46.0" prefWidth="1280.0">
+   <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="1280.0">
       <children>
          <Label fx:id="nomProjet" prefHeight="76.0" prefWidth="158.0" text="Nom du projet">
             <font>
                <Font name="System Bold" size="18.0" />
             </font>
+            <HBox.margin>
+               <Insets left="15.0" />
+            </HBox.margin>
          </Label>
          <Label fx:id="dateFinProjet" prefHeight="22.0" prefWidth="122.0" text="Date fin ">
             <HBox.margin>
@@ -35,12 +38,12 @@
                <Insets left="100.0" />
             </HBox.margin>
          </HBox>
-         <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
             <HBox.margin>
                <Insets left="5.0" />
             </HBox.margin>
             <children>
-               <Button alignment="CENTER" mnemonicParsing="false" text="Vue calendrier" />
+               <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onVueCalendrierButtonClick" text="Vue calendrier" />
             </children>
          </HBox>
          <Button mnemonicParsing="false" onAction="#onModifierProjetButtonClick" text="Modifier le projet" />

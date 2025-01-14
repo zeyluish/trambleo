@@ -2,10 +2,16 @@ package org.example.trambleo;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.event.ActionEvent;
 
+import org.controlsfx.control.action.Action;
+
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.time.LocalDate;
 
@@ -30,4 +36,12 @@ public class ControllerViewInpProject {
         stage.show();
     }
 
+    public void onVueCalendrierButtonClick(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-vueCalendrier.fxml"));
+        VBox pageCalendrier = loader.load();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow(); //Récupérer la fenetre actuelle.
+        stage.setTitle("Mon Compte");
+        stage.setScene(new Scene(pageCalendrier));
+        stage.show();
+    }
 }

@@ -39,6 +39,7 @@ public class HelloControllerMesProjets {
                         currentStage.setScene(new Scene(projectView));
                     } catch (IOException e) {
                         System.out.println("Erreur de l'application");
+                        e.printStackTrace();
                     }
                 });
 
