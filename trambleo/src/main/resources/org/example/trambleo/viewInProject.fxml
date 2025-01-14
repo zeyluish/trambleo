@@ -58,6 +58,7 @@
                      <Font name="System Bold" size="13.0" />
                   </font>
                </Label>
+               <Button mnemonicParsing="false" onAction="#onAddTacheAFaire" text="Ajouter une tache" />
             </children>
             <HBox.margin>
                <Insets />
@@ -70,6 +71,7 @@
                      <Font name="System Bold" size="13.0" />
                   </font>
                </Label>
+               <Button mnemonicParsing="false" onAction="#onAddTacheEnCours" text="Ajouter une tache" />
             </children>
             <opaqueInsets>
                <Insets />
@@ -85,6 +87,7 @@
                      <Font name="System Bold" size="13.0" />
                   </font>
                </Label>
+               <Button mnemonicParsing="false" onAction="#onAddTacheFait" text="Ajouter une tache" />
             </children>
             <opaqueInsets>
                <Insets />

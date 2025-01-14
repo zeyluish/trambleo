@@ -7,6 +7,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -41,13 +42,17 @@
             </VBox.margin></Label>
          <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
-               <RadioButton fx:id="radFaible" mnemonicParsing="false" onAction="#onFaible" text="Faible" />
-               <RadioButton fx:id="radMoyenne" mnemonicParsing="false" onAction="#onMoyenne" text="Moyenne">
+               <RadioButton fx:id="radFaible" mnemonicParsing="false" onAction="#onFaible" text="Faible">
+                  <toggleGroup>
+                     <ToggleGroup fx:id="groupPriorite" />
+                  </toggleGroup>
+               </RadioButton>
+               <RadioButton fx:id="radMoyenne" mnemonicParsing="false" onAction="#onMoyenne" text="Moyenne" toggleGroup="$groupPriorite">
                   <HBox.margin>
                      <Insets left="10.0" />
                   </HBox.margin>
                </RadioButton>
-               <RadioButton fx:id="radEleve" mnemonicParsing="false" onAction="#onEleve" text="Elevé">
+               <RadioButton fx:id="radEleve" mnemonicParsing="false" onAction="#onEleve" text="Elevé" toggleGroup="$groupPriorite">
                   <HBox.margin>
                      <Insets left="10.0" />
                   </HBox.margin>
@@ -72,7 +77,7 @@
          <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
                <ComboBox fx:id="comboEmploye" prefWidth="150.0" />
-               <Button mnemonicParsing="false" onAction="#onAttribuerEmployeBouton" style="-fx-background-color: #847CAE;" text="Attribuer employé">
+               <Button mnemonicParsing="false" onMouseClicked="#onAttribuerEmployeBouton" style="-fx-background-color: #847CAE;" text="Attribuer employé">
                   <HBox.margin>
                      <Insets left="20.0" />
                   </HBox.margin>
@@ -84,12 +89,12 @@
    <Label fx:id="messageConfirmation" />
    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
       <children>
-         <Button mnemonicParsing="false" onAction="#onAnnulerTacheBouton" style="-fx-background-color: #ea767c;" text="Annuler">
+         <Button mnemonicParsing="false" onMouseClicked="#onAnnulerTacheBouton" style="-fx-background-color: #ea767c;" text="Annuler">
             <HBox.margin>
                <Insets right="5.0" />
             </HBox.margin>
          </Button>
-         <Button mnemonicParsing="false" onAction="#onCreerTacheBouton" style="-fx-background-color: #847CAE;" text="Créer Tâche">
+         <Button mnemonicParsing="false" onMouseClicked="#onCreerTacheBouton" style="-fx-background-color: #847CAE;" text="Créer Tâche">
             <HBox.margin>
                <Insets left="5.0" />
             </HBox.margin>

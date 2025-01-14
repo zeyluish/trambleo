@@ -83,9 +83,9 @@ public class HelloControllerCreateTask {
         /*String nomTacheText = nomTache.getText();
         String descriptionTacheText = descTache.getText();
         LocalDate dateFinTacheDate = dateFin.getValue();
-        Projet nouvelleTache = ChefProjet.creerTache(nomProjet,nomTacheText,descriptionTacheText,prioriteTache,dateFinTacheDate);
+        Tache nouvelleTache = ChefProjet.creerTache(nomProjet,nomTacheText,descriptionTacheText,prioriteTache,dateFinTacheDate);
         for (Employe employe : employeChoisi) {
-            nouvelleTache.listeEmploye.add(employe);
+            nouvelleTache.listeEmployeTache.add(employe);
         }
         System.out.println(nouvelleTache);*/
         messageConfirmation.setText("La tâche a bien été créée");

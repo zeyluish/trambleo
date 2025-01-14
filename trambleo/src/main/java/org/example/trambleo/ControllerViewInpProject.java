@@ -46,4 +46,32 @@ public class ControllerViewInpProject {
         stage.setScene(new Scene(pageCalendrier));
         stage.show();
     }
+
+    public void onAddTacheAFaire() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation((this.getClass().getResource("hello-createtask.fxml")));
+        Scene scene = new Scene(loader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public  void onAddTacheEnCours() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation((this.getClass().getResource("hello-createtask.fxml")));
+        Scene scene = new Scene(loader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void onAddTacheFait() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation((this.getClass().getResource("hello-createtask.fxml")));
+        Scene scene = new Scene(loader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }
