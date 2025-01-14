@@ -27,7 +27,6 @@ public class HelloControllerCreateProject {
     @FXML
     Label messageConfirmation;
 
-
     @FXML
     public void initialize() {
         Employe.importEmploye();
@@ -50,7 +49,10 @@ public class HelloControllerCreateProject {
         }
         Projet nouveauProjet = Administrateur.creerProjet(nomProjetText,descriptionProjetText,dateDebutProjetDate,dateFinProjetDate);//Appel de la fonction pour créer un projet
         for (Employe employe : employeChoisi) {
+            System.out.println("Employe : " + employe);
             nouveauProjet.listeEmploye.add(employe);
+            employe.listeProjet.add(nouveauProjet);
+
         }
         Projet.saveProjet(nouveauProjet);
         System.out.println(nouveauProjet);

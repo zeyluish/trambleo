@@ -14,7 +14,7 @@ public class Employe {
     String motDePasse;
     String poste; // au sein de l'entreprise
     String role; // au sein du projet
-    ArrayList<Projet> listeProjet = new ArrayList<>();
+    ArrayList<Projet> listeProjet = new ArrayList<Projet>();
     static ArrayList<Employe> listeEmploye = new ArrayList<>();
     boolean isSupprime;
     boolean isDansEquipe;
@@ -142,7 +142,7 @@ public class Employe {
     // </editor-fold>
 
     public String toString() {
-        return "Identifiant : " + idUtilisateur + "\nNom : " + nom + "\nPrénom : " + prenom + "\nEmail : " + email + "\nMot de passe : " + motDePasse + "\nPoste : " + poste + "\nRôle : " + role + "\nListe des projets : " + listeProjet + "\n";
+        return "Identifiant : " + idUtilisateur + "\nNom : " + nom + "\nPrénom : " + prenom + "\nEmail : " + email + "\nMot de passe : " + motDePasse + "\nPoste : " + poste + "\nRôle : " + role + "\nListe des projets : " + listeProjet.size() + "\n";
     }
 
     public void creerEmploye(String nom, String prenom, String email, String motDePasse, String poste) {
