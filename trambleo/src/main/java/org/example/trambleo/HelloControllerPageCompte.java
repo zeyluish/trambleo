@@ -25,16 +25,29 @@ public class HelloControllerPageCompte {
     @FXML
     Label posteCompte;
 
-    private Employe employeSelected;
 
     //@FXML
-    /*public void initialize() {
-        nomCompte.setText(employeSelected.getNom());
-        prenomCompte.setText(employeSelected.getPrenom());
-        email.setText(employeSelected.getEmail());
-        posteCompte.setText(employeSelected.getPoste());
-
-    }*/
+    public void initialize() {
+        if (Developpeur.developpeurSelected != null) {
+            Developpeur devCompte = Developpeur.developpeurSelected;
+            nomCompte.setText(devCompte.getNom());
+            prenomCompte.setText(devCompte.getPrenom());
+            email.setText(devCompte.getEmail());
+            posteCompte.setText(devCompte.getPoste());
+        } else if (Administrateur.administrateurSelected != null) {
+            Administrateur adminCompte = Administrateur.administrateurSelected;
+            nomCompte.setText(adminCompte.getNom());
+            prenomCompte.setText(adminCompte.getPrenom());
+            email.setText(adminCompte.getEmail());
+            posteCompte.setText(adminCompte.getPoste());
+        } else if (ChefProjet.chefProjetSelected != null) {
+            ChefProjet chefCompte = ChefProjet.chefProjetSelected;
+            nomCompte.setText(chefCompte.getNom());
+            prenomCompte.setText(chefCompte.getPrenom());
+            email.setText(chefCompte.getEmail());
+            posteCompte.setText(chefCompte.getPoste());
+        }
+    }
     @FXML
     public void onEditEmailBouton() throws IOException {
         FXMLLoader loader = new FXMLLoader();

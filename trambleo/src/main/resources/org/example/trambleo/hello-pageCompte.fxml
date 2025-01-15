@@ -24,7 +24,7 @@
                <Font size="20.0" />
             </font>
          </Label>
-         <Label fx:id="nomCompte" prefHeight="62.0" prefWidth="72.0" text="Label">
+         <Label fx:id="nomCompte" prefHeight="50.0" prefWidth="700.0" text="Label">
             <font>
                <Font size="20.0" />
             </font>
@@ -41,7 +41,7 @@
                <Font size="20.0" />
             </font>
          </Label>
-         <Label fx:id="prenomCompte" prefHeight="62.0" prefWidth="72.0" text="Label">
+         <Label fx:id="prenomCompte" prefHeight="62.0" prefWidth="700.0" text="Label">
             <font>
                <Font size="20.0" />
             </font>
@@ -58,7 +58,7 @@
                <Font size="20.0" />
             </font>
          </Label>
-         <Label fx:id="email" prefHeight="62.0" prefWidth="72.0" text="Label">
+         <Label fx:id="email" prefHeight="62.0" prefWidth="700.0" text="Label">
             <font>
                <Font size="20.0" />
             </font>
@@ -85,7 +85,7 @@
                <Font size="20.0" />
             </font>
          </Label>
-         <Label fx:id="posteCompte" prefHeight="62.0" prefWidth="72.0" text="Label">
+         <Label fx:id="posteCompte" prefHeight="62.0" prefWidth="700.0" text="Label">
             <font>
                <Font size="20.0" />
             </font>
