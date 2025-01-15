@@ -8,6 +8,9 @@ import java.util.Locale;
 import java.util.UUID;
 
 public class Administrateur extends Employe {
+
+    static Administrateur administrateurSelected;
+
     public Administrateur(String nom, String prenom, String email, String motDePasse) {
         super(nom, prenom, email, motDePasse);
         this.poste = "administrateur";

@@ -1,6 +1,9 @@
 package org.example.trambleo;
 
 public class Developpeur extends Employe{
+
+    static Developpeur developpeurSelected;
+
     public Developpeur(String nom, String prenom, String email, String motDePasse) {
         super(nom, prenom, email, motDePasse);
         this.poste = "developpeur";

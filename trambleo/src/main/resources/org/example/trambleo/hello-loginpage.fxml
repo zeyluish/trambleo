@@ -43,7 +43,7 @@
                <Insets top="20.0" />
             </VBox.margin>
          </HBox>
-         <Label fx:id="messageConfirmation" alignment="CENTER" prefHeight="265.0" prefWidth="512.0" />
+         <Label fx:id="messageConfirmation" prefHeight="265.0" prefWidth="512.0" style="-fx-text-fill: #FF0000;" />
       </children>
    </VBox>
    <Button mnemonicParsing="false" onMouseClicked="#onBoutonConnecter1" style="-fx-background-color: #847CAE;" text="Se connecter" />

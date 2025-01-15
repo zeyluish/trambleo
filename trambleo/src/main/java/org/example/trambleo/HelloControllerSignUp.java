@@ -47,7 +47,7 @@ public class HelloControllerSignUp {
             Parent projectView = loader2.load();
             Stage currentStage = (Stage) nomCompte.getScene().getWindow();
             currentStage.setScene(new Scene(projectView));
-            //Employe.employeSelected = nouveauDev;
+            Developpeur.developpeurSelected = nouveauDev;
         } else {
             messageConfirmation.setText("Tout les champs doivent être remplis");
         }

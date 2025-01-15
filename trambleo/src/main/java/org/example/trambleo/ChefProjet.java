@@ -5,9 +5,11 @@ import java.time.LocalDate;
 import static org.example.trambleo.Projet.projetSelected;
 
 public class ChefProjet extends Employe {
+    static ChefProjet chefProjetSelected;
 
     public ChefProjet(String nom, String prenom, String email, String motDePasse) {
         super(nom, prenom, email, motDePasse);
+        this.poste = "chefProjet";
     }
 
     @Override
