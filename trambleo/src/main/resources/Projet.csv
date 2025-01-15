@@ -7,10 +7,19 @@ Poste : null
 Rôle : null
 Liste des projets : 1
 ]
-dd817cac-38c9-40af-8981-67212472e3a4;test1;eee;2025-01-15;2025-01-22;En cours;false;false;[Identifiant : 41ad56ed-acff-4a1a-92e4-377efc8d786f
+dd817cac-38c9-40af-8981-67212472e3a4;test1;eee;2025-01-15;2025-01-22;En retard;false;false;[]
 Nom : Gaudin
 Prénom : Téo
 Email : teo.gaudin@gmail.com
+Mot de passe : Motdepasse123
+Poste : null
+Rôle : null
+Liste des projets : 1
+]
+4fc7f929-8a26-4aed-a82d-9c8eb328935b;test2;test;2025-01-15;2025-01-17;En cours;false;false;[Identifiant : f166e283-79e5-424e-a4f7-b952405a46c0
+Nom : Vincent
+Prénom : Gabriel
+Email : vincentgab78@gmail.com
 Mot de passe : Motdepasse123
 Poste : null
 Rôle : null

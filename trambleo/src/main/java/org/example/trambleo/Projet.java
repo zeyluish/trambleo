@@ -24,7 +24,7 @@ public class Projet {
     boolean isSupprime;
     boolean isEquipeAssocie;
 
-    public Projet(UUID idProjet, String nomProjet, String descriptionProjet, LocalDate dateDebutProjet, LocalDate dateFinProjet) {
+    public Projet(UUID idProjet, String nomProjet, String descriptionProjet, LocalDate dateDebutProjet, LocalDate dateFinProjet, String statutProjet) {
         this.idProjet = idProjet;
         this.nomProjet = nomProjet;
         this.descriptionProjet = descriptionProjet;
@@ -32,7 +32,7 @@ public class Projet {
         this.dateFinProjet = dateFinProjet;
         this.isSupprime = false;
         this.isEquipeAssocie = false;
-        this.statutProjet = "En cours";
+        this.statutProjet = statutProjet;
     }
 
     // <editor-fold desc="Getters and setters">
@@ -221,7 +221,7 @@ public class Projet {
                             }
                         }
                         if (!exists) {
-                            listeProjet.add(new Projet(idProjet, nom, description, dateDebut, dateFin));
+                            listeProjet.add(new Projet(idProjet, nom, description, dateDebut, dateFin, statutProjet));
 
                         }
                     } catch (NumberFormatException e) {

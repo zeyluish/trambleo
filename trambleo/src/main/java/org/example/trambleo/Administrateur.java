@@ -16,9 +16,9 @@ public class Administrateur extends Employe {
         this.poste = "administrateur";
     }
 
-    public static Projet creerProjet(String nomProjet, String descriptionProjet, LocalDate dateDebutProjet, LocalDate dateFinProjet) {
+    public static Projet creerProjet(String nomProjet, String descriptionProjet, LocalDate dateDebutProjet, LocalDate dateFinProjet, String statutProjet) {
         UUID idProjet = UUID.randomUUID();
-        Projet nouveauProjet = new Projet(idProjet, nomProjet,descriptionProjet,dateDebutProjet,dateFinProjet);
+        Projet nouveauProjet = new Projet(idProjet, nomProjet,descriptionProjet,dateDebutProjet,dateFinProjet, statutProjet);
         System.out.println("Le projet a bien été créé");
         return nouveauProjet;
     }
