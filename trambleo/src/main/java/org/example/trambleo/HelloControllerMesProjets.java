@@ -50,9 +50,9 @@ public class HelloControllerMesProjets {
 
                 carte.setOnMouseClicked(event -> {
                     try {
+                        Projet.projetSelected = projet;
                         FXMLLoader loader2 = new FXMLLoader(getClass().getResource("viewInProject.fxml"));
                         Parent projectView = loader2.load();
-                        Projet.projetSelected = projet;
                         ControllerViewInpProject controllerViewInpProject = loader2.getController();
                         controllerViewInpProject.adapterProjet(projet.nomProjet, projet.dateFinProjet);
                         Stage currentStage = (Stage) carteProjet.getScene().getWindow();

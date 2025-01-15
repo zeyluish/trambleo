@@ -3,6 +3,7 @@ package org.example.trambleo;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -26,6 +27,8 @@ public class ControllerViewInpProject {
 
     @FXML
     VBox VBoxAFaire;
+
+    Tache tacheSelected;
 
     public void adapterProjet(String nom, LocalDate dateFin) {
         nomProjet.setText(nom);
@@ -92,6 +95,35 @@ public class ControllerViewInpProject {
 //        Stage stage = new Stage();
 //        stage.setScene(scene);
 //        stage.show();
+    }
+
+    public void initialize() {
+        Projet projet = Projet.projetSelected;
+        VBoxAFaire.getChildren().clear();
+        for(Tache tache : projet.listeTache) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("carteTache.fxml"));
+                VBox carte = loader.load();
+                ControllerCarteTache controllerCarteTache = loader.getController();
+                controllerCarteTache.adapterNomTache(tache);
+                carte.setOnMouseClicked(mouseEvent -> {
+                    try {
+                        FXMLLoader loader2 = new FXMLLoader(getClass().getResource("hello-editTask.fxml"));
+                        Parent taskView = loader2.load();
+                        Tache.tacheSelected = tache;
+                        ControllerInfoTache controllerInfoTache = loader2.getController();
+                        controllerInfoTache.adapterTache(tache.nomTache, tache.descriptionTache, tache.priorite, tache.dateFinTache, tache.listeEmployeTache);
+                        Stage currentStage = (Stage) VBoxAFaire.getScene().getWindow();
+                        currentStage.setScene(new Scene(taskView));
+                    } catch (IOException e) {
+                        System.out.println("Erreur de l'application");
+                        e.printStackTrace();
+                    }
+                });
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
 }

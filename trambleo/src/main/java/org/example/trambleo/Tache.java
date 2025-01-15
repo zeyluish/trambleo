@@ -19,6 +19,7 @@ public class Tache {
     ArrayList<String> listeCommentaire;
     ArrayList<Employe> listeEmployeTache;
     ArrayList<sousTache> listeSousTache;
+    static Tache tacheSelected;
 
     public Tache( String nomTache, String descriptionTache, String priorite, LocalDate dateFinTache) {
         this.idTache = UUID.randomUUID();
@@ -134,6 +135,38 @@ public class Tache {
 
     public void setListeSousTache(ArrayList<sousTache> listeSousTache) {
         this.listeSousTache = listeSousTache;
+    }
+
+    public boolean isSupprime() {
+        return isSupprime;
+    }
+
+    public void setSupprime(boolean supprime) {
+        isSupprime = supprime;
+    }
+
+    public Projet getProjetAssocie() {
+        return projetAssocie;
+    }
+
+    public void setProjetAssocie(Projet projetAssocie) {
+        this.projetAssocie = projetAssocie;
+    }
+
+    public ArrayList<String> getListeCommentaire() {
+        return listeCommentaire;
+    }
+
+    public void setListeCommentaire(ArrayList<String> listeCommentaire) {
+        this.listeCommentaire = listeCommentaire;
+    }
+
+    public static Tache getTacheSelected() {
+        return tacheSelected;
+    }
+
+    public static void setTacheSelected(Tache tacheSelected) {
+        Tache.tacheSelected = tacheSelected;
     }
 
     // </editor-fold>
