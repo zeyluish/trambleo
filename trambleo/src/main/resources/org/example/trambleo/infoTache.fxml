@@ -37,5 +37,47 @@
             </Label>
          </children>
       </HBox>
+      <HBox prefHeight="3.0" prefWidth="600.0">
+         <children>
+            <Label text="Priorité :">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="prioriteTache" text="prioriteTache">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="3.0" prefWidth="600.0">
+         <children>
+            <Label text="Date fin de la tache :">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="dateFinTache" text="dateFinTache">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="3.0" prefWidth="600.0">
+         <children>
+            <Label text="Liste des employés">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="listEmploye" text="listEmploye">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
    </children>
 </VBox>
