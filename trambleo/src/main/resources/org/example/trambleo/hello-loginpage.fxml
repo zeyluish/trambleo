@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -25,12 +26,19 @@
    <VBox prefHeight="360.0" prefWidth="235.0">
       <children>
          <Label text="Adresse Email :" />
-         <TextField fx:id="emailLogin" maxWidth="500.0" prefHeight="26.0" prefWidth="500.0" promptText="Entrez votre e-mail" />
+         <TextField fx:id="emailLogin" maxWidth="500.0" prefHeight="26.0" prefWidth="500.0" promptText="Entrez votre e-mail">
+            <VBox.margin>
+               <Insets top="5.0" />
+            </VBox.margin></TextField>
          <Label text="Mot de passe :">
             <VBox.margin>
                <Insets top="20.0" />
             </VBox.margin></Label>
-         <TextField fx:id="passwordLogin" maxWidth="500.0" promptText="Entrez votre mot de passe" />
+         <PasswordField fx:id="passwordLogin" maxWidth="500.0" promptText="Entrez votre mot de passe">
+            <VBox.margin>
+               <Insets top="5.0" />
+            </VBox.margin>
+         </PasswordField>
          <HBox alignment="CENTER_LEFT" prefHeight="67.0" prefWidth="1240.0">
             <children>
                <Label prefHeight="42.0" prefWidth="89.0" text="Pas de compte ?" />
@@ -46,5 +54,8 @@
          <Label fx:id="messageConfirmation" prefHeight="265.0" prefWidth="512.0" style="-fx-text-fill: #FF0000;" />
       </children>
    </VBox>
-   <Button mnemonicParsing="false" onMouseClicked="#onBoutonConnecter1" style="-fx-background-color: #847CAE;" text="Se connecter" />
+   <Button mnemonicParsing="false" onMouseClicked="#onBoutonConnecter1" prefHeight="38.0" prefWidth="178.0" style="-fx-background-color: #847CAE;" text="Se connecter">
+      <font>
+         <Font size="23.0" />
+      </font></Button>
 </VBox>
