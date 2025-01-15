@@ -37,6 +37,12 @@ public class HelloControllerCreateTask {
     Button addTacheAFaire = new Button();
 
     Projet projetSelected;
+    private ControllerViewInpProject controllerViewInpProject; // Référence au contrôleur principal
+
+    public void setControllerViewInpProject(ControllerViewInpProject controllerViewInpProject) {
+        this.controllerViewInpProject = controllerViewInpProject;
+    }
+
 
     @FXML
     public void initialize() {
@@ -74,15 +80,17 @@ public class HelloControllerCreateTask {
         String descriptionTacheText = descTache.getText();
         String prioriteTacheText = getSelectedValue();
         LocalDate dateFinTacheDate = dateFin.getValue();
-        Projet projet = Projet.projetSelected;
-        Tache nouvelleTache = ChefProjet.creerTache(projet, nomTacheText,descriptionTacheText,prioriteTacheText,dateFinTacheDate);
-        projet.listeTache.add(nouvelleTache);
-        System.out.println(projet.listeTache);
+        Projet projetSelect = Projet.projetSelected;
+        Tache nouvelleTache = ChefProjet.creerTache(projetSelect, nomTacheText,descriptionTacheText,prioriteTacheText,dateFinTacheDate);
+        projetSelect.listeTache.add(nouvelleTache);
+        System.out.println(projetSelect);
         for (Employe employe : employeChoisi) {
             nouvelleTache.listeEmployeTache.add(employe);
         }
         System.out.println(nouvelleTache);
         messageConfirmation.setText("La tâche a bien été créée");
+        controllerViewInpProject.initialize();
+
     }
 
     public void onAnnulerTacheBouton(){ //Fermer la pop up

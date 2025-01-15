@@ -60,6 +60,9 @@ public class ControllerViewInpProject {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation((this.getClass().getResource("hello-createtask.fxml")));
         Scene scene = new Scene(loader.load());
+        HelloControllerCreateTask controllerCreateTask = loader.getController();
+        controllerCreateTask.setControllerViewInpProject(this);
+
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
@@ -99,13 +102,15 @@ public class ControllerViewInpProject {
 
     public void initialize() {
         Projet projet = Projet.projetSelected;
-        VBoxAFaire.getChildren().clear();
-        for(Tache tache : projet.listeTache) {
+        VBoxAFaire.getChildren().clear(); // Nettoyer le conteneur avant d'ajouter les tâches
+        for (Tache tache : projet.listeTache) {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("carteTache.fxml"));
                 VBox carte = loader.load();
                 ControllerCarteTache controllerCarteTache = loader.getController();
                 controllerCarteTache.adapterNomTache(tache);
+
+                // Configurer un clic pour modifier la tâche
                 carte.setOnMouseClicked(mouseEvent -> {
                     try {
                         FXMLLoader loader2 = new FXMLLoader(getClass().getResource("hello-editTask.fxml"));
@@ -120,6 +125,9 @@ public class ControllerViewInpProject {
                         e.printStackTrace();
                     }
                 });
+
+                // Ajouter la carte au conteneur VBoxAFaire
+                VBoxAFaire.getChildren().add(carte);
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
