@@ -1,4 +1,4 @@
-32b5e93e-dc25-42c4-ba69-d1f58cd2a28c;test;test;2025-01-15;2025-01-18;Termine;false;false;[]
+32b5e93e-dc25-42c4-ba69-d1f58cd2a28c;test du projet2;test de la description;2025-01-15;2025-01-18;Termine;false;false;[]
 Nom : Gaudin
 Prénom : Téo
 Email : teo.gaudin@gmail.com
@@ -20,6 +20,15 @@ Liste des projets : 1
 Nom : Vincent
 Prénom : Gabriel
 Email : vincentgab78@gmail.com
+Mot de passe : Motdepasse123
+Poste : null
+Rôle : null
+Liste des projets : 1
+]
+87b1d951-02ed-40d8-ae79-747a69282fbd;test3;description3;2025-01-16;2025-01-19;En cours;false;false;[Identifiant : 36a03604-4fbe-4fb5-9c28-5bab64258a75
+Nom : Gaudin
+Prénom : Téo
+Email : teo.gaudin@gmail.com
 Mot de passe : Motdepasse123
 Poste : null
 Rôle : null

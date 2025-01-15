@@ -37,7 +37,7 @@ public class HelloControllerCreateTask {
     Button addTacheAFaire = new Button();
 
     Projet projetSelected;
-    private ControllerViewInpProject controllerViewInpProject; // Référence au contrôleur principal
+    private ControllerViewInpProject controllerViewInpProject;
 
     public void setControllerViewInpProject(ControllerViewInpProject controllerViewInpProject) {
         this.controllerViewInpProject = controllerViewInpProject;

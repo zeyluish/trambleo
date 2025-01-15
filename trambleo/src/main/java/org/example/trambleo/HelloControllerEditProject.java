@@ -20,6 +20,11 @@ public class HelloControllerEditProject {
     ToggleGroup groupPriorite;
 
     String prioriteProjet;
+    private ControllerViewInpProject controllerViewInpProject;
+
+    public void setControllerViewInpProject(ControllerViewInpProject controllerViewInpProject) {
+        this.controllerViewInpProject = controllerViewInpProject;
+    }
 
 
     private Projet projet;
@@ -57,6 +62,7 @@ public class HelloControllerEditProject {
             Projet.projetSelected = projet;
             Stage stage = (Stage) nomProjet.getScene().getWindow();
             stage.close();
+            controllerViewInpProject.adapterProjet(nouveauNomProjet,nouvelleDescriptionProjet,nouvelleDateFinProjet);
 
         } else {
             messageConfirmation.setText("Il faut remplir tout les champs");

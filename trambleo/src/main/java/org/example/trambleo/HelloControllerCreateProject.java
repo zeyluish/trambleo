@@ -27,6 +27,12 @@ public class HelloControllerCreateProject {
     @FXML
     Label messageConfirmation;
 
+    private HelloControllerMesProjets controllerMesProjets;
+
+    public void setControllerMesProjets( HelloControllerMesProjets controllerMesProjets) {
+        this.controllerMesProjets = controllerMesProjets;
+    }
+
     @FXML
     public void initialize() {
         Employe.importEmploye();
@@ -57,6 +63,7 @@ public class HelloControllerCreateProject {
         }
         Projet.saveProjet(nouveauProjet);
         System.out.println(nouveauProjet);
+        controllerMesProjets.initialize();
         Stage stage = (Stage) nomProjet.getScene().getWindow();
         stage.close(); //Fermer la pop up
     }

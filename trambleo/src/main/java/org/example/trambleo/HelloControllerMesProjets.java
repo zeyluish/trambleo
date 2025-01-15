@@ -54,7 +54,7 @@ public class HelloControllerMesProjets {
                         FXMLLoader loader2 = new FXMLLoader(getClass().getResource("viewInProject.fxml"));
                         Parent projectView = loader2.load();
                         ControllerViewInpProject controllerViewInpProject = loader2.getController();
-                        controllerViewInpProject.adapterProjet(projet.nomProjet, projet.dateFinProjet);
+                        controllerViewInpProject.adapterProjet(projet.nomProjet,projet.descriptionProjet, projet.dateFinProjet );
                         Stage currentStage = (Stage) carteProjet.getScene().getWindow();
                         currentStage.setScene(new Scene(projectView));
                     } catch (IOException e) {
@@ -86,6 +86,8 @@ public class HelloControllerMesProjets {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation((this.getClass().getResource("hello-createProject.fxml")));
         Scene scene = new Scene(loader.load());
+        HelloControllerCreateProject controllerCreateProject = loader.getController();
+        controllerCreateProject.setControllerMesProjets(this);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();

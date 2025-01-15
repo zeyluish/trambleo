@@ -10,16 +10,22 @@
 
 <VBox prefHeight="720.0" prefWidth="1280.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.trambleo.ControllerViewInpProject">
     <fx:include source="hello-navbar.fxml" />
-   <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="1280.0">
+   <HBox alignment="CENTER_LEFT" prefHeight="82.0" prefWidth="1280.0">
       <children>
-         <Label fx:id="nomProjet" prefHeight="76.0" prefWidth="158.0" text="Nom du projet">
-            <font>
-               <Font name="System Bold" size="18.0" />
-            </font>
-            <HBox.margin>
-               <Insets left="15.0" />
-            </HBox.margin>
-         </Label>
+         <VBox alignment="CENTER" prefHeight="82.0" prefWidth="189.0">
+            <children>
+               <Label fx:id="nomProjet" prefHeight="67.0" prefWidth="190.0" text="Nom du projet">
+                  <font>
+                     <Font name="System Bold" size="18.0" />
+                  </font>
+               </Label>
+               <Label fx:id="descriptionProjet" alignment="TOP_LEFT" prefHeight="38.0" prefWidth="190.0" text="Description">
+                  <font>
+                     <Font size="13.0" />
+                  </font>
+               </Label>
+            </children>
+         </VBox>
          <Label fx:id="dateFinProjet" prefHeight="22.0" prefWidth="122.0" text="Date fin ">
             <HBox.margin>
                <Insets left="5.0" />
@@ -43,10 +49,10 @@
                <Insets left="5.0" />
             </HBox.margin>
             <children>
-               <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onVueCalendrierButtonClick" text="Vue calendrier" />
+               <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onVueCalendrierButtonClick" style="-fx-background-color: #847CAE;" text="Vue calendrier" />
             </children>
          </HBox>
-         <Button mnemonicParsing="false" onAction="#onModifierProjetButtonClick" text="Modifier le projet" />
+         <Button mnemonicParsing="false" onAction="#onModifierProjetButtonClick" style="-fx-background-color: #847CAE;" text="Modifier le projet" />
       </children>
    </HBox>
    <HBox prefHeight="414.0" prefWidth="1280.0">
@@ -60,14 +66,9 @@
                </Label>
                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                   <children>
-                     <Button fx:id="addTacheAFaire" mnemonicParsing="false" onAction="#onAddTacheAFaire" text="Ajouter une tache">
+                     <Button fx:id="addTacheAFaire" mnemonicParsing="false" onAction="#onAddTacheAFaire" style="-fx-background-color: #847CAE;" text="Ajouter une tache">
                         <HBox.margin>
                            <Insets right="30.0" />
-                        </HBox.margin>
-                     </Button>
-                     <Button fx:id="refresh" alignment="CENTER" mnemonicParsing="false" onAction="#onRefreshBoutonClick" text="Refresh">
-                        <HBox.margin>
-                           <Insets left="30.0" />
                         </HBox.margin>
                      </Button>
                   </children>
@@ -85,7 +86,7 @@
                      <Font name="System Bold" size="13.0" />
                   </font>
                </Label>
-               <Button mnemonicParsing="false" onAction="#onAddTacheEnCours" text="Ajouter une tache" />
+               <Button mnemonicParsing="false" onAction="#onAddTacheEnCours" style="-fx-background-color: #847CAE;" text="Ajouter une tache" />
             </children>
             <opaqueInsets>
                <Insets />
@@ -101,7 +102,7 @@
                      <Font name="System Bold" size="13.0" />
                   </font>
                </Label>
-               <Button mnemonicParsing="false" onAction="#onAddTacheFait" text="Ajouter une tache" />
+               <Button mnemonicParsing="false" onAction="#onAddTacheFait" style="-fx-background-color: #847CAE;" text="Ajouter une tache" />
             </children>
             <opaqueInsets>
                <Insets />
