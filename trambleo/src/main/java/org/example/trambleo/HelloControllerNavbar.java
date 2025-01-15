@@ -30,4 +30,20 @@ public class HelloControllerNavbar {
         stage.setScene(new Scene(pageProjet));
         stage.show();
     }
+
+    public void onDeconnexionButtonClick(MouseEvent event) throws IOException {
+        if (Developpeur.developpeurSelected != null) {
+            Developpeur.developpeurSelected = null;
+        } else if (Administrateur.administrateurSelected != null) {
+            Administrateur.administrateurSelected = null;
+        } else if (ChefProjet.chefProjetSelected != null) {
+            ChefProjet.chefProjetSelected = null;
+        }
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-loginpage.fxml"));
+        VBox pageProjet = loader.load();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Se connecter");
+        stage.setScene(new Scene(pageProjet));
+        stage.show();
+    }
 }
