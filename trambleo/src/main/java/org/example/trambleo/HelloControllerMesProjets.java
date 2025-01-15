@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -16,9 +17,16 @@ public class HelloControllerMesProjets {
 
     @FXML
     HBox carteProjet;
+    @FXML
+    Button boutonCreerProjet;
+
     Projet projetSelected;
 
     public void initialize() {
+        if (Developpeur.developpeurSelected != null || ChefProjet.chefProjetSelected != null) {
+            boutonCreerProjet.setVisible(false);
+        }
+
         Projet.importProjet(); //Récupérer les projets du CSV
         carteProjet.getChildren().clear();
         for (Projet projet : Projet.listeProjet){
