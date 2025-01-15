@@ -88,18 +88,12 @@ public class ChefProjet extends Employe {
         return tache;
     }
 
-    public static void modifierTache(Tache tache, String attribut, String nouvelleValeur) {
-        switch (attribut.toLowerCase()){
-            case "nom":
-                tache.nomTache = nouvelleValeur;
-                break;
-            case "description" :
-                tache.descriptionTache = nouvelleValeur;
-                break;
-            case "priorite":
-                tache.priorite = nouvelleValeur;
-                break;
-        }
+    public static void modifierTache( Tache tache, String nouveauNom, String nouvelleDescription, LocalDate nouvelleDateFin,String nouveauStatut) {
+        tache.nomTache = nouveauNom;
+        tache.descriptionTache = nouvelleDescription;
+        tache.dateFinTache = nouvelleDateFin;
+        tache.priorite = nouveauStatut;
+        //Projet.modifierCSV(projet);
     }
 
     public static void modifierDateTache(Tache tache, String attribut, LocalDate dateFin) {

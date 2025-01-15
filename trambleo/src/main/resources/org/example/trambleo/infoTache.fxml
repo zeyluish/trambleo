@@ -94,6 +94,11 @@
       <HBox alignment="CENTER" prefHeight="302.0" prefWidth="600.0">
          <children>
             <Button mnemonicParsing="false" onAction="#onSupprimerTacheButton" style="-fx-background-color: #ea767c;" text="Supprimer le projet" />
+            <Button mnemonicParsing="false" onAction="#onAjouterCommentaireButton" style="-fx-background-color: #CFDFFB;" text="Ajouter commentaire">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </Button>
             <Button mnemonicParsing="false" onAction="#onModifierTacheButton" style="-fx-background-color: #847CAE;" text="Modifier le projet">
                <HBox.margin>
                   <Insets left="15.0" />

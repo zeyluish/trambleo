@@ -2,11 +2,12 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -23,22 +24,39 @@
    <VBox prefHeight="200.0" prefWidth="100.0">
       <children>
          <Label text="Nom :" />
-         <TextField promptText="Entrez le nom" />
+         <TextField fx:id="nomTache" promptText="Entrez le nom" />
          <Label text="Description :" />
-         <TextField promptText="Entrez la description" />
+         <TextField fx:id="descriptionTache" promptText="Entrez la description" />
          <Label prefHeight="18.0" prefWidth="54.0" text="Priorité :" />
          <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
-               <CheckBox mnemonicParsing="false" text="Faible" />
-               <CheckBox mnemonicParsing="false" text="Moyenne" />
-               <CheckBox mnemonicParsing="false" text="Elevée" />
+               <RadioButton mnemonicParsing="false" text="Faible">
+                  <toggleGroup>
+                     <ToggleGroup fx:id="groupPriorite" />
+                  </toggleGroup>
+               </RadioButton>
+               <RadioButton mnemonicParsing="false" text="Moyenne" toggleGroup="$groupPriorite">
+                  <HBox.margin>
+                     <Insets left="15.0" right="15.0" />
+                  </HBox.margin>
+               </RadioButton>
+               <RadioButton mnemonicParsing="false" text="Elevee" toggleGroup="$groupPriorite" />
             </children>
          </HBox>
          <Label text="Date de fin:" />
-         <DatePicker />
+         <DatePicker fx:id="dateFinTache" />
          <Label text="Employés :" />
          <ComboBox prefWidth="150.0" />
       </children>
    </VBox>
-   <Button mnemonicParsing="false" text="Modifier Tâche" />
+   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Button mnemonicParsing="false" onAction="#onAnnulerTacheButton" style="-fx-background-color: #ea767c;" text="Annuler" />
+         <Button mnemonicParsing="false" onAction="#onModifierTacheButton" style="-fx-background-color: #847CAE;" text="Modifier Tâche">
+            <HBox.margin>
+               <Insets left="15.0" />
+            </HBox.margin>
+         </Button>
+      </children>
+   </HBox>
 </VBox>
