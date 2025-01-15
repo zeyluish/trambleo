@@ -32,7 +32,7 @@ public class Projet {
         this.dateFinProjet = dateFinProjet;
         this.isSupprime = false;
         this.isEquipeAssocie = false;
-        this.statutProjet = "Nouveau Projet";
+        this.statutProjet = "En cours";
     }
 
     // <editor-fold desc="Getters and setters">

@@ -22,8 +22,8 @@
             <Insets left="25.0" right="25.0" />
          </VBox.margin>
          <children>
-            <Circle fill="#ff9d00" radius="11.0" stroke="BLACK" strokeType="INSIDE" />
-            <Label prefHeight="18.0" prefWidth="50.0" text="En cours">
+            <Circle fx:id="rondStatutProjet" fill="#ff9d00" radius="11.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="statutProjet" prefHeight="18.0" prefWidth="50.0" text="En cours">
                <HBox.margin>
                   <Insets left="15.0" />
                </HBox.margin>
