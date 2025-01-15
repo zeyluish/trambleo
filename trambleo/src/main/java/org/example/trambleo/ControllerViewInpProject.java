@@ -94,6 +94,7 @@ public class ControllerViewInpProject {
     public void initialize() {
         Projet projet = Projet.projetSelected;
         VBoxAFaire.getChildren().clear(); // Nettoyer le conteneur avant d'ajouter les tâches
+        VBoxAFaire.setSpacing(10);
         for (Tache tache : projet.listeTache) {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("carteTache.fxml"));
@@ -104,13 +105,14 @@ public class ControllerViewInpProject {
                 // Configurer un clic pour modifier la tâche
                 carte.setOnMouseClicked(mouseEvent -> {
                     try {
-                        FXMLLoader loader2 = new FXMLLoader(getClass().getResource("hello-editTask.fxml"));
+                        FXMLLoader loader2 = new FXMLLoader(getClass().getResource("infoTache.fxml"));
                         Parent taskView = loader2.load();
                         Tache.tacheSelected = tache;
                         ControllerInfoTache controllerInfoTache = loader2.getController();
-                        controllerInfoTache.adapterTache(tache.nomTache, tache.descriptionTache, tache.priorite, tache.dateFinTache, tache.listeEmployeTache);
-                        Stage currentStage = (Stage) VBoxAFaire.getScene().getWindow();
-                        currentStage.setScene(new Scene(taskView));
+                        //controllerInfoTache.adapterTache(tache.nomTache, tache.descriptionTache, tache.priorite, tache.dateFinTache, tache.listeEmployeTache);
+                        Stage stage = new Stage();
+                        stage.setScene(new Scene(taskView));
+                        stage.show();
                     } catch (IOException e) {
                         System.out.println("Erreur de l'application");
                         e.printStackTrace();

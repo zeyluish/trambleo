@@ -32,4 +32,11 @@ public class ControllerInfoTache {
         String listeEmploye = liste.toString();
         listEmploye.setText(listeEmploye);
     }
+
+    @FXML
+    public void onSupprimerTacheButton() {
+    }
+    public void onModifierTacheButton(){
+        
+    }
 }

@@ -82,7 +82,7 @@ public class HelloControllerCreateTask {
         LocalDate dateFinTacheDate = dateFin.getValue();
         Projet projetSelect = Projet.projetSelected;
         Tache nouvelleTache = ChefProjet.creerTache(projetSelect, nomTacheText,descriptionTacheText,prioriteTacheText,dateFinTacheDate);
-        projetSelect.listeTache.add(nouvelleTache);
+        //projetSelect.listeTache.add(nouvelleTache);
         System.out.println(projetSelect);
         for (Employe employe : employeChoisi) {
             nouvelleTache.listeEmployeTache.add(employe);
@@ -90,6 +90,8 @@ public class HelloControllerCreateTask {
         System.out.println(nouvelleTache);
         messageConfirmation.setText("La tâche a bien été créée");
         controllerViewInpProject.initialize();
+        Stage stage = (Stage) nomTache.getScene().getWindow();
+        stage.close(); //Fermer la pop up
 
     }
 

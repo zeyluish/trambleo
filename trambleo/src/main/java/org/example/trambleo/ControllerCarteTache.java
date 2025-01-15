@@ -23,5 +23,7 @@ public class ControllerCarteTache {
 
     public void adapterNomTache(Tache tache) {
         nomTache.setText(tache.getNomTache());
+        String dateFin = tache.dateFinTache.toString();
+        dateTache.setText(dateFin);
     }
 }
