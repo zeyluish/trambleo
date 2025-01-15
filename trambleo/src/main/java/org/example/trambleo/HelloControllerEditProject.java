@@ -1,10 +1,7 @@
 package org.example.trambleo;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,13 +15,12 @@ public class HelloControllerEditProject {
     @FXML
     DatePicker dateFinProjet;
     @FXML
-    CheckBox statutEnCours;
-    @FXML
-    CheckBox statutEnRetard;
-    @FXML
-    CheckBox statutTermine;
-    @FXML
     Label messageConfirmation;
+    @FXML
+    ToggleGroup groupPriorite;
+
+    String prioriteProjet;
+
 
     private Projet projet;
 
@@ -38,17 +34,24 @@ public class HelloControllerEditProject {
         nomProjet.setText(projet.getNomProjet());
         descriptionProjet.setText(projet.getDescriptionProjet());
         dateFinProjet.setValue(projet.getDateFinProjet());
-        statutEnCours.setSelected(projet.getStatutProjet().equals("En cours"));
-        statutEnRetard.setSelected(projet.getStatutProjet().equals("En retard"));
-        statutTermine.setSelected(projet.getStatutProjet().equals("Termine"));
+        //statutEnCours.setSelected(projet.getStatutProjet().equals("En cours"));
+        //statutEnRetard.setSelected(projet.getStatutProjet().equals("En retard"));
+        //statutTermine.setSelected(projet.getStatutProjet().equals("Termine"));
 
     }
 
-    public void onModifierButtonClick(){
+    public String getSelectedValue() throws IOException {
+        RadioButton selectedRadioButton = (RadioButton) groupPriorite.getSelectedToggle();
+        prioriteProjet = selectedRadioButton.getText();
+        System.out.println(prioriteProjet);
+        return prioriteProjet;
+    }
+
+    public void onModifierButtonClick() throws IOException {
         String nouveauNomProjet = nomProjet.getText();
         String nouvelleDescriptionProjet = descriptionProjet.getText();
         LocalDate nouvelleDateFinProjet = dateFinProjet.getValue();
-        String nouveauStatutProjet = statutEnCours.isSelected() ? "En cours" : statutEnRetard.isSelected() ? "En retard" : statutTermine.isSelected() ? "Termine" : null;
+        String nouveauStatutProjet = getSelectedValue();
         if (!nouveauNomProjet.equals("") && !nouvelleDescriptionProjet.equals("") && nouvelleDateFinProjet != null) {
             ChefProjet.modifierProjet(projet, nouveauNomProjet, nouvelleDescriptionProjet,nouvelleDateFinProjet, nouveauStatutProjet);
             Projet.projetSelected = projet;

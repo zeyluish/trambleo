@@ -2,11 +2,12 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -29,9 +30,20 @@
          <Label text="Statut :" />
          <HBox prefHeight="100.0" prefWidth="200.0">
             <children>
-               <CheckBox fx:id="statutEnCours" mnemonicParsing="false" text="En cours" />
-               <CheckBox fx:id="statutEnRetard" mnemonicParsing="false" text="En retard" />
-               <CheckBox fx:id="statutTermine" mnemonicParsing="false" text="Terminé" />
+               <RadioButton mnemonicParsing="false" text="En cours">
+                  <HBox.margin>
+                     <Insets right="15.0" />
+                  </HBox.margin>
+                  <toggleGroup>
+                     <ToggleGroup fx:id="groupPriorite" />
+                  </toggleGroup>
+               </RadioButton>
+               <RadioButton mnemonicParsing="false" text="En retard" toggleGroup="$groupPriorite">
+                  <HBox.margin>
+                     <Insets right="15.0" />
+                  </HBox.margin>
+               </RadioButton>
+               <RadioButton mnemonicParsing="false" text="Termine" toggleGroup="$groupPriorite" />
             </children>
          </HBox>
          <Label text="Date de fin:" />

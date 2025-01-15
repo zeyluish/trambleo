@@ -66,7 +66,6 @@ public class HelloControllerCreateTask {
         prioriteTache = selectedRadioButton.getText();
         System.out.println(prioriteTache);
         return prioriteTache;
-
     }
 
     @FXML

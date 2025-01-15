@@ -32,10 +32,10 @@ public class HelloControllerMesProjets {
 
         Projet.importProjet(); // Récupérer les projets du CSV
         carteProjet.getChildren().clear();
-        carteProjet.setAlignment(Pos.CENTER); // Centrer tout le contenu du GridPane
-        carteProjet.setHgap(20); // Espacement horizontal entre les cartes
-        carteProjet.setVgap(50); // Espacement vertical entre les cartes
-        carteProjet.setPadding(new Insets(20, 20, 20, 20)); // Ajouter un padding autour du GridPane
+        carteProjet.setAlignment(Pos.CENTER);
+        carteProjet.setHgap(20);
+        carteProjet.setVgap(50);
+        carteProjet.setPadding(new Insets(20, 20, 20, 20));
 
         int colonne = 0;
         int ligne = 0;
@@ -64,10 +64,10 @@ public class HelloControllerMesProjets {
                 });
 
                 carteProjet.add(carte, colonne, ligne);
-                GridPane.setMargin(carte, new Insets(10, 10, 10, 10)); // Ajouter des marges uniformes autour de chaque carte
+                GridPane.setMargin(carte, new Insets(10, 10, 10, 10));
 
                 colonne++;
-                if (colonne == 5) { // Adapte le nombre de colonnes maximum
+                if (colonne == 5) {
                     colonne = 0;
                     ligne++;
                 }
@@ -76,9 +76,8 @@ public class HelloControllerMesProjets {
             }
         }
 
-        // Centrer le contenu si le nombre total d'éléments est inférieur à une ligne complète
         if (Projet.listeProjet.size() < 5) {
-            carteProjet.setAlignment(Pos.CENTER); // Centrer si les projets ne remplissent pas une rangée entière
+            carteProjet.setAlignment(Pos.CENTER);
         }
     }
 
