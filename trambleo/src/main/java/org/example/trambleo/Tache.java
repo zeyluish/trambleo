@@ -18,7 +18,6 @@ public class Tache {
     Projet projetAssocie;
     ArrayList<String> listeCommentaire;
     ArrayList<Employe> listeEmployeTache;
-    ArrayList<sousTache> listeSousTache;
     static Tache tacheSelected;
 
     public Tache( String nomTache, String descriptionTache, String priorite, LocalDate dateFinTache) {
@@ -28,7 +27,6 @@ public class Tache {
         this.priorite = priorite;
         this.dateFinTache = dateFinTache;
         this.listeEmployeTache = new ArrayList<>();
-        this.listeSousTache = new ArrayList<>();
         this.listeCommentaire = new ArrayList<>();
         this.isSupprime = false;
     }
@@ -37,40 +35,6 @@ public class Tache {
         return "identifiant : " + idTache + ", nom : " + nomTache + ", description : " + descriptionTache + ", priorité : " + priorite + ", date de fin : " + dateFinTache;
     }
 
-    public void supprimerTache() { //Sur l'interface graphique on fera disparaitre la tache
-        this.isSupprime = true;
-        System.out.println("La tâche a bien été supprimée");
-    }
-
-    public void attribuerEmploye(Employe employe){
-        if (!listeEmployeTache.contains(employe)) {
-            listeEmployeTache.add(employe);
-            System.out.println(listeEmployeTache);
-        } else {
-            System.out.println("L'employé est déjà dans la liste");
-        }
-    }
-
-    public void creerSousTache(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Entrez le nom de la sous-tâche : ");
-        String nomSousTache = scanner.nextLine();
-        sousTache nouvelleSousTache = new sousTache(nomSousTache);
-        listeSousTache.add(nouvelleSousTache);
-        nouvelleSousTache.tacheAssociee = this;
-        System.out.println("La sous tâche a été créer");
-    }
-
-    public void changerDateFin(LocalDate nouvelleDateFin){
-        this.dateFinTache = nouvelleDateFin;
-        System.out.println("La date de fin a été modifié au : " + this.dateFinTache);
-
-    }
-
-    public void ajouterCommentaire(String nouveauCommentaire) {
-        this.listeCommentaire.add(nouveauCommentaire);
-        System.out.println("Le commentaire est : " + nouveauCommentaire);
-    }
     // <editor-fold desc="Getter and setter">
     public UUID getIdTache() {
         return idTache;
@@ -127,14 +91,6 @@ public class Tache {
 
     public void setCommentaire(ArrayList<String> commentaire) {
         this.listeCommentaire = commentaire;
-    }
-
-    public ArrayList<sousTache> getListeSousTache() {
-        return listeSousTache;
-    }
-
-    public void setListeSousTache(ArrayList<sousTache> listeSousTache) {
-        this.listeSousTache = listeSousTache;
     }
 
     public boolean isSupprime() {

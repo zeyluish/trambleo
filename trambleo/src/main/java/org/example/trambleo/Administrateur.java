@@ -34,23 +34,11 @@ public class Administrateur extends Employe {
                 break;
         }
     }
-    public static void modifierDateProjet(Projet projet, String attribut, LocalDate nouvelleDate) {
-        switch (attribut.toLowerCase()) {
-            case "datedebut":
-                projet.dateDebutProjet = nouvelleDate;
-                break;
-            case "datefin":
-                projet.dateFinProjet = nouvelleDate;
-        }
-    }
     public void supprimerProjet(Projet projet){
         projet.isSupprime = true;
         System.out.println("Le projet a bien été supprimé");
     }
-    public void attribuerEmploye(){
 
-
-    }
     public void modifierPoste(Employe employe, String nouveauPoste){
         employe.poste = nouveauPoste;
     }

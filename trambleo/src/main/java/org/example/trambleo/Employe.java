@@ -11,7 +11,6 @@ public class Employe {
     String email;
     String motDePasse;
     String poste; // au sein de l'entreprise
-    String role; // au sein du projet
     static Employe employeSelected;
     static ArrayList<Projet> listeProjet = new ArrayList<Projet>();
     static ArrayList<Employe> listeEmploye = new ArrayList<>();
@@ -130,13 +129,6 @@ public class Employe {
         this.poste = poste;
     }
 
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
 
     public ArrayList<Projet> getListeProjet() {
         return listeProjet;
@@ -165,11 +157,7 @@ public class Employe {
     // </editor-fold>
 
     public String toString() {
-        return "Identifiant : " + idUtilisateur + "\nNom : " + nom + "\nPrénom : " + prenom + "\nEmail : " + email + "\nMot de passe : " + motDePasse + "\nPoste : " + poste + "\nRôle : " + role + "\nListe des projets : " + listeProjet.size() + "\n";
-    }
-
-    public void creerEmploye(String nom, String prenom, String email, String motDePasse, String poste) {
-        Employe newEmploye = new Employe(nom, prenom, email, motDePasse);
+        return "Identifiant : " + idUtilisateur + "\nNom : " + nom + "\nPrénom : " + prenom + "\nEmail : " + email + "\nMot de passe : " + motDePasse + "\nPoste : " + poste + "\nListe des projets : " + listeProjet.size() + "\n";
     }
 
     public void modifierEmploye(String attribut, String nouvelleValeur) {
@@ -195,13 +183,5 @@ public class Employe {
     public void supprimerEmploye() {
         this.isSupprime = true;
         System.out.println("L'employé " + prenom + " " + nom + " a bien été supprimé");
-    }
-
-    public void afficherInfo() {
-        System.out.println("Les informations de " + this.prenom + " " + this.nom + " sont :" + "\nIdentifiant : " + idUtilisateur + "\nNom : " + nom + "\nPrénom : " + prenom + "\nEmail : " + email + "\nMot de passe : " + motDePasse + "\nPoste : " + poste + "\n");
-    }
-
-    public void afficherHistorique() {
-        System.out.println("L'historique de travail de " + this.prenom + " " + this.nom + " est :" + "\n" + listeProjet);
     }
 }

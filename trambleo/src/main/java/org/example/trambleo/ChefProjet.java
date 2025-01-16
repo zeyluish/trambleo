@@ -18,7 +18,6 @@ public class ChefProjet extends Employe {
                 "isDansEquipe=" + isDansEquipe +
                 ", isSupprime=" + isSupprime +
                 ", listeProjet=" + listeProjet +
-                ", role='" + role + '\'' +
                 ", poste='" + poste + '\'' +
                 ", motDePasse='" + motDePasse + '\'' +
                 ", email='" + email + '\'' +
@@ -27,7 +26,7 @@ public class ChefProjet extends Employe {
                 ", idUtilisateur=" + idUtilisateur +
                 '}';
     }
-
+/*
     public static void attribuerEmployeEquipe(Equipe equipe, Employe employe) {
         equipe.listeMembre.add(employe);
         employe.isDansEquipe = true;
@@ -61,23 +60,13 @@ public class ChefProjet extends Employe {
         projet.isEquipeAssocie = false;
         System.out.println("L'équipe " + equipe.nomEquipe + " a bien été retirée du projet " + projet.nomProjet + ".");
     }
-
+*/
     public static void modifierProjet( Projet projet, String nouveauNom, String nouvelleDescription, LocalDate nouvelleDateFin,String nouveauStatut) {
         projet.nomProjet = nouveauNom;
         projet.descriptionProjet = nouvelleDescription;
         projet.dateFinProjet = nouvelleDateFin;
         projet.statutProjet = nouveauStatut;
         Projet.modifierCSV(projet);
-    }
-
-    public static void modifierDateProjet(Projet projet, String attribut, LocalDate nouvelleDate) {
-        switch (attribut.toLowerCase()) {
-            case "datedebut":
-                projet.dateDebutProjet = nouvelleDate;
-                break;
-            case "datefin":
-                projet.dateFinProjet = nouvelleDate;
-        }
     }
 
     public static Tache creerTache(Projet projet, String nomTache, String description, String priorite, LocalDate dateFin) {
@@ -94,14 +83,6 @@ public class ChefProjet extends Employe {
         tache.dateFinTache = nouvelleDateFin;
         tache.priorite = nouveauStatut;
         //Projet.modifierCSV(projet);
-    }
-
-    public static void modifierDateTache(Tache tache, String attribut, LocalDate dateFin) {
-        switch (attribut.toLowerCase()){
-            case "datedebut":
-                tache.dateFinTache = dateFin;
-                break;
-        }
     }
 
     public static void supprimerTache(Projet projet, Tache tache) {

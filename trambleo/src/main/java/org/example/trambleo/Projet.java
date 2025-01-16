@@ -262,23 +262,4 @@ public class Projet {
             System.out.println("Erreur lors de la lecture du fichier : " + e.getMessage());
         }
     }
-
-
-    public void supprimerProjet() {
-        this.isSupprime = true;
-        System.out.println("Le projet " + nomProjet + "a bien été supprimée.");
-    }
-
-    public  void attribuerEmploye(Employe employe) {
-        listeEmploye.add(employe);
-        employe.listeProjet.add(this);
-    }
-
-    public void changerDateDebut(LocalDate dateDebut) {
-        this.dateDebutProjet = dateDebut;
-    }
-
-    public void changerDateFin(LocalDate dateFin) {
-        this.dateFinProjet = dateFin;
-    }
 }
