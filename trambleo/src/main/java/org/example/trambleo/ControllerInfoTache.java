@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,7 +26,9 @@ public class ControllerInfoTache {
     Label dateFinTache;
 
     @FXML
-    Label listEmploye;
+    ListView<String> listEmploye;
+    @FXML
+    ListView<String> listCommentaire;
 
     private ControllerViewInpProject controllerViewInpProject;
 
@@ -39,13 +42,26 @@ public class ControllerInfoTache {
         prioriteTache.setText(pri);
         String dateFin = date.toString();
         dateFinTache.setText(dateFin);
-        String listeEmploye = liste.toString();
-        String employesString = "";
-        for (Employe employe : liste) {
-            employesString += employe.getNom() + " " + employe.getPrenom() + "\n";
-        }
-        listEmploye.setText(employesString);
+        afficherEmployes();
+        afficherCommentaires();
     }
+
+    private void afficherCommentaires() {
+        Tache tacheSelect = Tache.tacheSelected;
+        listCommentaire.getItems().clear();
+        for (String commentaire : tacheSelect.getListeCommentaire()) {
+            listCommentaire.getItems().add(commentaire);
+        }
+    }
+    private void afficherEmployes() {
+        Tache tacheSelect = Tache.tacheSelected;
+        listEmploye.getItems().clear();
+        for (Employe employe : tacheSelect.getListeEmployeTache()) {
+            String employeString = employe.getNom() + " " + employe.getPrenom();
+            listEmploye.getItems().add(employeString);
+        }
+    }
+
 
     @FXML
     public void onSupprimerTacheButton() {
@@ -69,9 +85,14 @@ public class ControllerInfoTache {
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
-
     }
-    public void onAjouterCommentaireButton(){
+    public void onAjouterCommentaireButton() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation((this.getClass().getResource("hello-commentaireTache.fxml")));
+        Scene scene = new Scene(loader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
 
     }
 }
