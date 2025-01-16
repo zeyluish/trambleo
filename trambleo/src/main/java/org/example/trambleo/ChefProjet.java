@@ -69,9 +69,9 @@ public class ChefProjet extends Employe {
         Projet.modifierCSV(projet);
     }
 
-    public static Tache creerTache(Projet projet, String nomTache, String description, String priorite, LocalDate dateFin) {
+    public static Tache creerTache(Projet projet, String nomTache, String description, String priorite, LocalDate dateFin, String etat) {
         projet = projetSelected;
-        Tache tache = new Tache(nomTache, description, priorite, dateFin);
+        Tache tache = new Tache(nomTache, description, priorite, dateFin, etat);
         tache.projetAssocie = projet;
         projet.listeTache.add(tache);
         return tache;

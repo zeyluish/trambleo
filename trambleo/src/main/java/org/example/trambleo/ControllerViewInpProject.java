@@ -74,6 +74,7 @@ public class ControllerViewInpProject {
         Scene scene = new Scene(loader.load());
         HelloControllerCreateTask controllerCreateTask = loader.getController();
         //controllerCreateTask.setControllerViewInpProject(this);
+        controllerCreateTask.setEtat("aFaire");
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
@@ -83,6 +84,8 @@ public class ControllerViewInpProject {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation((this.getClass().getResource("hello-createtask.fxml")));
         Scene scene = new Scene(loader.load());
+        HelloControllerCreateTask controllerCreateTask = loader.getController();
+        controllerCreateTask.setEtat("enCours");
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
@@ -92,6 +95,8 @@ public class ControllerViewInpProject {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation((this.getClass().getResource("hello-createtask.fxml")));
         Scene scene = new Scene(loader.load());
+        HelloControllerCreateTask controllerCreateTask = loader.getController();
+        controllerCreateTask.setEtat("fait");
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
@@ -137,10 +142,13 @@ public class ControllerViewInpProject {
                 });
 
                 // Ajouter la carte au conteneur VBoxAFaire
-
-                VBoxAFaire.getChildren().add(carte);
-                VBoxEnCours.getChildren().add(carte);
-                VBoxFait.getChildren().add(carte);
+                if ("aFaire".equals(tache.getEtat())) {
+                    VBoxAFaire.getChildren().add(carte);
+                } else if ("enCours".equals(tache.getEtat())) {
+                    VBoxEnCours.getChildren().add(carte);
+                } else if ("fait".equals(tache.getEtat())) {
+                    VBoxFait.getChildren().add(carte);
+                }
 
             } catch (IOException e) {
                 System.out.println(e.getMessage());

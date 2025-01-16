@@ -66,7 +66,7 @@
                </Label>
                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                   <children>
-                     <Button fx:id="addTacheAFaire" mnemonicParsing="false" onAction="#onAddTacheAFaire" style="-fx-background-color: #847CAE;" text="Ajouter une tache">
+                     <Button fx:id="buttonAFaire" mnemonicParsing="false" onAction="#onAddTacheAFaire" style="-fx-background-color: #847CAE;" text="Ajouter une tache">
                         <HBox.margin>
                            <Insets right="30.0" />
                         </HBox.margin>
@@ -88,7 +88,7 @@
                </Label>
                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="420.0">
                   <children>
-                     <Button mnemonicParsing="false" onAction="#onAddTacheEnCours" style="-fx-background-color: #847CAE;" text="Ajouter une tache" />
+                     <Button fx:id="buttonEnCours" mnemonicParsing="false" onAction="#onAddTacheEnCours" style="-fx-background-color: #847CAE;" text="Ajouter une tache" />
                   </children>
                </HBox>
                <VBox fx:id="VBoxEnCours" prefHeight="377.0" prefWidth="420.0" />
@@ -109,7 +109,7 @@
                </Label>
                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="420.0">
                   <children>
-                     <Button mnemonicParsing="false" onAction="#onAddTacheFait" style="-fx-background-color: #847CAE;" text="Ajouter une tache" />
+                     <Button fx:id="buttonFait" mnemonicParsing="false" onAction="#onAddTacheFait" style="-fx-background-color: #847CAE;" text="Ajouter une tache" />
                   </children>
                </HBox>
                <VBox fx:id="VBoxFait" prefHeight="377.0" prefWidth="420.0" />

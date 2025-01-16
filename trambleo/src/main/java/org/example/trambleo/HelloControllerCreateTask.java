@@ -37,6 +37,11 @@ public class HelloControllerCreateTask {
     Button addTacheAFaire = new Button();
 
     Projet projetSelected;
+    String etat;
+
+    public void setEtat(String etat) {
+        this.etat = etat;
+    }
     /*
     //private ControllerViewInpProject controllerViewInpProject;
 
@@ -82,7 +87,7 @@ public class HelloControllerCreateTask {
         String prioriteTacheText = getSelectedValue();
         LocalDate dateFinTacheDate = dateFin.getValue();
         Projet projetSelect = Projet.projetSelected;
-        Tache nouvelleTache = ChefProjet.creerTache(projetSelect, nomTacheText,descriptionTacheText,prioriteTacheText,dateFinTacheDate);
+        Tache nouvelleTache = ChefProjet.creerTache(projetSelect, nomTacheText,descriptionTacheText,prioriteTacheText,dateFinTacheDate, etat);
         //projetSelect.listeTache.add(nouvelleTache);
         System.out.println(projetSelect);
         for (Employe employe : employeChoisi) {

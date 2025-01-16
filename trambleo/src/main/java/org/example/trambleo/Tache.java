@@ -19,8 +19,9 @@ public class Tache {
     ArrayList<String> listeCommentaire;
     ArrayList<Employe> listeEmployeTache;
     static Tache tacheSelected;
+    String etat;
 
-    public Tache( String nomTache, String descriptionTache, String priorite, LocalDate dateFinTache) {
+    public Tache( String nomTache, String descriptionTache, String priorite, LocalDate dateFinTache, String etat) {
         this.idTache = UUID.randomUUID();
         this.nomTache = nomTache;
         this.descriptionTache = descriptionTache;
@@ -29,6 +30,7 @@ public class Tache {
         this.listeEmployeTache = new ArrayList<>();
         this.listeCommentaire = new ArrayList<>();
         this.isSupprime = false;
+        this.etat = etat;
     }
 
     public String toString() {
@@ -38,6 +40,14 @@ public class Tache {
     // <editor-fold desc="Getter and setter">
     public UUID getIdTache() {
         return idTache;
+    }
+
+    public String getEtat() {
+        return etat;
+    }
+
+    public void setEtat(String etat) {
+        this.etat = etat;
     }
 
     public void setIdTache(UUID idTache) {
