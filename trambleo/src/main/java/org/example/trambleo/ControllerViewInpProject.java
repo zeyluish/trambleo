@@ -67,7 +67,7 @@ public class ControllerViewInpProject {
         loader.setLocation((this.getClass().getResource("hello-createtask.fxml")));
         Scene scene = new Scene(loader.load());
         HelloControllerCreateTask controllerCreateTask = loader.getController();
-        controllerCreateTask.setControllerViewInpProject(this);
+        //controllerCreateTask.setControllerViewInpProject(this);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();

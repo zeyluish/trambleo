@@ -37,13 +37,14 @@ public class HelloControllerCreateTask {
     Button addTacheAFaire = new Button();
 
     Projet projetSelected;
-    private ControllerViewInpProject controllerViewInpProject;
+    /*
+    //private ControllerViewInpProject controllerViewInpProject;
 
     public void setControllerViewInpProject(ControllerViewInpProject controllerViewInpProject) {
         this.controllerViewInpProject = controllerViewInpProject;
     }
 
-
+*/
     @FXML
     public void initialize() {
         Employe.importEmploye();
@@ -89,7 +90,7 @@ public class HelloControllerCreateTask {
         }
         System.out.println(nouvelleTache);
         messageConfirmation.setText("La tâche a bien été créée");
-        controllerViewInpProject.initialize();
+        //controllerViewInpProject.initialize();
         Stage stage = (Stage) nomTache.getScene().getWindow();
         stage.close(); //Fermer la pop up
 
