@@ -103,5 +103,6 @@
          <Insets left="15.0" />
       </VBox.margin>
    </Label>
+   <HBox fx:id="historiqueProjet" prefHeight="239.0" prefWidth="1280.0" />
 
 </VBox>

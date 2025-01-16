@@ -24,6 +24,7 @@ public class HelloControllerSignUp {
     TextField passwordCompte;
     @FXML
     Label messageConfirmation;
+    boolean isMemeEmail = false;
 
     @FXML
     public void onBoutonConnecter(MouseEvent event) throws IOException {
@@ -36,11 +37,17 @@ public class HelloControllerSignUp {
         }
 
     public void onBoutonCreer(MouseEvent event) throws IOException {
+        Employe.importEmploye();
         String nomCompteText = nomCompte.getText();
         String prenomCompteText = prenomCompte.getText();
         String emailCompteText = emailCompte.getText();
         String passwordCompteText = passwordCompte.getText();
-        if (!nomCompteText.equals("") && !prenomCompteText.equals("") && !emailCompteText.equals("") && !passwordCompteText.equals("")) {
+        for (int i = 0; i<Employe.listeEmploye.size(); i++){
+            if (Employe.listeEmploye.get(i).getEmail().equals(emailCompteText)) {
+                isMemeEmail = true;
+            }
+        }
+        if (!nomCompteText.equals("") && !prenomCompteText.equals("") && !emailCompteText.equals("") && !passwordCompteText.equals("") && !isMemeEmail) {
             Developpeur nouveauDev = new Developpeur(nomCompteText,prenomCompteText,emailCompteText,passwordCompteText);
             Employe.saveEmploye(nouveauDev);
             FXMLLoader loader2 = new FXMLLoader(getClass().getResource("hello-mesProjets.fxml"));
@@ -51,6 +58,5 @@ public class HelloControllerSignUp {
         } else {
             messageConfirmation.setText("Tout les champs doivent être remplis");
         }
-
     }
 }
