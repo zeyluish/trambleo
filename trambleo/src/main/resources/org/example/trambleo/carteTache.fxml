@@ -11,7 +11,7 @@
    <children>
       <HBox fx:id="carteTache" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="150.0" style="-fx-background-color: #CFDFFB; -fx-background-radius: 30;">
          <children>
-            <Label fx:id="nomTache" style="-fx-background-color: #CFDFFB;" text="nomTache">
+            <Label fx:id="nomTache" maxWidth="161.0" prefHeight="26.0" prefWidth="161.0" style="-fx-background-color: #CFDFFB;" text="nomTache">
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin>
@@ -22,12 +22,12 @@
                   <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                </padding>
             </Label>
-            <Label fx:id="dateTache" prefHeight="20.0" prefWidth="151.0" text="dateTache">
+            <Label fx:id="dateTache" maxWidth="100.0" prefHeight="20.0" prefWidth="100.0" text="dateTache">
                <font>
                   <Font size="14.0" />
                </font>
                <HBox.margin>
-                  <Insets left="75.0" />
+                  <Insets left="45.0" />
                </HBox.margin>
             </Label>
             <Circle fx:id="cercleStatut" fill="DODGERBLUE" radius="20.0" stroke="BLACK" strokeType="INSIDE">

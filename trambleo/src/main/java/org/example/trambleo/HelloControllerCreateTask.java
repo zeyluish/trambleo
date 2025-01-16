@@ -98,7 +98,6 @@ public class HelloControllerCreateTask {
         controllerViewInpProject.initialize();
         Stage stage = (Stage) nomTache.getScene().getWindow();
         stage.close(); //Fermer la pop up
-
     }
 
     public void onAnnulerTacheBouton(){ //Fermer la pop up

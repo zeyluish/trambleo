@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -68,14 +69,6 @@ public class ControllerViewInpProject {
         stage.show();
     }
 
-    public void onVueCalendrierButtonClick(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-vueCalendrier.fxml"));
-        VBox pageCalendrier = loader.load();
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow(); //Récupérer la fenetre actuelle.
-        stage.setTitle("Vue calendrier");
-        stage.setScene(new Scene(pageCalendrier));
-        stage.show();
-    }
 
     public void onAddTacheAFaire() throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -144,6 +137,7 @@ public class ControllerViewInpProject {
         VBoxFait.setSpacing(10);
 
         employeEncart.setSpacing(5);
+        employeEncart.getChildren().clear();
 
         for (String email : projet.emailEmployeProjet) {
             try {

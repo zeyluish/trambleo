@@ -61,7 +61,7 @@ public class HelloControllerPageCompte {
         historiqueProjet.getChildren().clear();
 
         for (Projet projet : Projet.listeProjet) {
-            if (projet.emailEmployeProjet.contains(emailUtilisateur)) {
+            if (projet.emailEmployeProjet.contains(emailUtilisateur)&& projet.statutProjet.equals("Termine")) {
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-carteProjet.fxml"));
                     VBox carte = loader.load();

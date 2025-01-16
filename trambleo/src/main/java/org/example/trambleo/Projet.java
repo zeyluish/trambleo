@@ -189,6 +189,8 @@ public class Projet {
             for (int i = 0; i < lignes.size(); i++) {
                 String[] elements = lignes.get(i).split(";");
                 if (elements[0].equals(projet.getIdProjet().toString())) {
+                    String emails = String.join(",", projet.getEmailEmployeProjet());
+
                     lignes.set(i, String.join(";",
                             projet.getIdProjet().toString(),
                             projet.getNomProjet(),
@@ -198,7 +200,7 @@ public class Projet {
                             projet.getStatutProjet(),
                             "false",
                             "false",
-                            "[]"
+                            emails
                     ));
                     break;
                 }
