@@ -23,8 +23,9 @@ public class Projet {
     static ArrayList<Projet> listeProjet = new ArrayList<>();
     boolean isSupprime;
     boolean isEquipeAssocie;
+    ArrayList<String> emailEmployeProjet = new ArrayList<>();
 
-    public Projet(UUID idProjet, String nomProjet, String descriptionProjet, LocalDate dateDebutProjet, LocalDate dateFinProjet, String statutProjet) {
+    public Projet(UUID idProjet, String nomProjet, String descriptionProjet, LocalDate dateDebutProjet, LocalDate dateFinProjet, String statutProjet, ArrayList<String> emailEmployeProjet) {
         this.idProjet = idProjet;
         this.nomProjet = nomProjet;
         this.descriptionProjet = descriptionProjet;
@@ -33,12 +34,21 @@ public class Projet {
         this.isSupprime = false;
         this.isEquipeAssocie = false;
         this.statutProjet = statutProjet;
+        this.emailEmployeProjet = emailEmployeProjet;
     }
 
     // <editor-fold desc="Getters and setters">
 
     public UUID getIdProjet() {
         return idProjet;
+    }
+
+    public  ArrayList<String> getEmailEmployeProjet() {
+        return emailEmployeProjet;
+    }
+
+    public void setEmailEmployeProjet(ArrayList<String> emailEmployeProjet) {
+        this.emailEmployeProjet = emailEmployeProjet;
     }
 
     public void setIdProjet(UUID idProjet) {
@@ -143,9 +153,20 @@ public class Projet {
         return "Identifiant : " + idProjet + "\nNom du Projet : " + nomProjet + "\nDescription du Projet : " + descriptionProjet + "\nDate de début : " + dateDebutProjet + "\nDate de fin : " + dateFinProjet + "\nStatut : " + statutProjet + "\nListe des tâches : " + listeTache + "\nListe des employes : " + listeEmploye + "\n";
     }
 
-    public String toCSV(){
-        return idProjet + ";" + nomProjet + ";" + descriptionProjet + ";" + dateDebutProjet + ";" + dateFinProjet + ";" + statutProjet + ";" + isSupprime + ";" + isEquipeAssocie + ";" + listeEmploye;
+    public String toCSV() {
+        String employesCSV = "";
+        for (int i = 0; i < listeEmploye.size(); i++) {
+            Employe employe = listeEmploye.get(i);
+            employesCSV += employe.getEmail();
+
+            if (i < listeEmploye.size() - 1) {
+                employesCSV += ",";
+            }
+        }
+
+        return idProjet + ";" + nomProjet + ";" + descriptionProjet + ";" + dateDebutProjet + ";" + dateFinProjet + ";" + statutProjet + ";" + isSupprime + ";" + isEquipeAssocie + ";" + "[" + employesCSV + "]";
     }
+
 
     public static void saveProjet(Projet projet) {
         String filePath = "src/main/resources/Projet.csv";
@@ -211,7 +232,14 @@ public class Projet {
                         String statutProjet = parts[5];
                         boolean isSupprime = Boolean.parseBoolean(parts[6]);
                         boolean isEquipeAssocie = Boolean.parseBoolean(parts[7]);
+                        String equipeEmploye = parts[8].replace("[", "").replace("]", "").trim();
+                        ArrayList<String> testEmail = new ArrayList<>();
+                        String[] emails = equipeEmploye.split(",");
 
+                        for (String email : emails) {
+                            email = email.trim();
+                            testEmail.add(email);
+                        }
                         boolean exists = false; //Vérifie que le projet n'existe pas déjà pour pas le réafficher
                         for (Projet projet : listeProjet) {
                             if (projet.getIdProjet().equals(idProjet)) {
@@ -221,8 +249,7 @@ public class Projet {
                             }
                         }
                         if (!exists) {
-                            listeProjet.add(new Projet(idProjet, nom, description, dateDebut, dateFin, statutProjet));
-
+                            listeProjet.add(new Projet(idProjet, nom, description, dateDebut, dateFin, statutProjet,testEmail));
                         }
                     } catch (NumberFormatException e) {
                         System.out.println("Erreur de conversion sur cette ligne : " + line);

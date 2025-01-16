@@ -13,7 +13,7 @@ public class Employe {
     String poste; // au sein de l'entreprise
     String role; // au sein du projet
     static Employe employeSelected;
-    ArrayList<Projet> listeProjet = new ArrayList<Projet>();
+    static ArrayList<Projet> listeProjet = new ArrayList<Projet>();
     static ArrayList<Employe> listeEmploye = new ArrayList<>();
     boolean isSupprime;
     boolean isDansEquipe;

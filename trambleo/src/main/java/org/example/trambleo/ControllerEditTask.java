@@ -1,10 +1,7 @@
 package org.example.trambleo;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,6 +17,8 @@ public class ControllerEditTask {
     DatePicker dateFinTache;
     @FXML
     ToggleGroup groupPriorite;
+    @FXML
+    Label messageConfirmation;
 
     private Tache tache;
     String prioriteTache;
@@ -50,7 +49,7 @@ public class ControllerEditTask {
         String nouvelleDescriptionTache = descriptionTache.getText();
         LocalDate nouvelleDateFinTache = dateFinTache.getValue();
         String nouveauStatutTache = getSelectedValue();
-        if (!nouveauNomTache.equals("") && !nouvelleDescriptionTache.equals("") && nouvelleDateFinTache != null) {
+        if (!nouveauNomTache.equals("") && !nouvelleDescriptionTache.equals("") && nouvelleDateFinTache != null && groupPriorite.getSelectedToggle() != null) {
             ChefProjet.modifierTache(tache, nouveauNomTache, nouvelleDescriptionTache,nouvelleDateFinTache, nouveauStatutTache);
             //Projet.projetSelected = projet;
             Stage stage = (Stage) nomTache.getScene().getWindow();
@@ -58,7 +57,7 @@ public class ControllerEditTask {
             //controllerViewInpProject.initialize();
 
         } else {
-           // messageConfirmation.setText("Il faut remplir tout les champs");
+           messageConfirmation.setText("Il faut remplir tout les champs");
         }
     }
     public void onAnnulerTacheButton(){

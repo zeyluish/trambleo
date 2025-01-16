@@ -45,6 +45,7 @@ public class HelloControllerCreateProject {
         String descriptionProjetText = descriptionProjet.getText();
         LocalDate dateDebutProjetDate = dateDebutProjet.getValue();
         LocalDate dateFinProjetDate = dateFinProjet.getValue();
+        ArrayList<String> emailEmployeProjet = new ArrayList<>();
         String statutProjet = "En cours";
         if (nomProjetText.equals("") || descriptionProjetText.equals("") || dateDebutProjetDate == null || dateFinProjetDate == null) { //Vérification de mise en forme
             messageConfirmation.setText("Il faut que tout les champs soient remplis");
@@ -54,12 +55,11 @@ public class HelloControllerCreateProject {
             messageConfirmation.setText("La date de fin doit être après la date de début");
             return;
         }
-        Projet nouveauProjet = Administrateur.creerProjet(nomProjetText,descriptionProjetText,dateDebutProjetDate,dateFinProjetDate, statutProjet);//Appel de la fonction pour créer un projet
+        Projet nouveauProjet = Administrateur.creerProjet(nomProjetText,descriptionProjetText,dateDebutProjetDate,dateFinProjetDate, statutProjet,emailEmployeProjet );//Appel de la fonction pour créer un projet
         for (Employe employe : employeChoisi) {
             System.out.println("Employe : " + employe);
             nouveauProjet.listeEmploye.add(employe);
             employe.listeProjet.add(nouveauProjet);
-
         }
         Projet.saveProjet(nouveauProjet);
         System.out.println(nouveauProjet);

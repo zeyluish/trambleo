@@ -59,4 +59,5 @@
          </Button>
       </children>
    </HBox>
+   <Label fx:id="messageConfirmation" textFill="RED" />
 </VBox>

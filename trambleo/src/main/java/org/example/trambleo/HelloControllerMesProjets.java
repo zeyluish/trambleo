@@ -24,10 +24,24 @@ public class HelloControllerMesProjets {
     Button boutonCreerProjet;
 
     Projet projetSelected;
+    Developpeur devSelected;
+    Administrateur adminSelected;
+    ChefProjet chefSelected;
+    String emailUtilisateur;
 
     public void initialize() {
         if (Developpeur.developpeurSelected != null || ChefProjet.chefProjetSelected != null) {
             boutonCreerProjet.setVisible(false);
+        }
+        if (Developpeur.developpeurSelected != null) {
+            devSelected = Developpeur.developpeurSelected;
+            emailUtilisateur = devSelected.getEmail();
+        } else if (ChefProjet.chefProjetSelected != null) {
+            chefSelected = ChefProjet.chefProjetSelected;
+            emailUtilisateur = chefSelected.getEmail();
+        } else if (Administrateur.administrateurSelected != null) {
+            adminSelected = Administrateur.administrateurSelected;
+            emailUtilisateur = adminSelected.getEmail();
         }
 
         Projet.importProjet(); // Récupérer les projets du CSV
@@ -41,43 +55,46 @@ public class HelloControllerMesProjets {
         int ligne = 0;
 
         for (Projet projet : Projet.listeProjet) {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-carteProjet.fxml")); // Ajouter une carte pour chaque projet
-                VBox carte = loader.load();
+            if (projet.emailEmployeProjet.contains(emailUtilisateur)) {
+                try {
+                    System.out.println(projet.emailEmployeProjet);
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-carteProjet.fxml")); // Ajouter une carte pour chaque projet
+                    VBox carte = loader.load();
 
-                HelloControllerCarteProjet controller = loader.getController();
-                controller.adapterTitre(projet); // Changer l'apparence de la carte selon le projet
+                    HelloControllerCarteProjet controller = loader.getController();
+                    controller.adapterTitre(projet); // Changer l'apparence de la carte selon le projet
 
-                carte.setOnMouseClicked(event -> {
-                    try {
-                        Projet.projetSelected = projet;
-                        FXMLLoader loader2 = new FXMLLoader(getClass().getResource("viewInProject.fxml"));
-                        Parent projectView = loader2.load();
-                        ControllerViewInpProject controllerViewInpProject = loader2.getController();
-                        controllerViewInpProject.adapterProjet(projet.nomProjet,projet.descriptionProjet, projet.dateFinProjet );
-                        Stage currentStage = (Stage) carteProjet.getScene().getWindow();
-                        currentStage.setScene(new Scene(projectView));
-                    } catch (IOException e) {
-                        System.out.println("Erreur de l'application");
-                        e.printStackTrace();
+                    carte.setOnMouseClicked(event -> {
+                        try {
+                            Projet.projetSelected = projet;
+                            FXMLLoader loader2 = new FXMLLoader(getClass().getResource("viewInProject.fxml"));
+                            Parent projectView = loader2.load();
+                            ControllerViewInpProject controllerViewInpProject = loader2.getController();
+                            controllerViewInpProject.adapterProjet(projet.nomProjet, projet.descriptionProjet, projet.dateFinProjet);
+                            Stage currentStage = (Stage) carteProjet.getScene().getWindow();
+                            currentStage.setScene(new Scene(projectView));
+                        } catch (IOException e) {
+                            System.out.println("Erreur de l'application");
+                            e.printStackTrace();
+                        }
+                    });
+
+                    carteProjet.add(carte, colonne, ligne);
+                    GridPane.setMargin(carte, new Insets(10, 10, 10, 10));
+
+                    colonne++;
+                    if (colonne == 5) {
+                        colonne = 0;
+                        ligne++;
                     }
-                });
-
-                carteProjet.add(carte, colonne, ligne);
-                GridPane.setMargin(carte, new Insets(10, 10, 10, 10));
-
-                colonne++;
-                if (colonne == 5) {
-                    colonne = 0;
-                    ligne++;
+                } catch (IOException e) {
+                    System.out.println(e.getMessage());
                 }
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
             }
-        }
 
-        if (Projet.listeProjet.size() < 5) {
-            carteProjet.setAlignment(Pos.CENTER);
+            if (Projet.listeProjet.size() < 5) {
+                carteProjet.setAlignment(Pos.CENTER);
+            }
         }
     }
 
