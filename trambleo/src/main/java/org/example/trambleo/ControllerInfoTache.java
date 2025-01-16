@@ -71,7 +71,6 @@ public class ControllerInfoTache {
         Stage stage = (Stage) nomTache.getScene().getWindow();
         stage.close();
         controllerViewInpProject.initialize();
-
     }
 
     public void onModifierTacheButton() throws IOException {

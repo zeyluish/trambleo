@@ -36,8 +36,17 @@ public class ControllerViewInpProject {
     VBox VBoxFait;
     @FXML
     HBox employeEncart;
+    @FXML
+    Button supprimerProjet;
+    @FXML
+    Button modifierProjet;
 
     Tache tacheSelected;
+    private HelloControllerMesProjets controllerMesProjets;
+
+    public void setControllerMesProjets(HelloControllerMesProjets controllerMesProjets) {
+        this.controllerMesProjets = controllerMesProjets;
+    }
 
     public void adapterProjet(String nom, String description, LocalDate dateFin) {
         nomProjet.setText(nom);
@@ -104,9 +113,28 @@ public class ControllerViewInpProject {
         stage.show();
     }
 
+    public void onSupprimerButtonClick() throws IOException {
+        Projet projetSelect = Projet.projetSelected;
+        Projet.supprimerCSV(projetSelect);
+        FXMLLoader loader2 = new FXMLLoader(getClass().getResource("hello-mesProjets.fxml"));
+        Parent projectView = loader2.load();
+        controllerMesProjets.initialize();
+        Stage currentStage = (Stage) VBoxAFaire.getScene().getWindow();
+        Projet.listeProjet.remove(projetSelect);
+        currentStage.setScene(new Scene(projectView));
+    }
+
     public void initialize() {
         Projet projet = Projet.projetSelected;
-        VBoxAFaire.getChildren().clear(); // Nettoyer le conteneur avant d'ajouter les tâches
+
+        if (Developpeur.developpeurSelected != null || ChefProjet.chefProjetSelected != null) {
+            supprimerProjet.setVisible(false);
+        }
+        if (Developpeur.developpeurSelected != null) {
+            modifierProjet.setVisible(false);
+        }
+
+        VBoxAFaire.getChildren().clear();
         VBoxAFaire.setSpacing(10);
 
         VBoxEnCours.getChildren().clear();

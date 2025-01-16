@@ -48,7 +48,7 @@
                   </toggleGroup>
                </RadioButton>
                <RadioButton mnemonicParsing="false" text="Moyenne" toggleGroup="$groupPriorite" />
-               <RadioButton mnemonicParsing="false" text="Elevé" toggleGroup="$groupPriorite" />
+               <RadioButton mnemonicParsing="false" text="Elevée" toggleGroup="$groupPriorite" />
             </children>
             <VBox.margin>
                <Insets top="5.0" />

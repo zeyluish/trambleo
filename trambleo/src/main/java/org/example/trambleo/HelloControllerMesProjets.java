@@ -70,6 +70,7 @@ public class HelloControllerMesProjets {
                             FXMLLoader loader2 = new FXMLLoader(getClass().getResource("viewInProject.fxml"));
                             Parent projectView = loader2.load();
                             ControllerViewInpProject controllerViewInpProject = loader2.getController();
+                            controllerViewInpProject.setControllerMesProjets(this);
                             controllerViewInpProject.adapterProjet(projet.nomProjet, projet.descriptionProjet, projet.dateFinProjet);
                             Stage currentStage = (Stage) carteProjet.getScene().getWindow();
                             currentStage.setScene(new Scene(projectView));

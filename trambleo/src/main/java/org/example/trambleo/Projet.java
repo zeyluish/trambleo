@@ -216,6 +216,31 @@ public class Projet {
         }
     }
 
+    public static void supprimerCSV(Projet projet) {
+        Path filePath = Paths.get("src/main/resources/Projet.csv");
+        try {
+            List<String> lignes = Files.readAllLines(filePath);
+            List<String> lignesModifiees = new ArrayList<>();
+            for (String ligne : lignes) {
+                String[] elements = ligne.split(";");
+                if (!elements[0].equals(projet.getIdProjet().toString())) {
+                    lignesModifiees.add(ligne);
+                }
+            }
+            try (BufferedWriter writer = Files.newBufferedWriter(filePath)) {
+                for (String ligne : lignesModifiees) {
+                    writer.write(ligne);
+                    writer.newLine();
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Erreur lors de la suppression du projet dans le fichier CSV.");
+        }
+    }
+
+
     public static void  importProjet() { //récupérer les projets depuis le CSV
         String filePath = "src/main/resources/Projet.csv";
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
