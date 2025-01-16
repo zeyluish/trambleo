@@ -27,9 +27,9 @@
          </children>
          </HBox>
          <Button layoutX="164.0" layoutY="25.0" onAction="#onVueKanbanBoutonClick" text="Vue Kanban" />
-      <FlowPane fx:id="calendar" layoutY="133.0" prefHeight="573.0" prefWidth="1280.0" />
+      <FlowPane fx:id="calendar" layoutY="133.0" prefHeight="587.0" prefWidth="1280.0" />
       <Text layoutX="72.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dimanche" />
       <Text layoutX="259.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lundi" />
-      <Text layoutX="420.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mardi" />
+      <Text layoutX="438.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mardi" />
       </children>
 </AnchorPane>
