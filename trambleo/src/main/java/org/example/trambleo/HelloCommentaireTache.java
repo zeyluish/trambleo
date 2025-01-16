@@ -8,7 +8,6 @@ public class HelloCommentaireTache {
     @FXML
     TextField commentaire;
 
-
     @FXML
     public void onAnnulerButtonClick(){
         Stage stage = (Stage) commentaire.getScene().getWindow();

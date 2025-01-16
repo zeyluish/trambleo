@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
@@ -27,18 +28,16 @@ public class ControllerViewInpProject {
     Label descriptionProjet;
     @FXML
     Label dateFinProjet;
-
     @FXML
     VBox VBoxAFaire;
-
     @FXML
     VBox VBoxEnCours;
-
     @FXML
     VBox VBoxFait;
+    @FXML
+    HBox employeEncart;
 
     Tache tacheSelected;
-
 
     public void adapterProjet(String nom, String description, LocalDate dateFin) {
         nomProjet.setText(nom);
@@ -115,6 +114,22 @@ public class ControllerViewInpProject {
 
         VBoxFait.getChildren().clear();
         VBoxFait.setSpacing(10);
+
+        employeEncart.setSpacing(5);
+
+        for (String email : projet.emailEmployeProjet) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("rondEmploye.fxml"));
+                VBox rondEmploye = loader.load();
+
+                ControllerRondEmploye controllerRondEmploye = loader.getController();
+                controllerRondEmploye.adapterEmail(email);
+
+                employeEncart.getChildren().add(rondEmploye);
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+        }
 
         for (Tache tache : projet.listeTache) {
             try {
