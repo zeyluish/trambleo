@@ -30,6 +30,12 @@ public class ControllerViewInpProject {
     @FXML
     VBox VBoxAFaire;
 
+    @FXML
+    VBox VBoxEnCours;
+
+    @FXML
+    VBox VBoxFait;
+
     Tache tacheSelected;
 
 
@@ -73,7 +79,7 @@ public class ControllerViewInpProject {
         stage.show();
     }
 
-    public  void onAddTacheEnCours() throws IOException {
+    public void onAddTacheEnCours() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation((this.getClass().getResource("hello-createtask.fxml")));
         Scene scene = new Scene(loader.load());
@@ -95,6 +101,13 @@ public class ControllerViewInpProject {
         Projet projet = Projet.projetSelected;
         VBoxAFaire.getChildren().clear(); // Nettoyer le conteneur avant d'ajouter les tâches
         VBoxAFaire.setSpacing(10);
+
+        VBoxEnCours.getChildren().clear();
+        VBoxEnCours.setSpacing(10);
+
+        VBoxFait.getChildren().clear();
+        VBoxFait.setSpacing(10);
+
         for (Tache tache : projet.listeTache) {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("carteTache.fxml"));
@@ -124,7 +137,11 @@ public class ControllerViewInpProject {
                 });
 
                 // Ajouter la carte au conteneur VBoxAFaire
+
                 VBoxAFaire.getChildren().add(carte);
+                VBoxEnCours.getChildren().add(carte);
+                VBoxFait.getChildren().add(carte);
+
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
