@@ -133,10 +133,11 @@ public class ControllerViewInpProject {
 
                         Tache.tacheSelected = tache;
                         FXMLLoader loader3 = new FXMLLoader(getClass().getResource("hello-editTask.fxml"));
-                        //ControllerEditTask controllerEditTask = loader3.getController();
+                        ControllerEditTask controllerEditTask = loader3.getController();
                         //controllerEditTask.setControllerViewInpProject(this);
                         ControllerInfoTache controllerInfoTache = loader2.getController();
                         controllerInfoTache.adapterTache(tache.nomTache, tache.descriptionTache, tache.priorite, tache.dateFinTache, tache.listeEmployeTache);
+                        controllerInfoTache.setControllerViewInpProject(this);
                         Stage stage = new Stage();
                         stage.setScene(new Scene(taskView));
                         stage.show();

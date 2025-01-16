@@ -23,12 +23,12 @@ public class ControllerEditTask {
     private Tache tache;
     String prioriteTache;
 
-    private ControllerViewInpProject controllerViewInpProject;
+   /* private ControllerViewInpProject controllerViewInpProject;
 
     public void setControllerViewInpProject(ControllerViewInpProject controllerViewInpProject) {
         this.controllerViewInpProject = controllerViewInpProject;
     }
-
+*/
     @FXML
     public void setTache(Tache tache){
         this.tache = tache;
