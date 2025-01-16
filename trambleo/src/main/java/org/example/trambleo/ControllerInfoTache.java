@@ -34,7 +34,11 @@ public class ControllerInfoTache {
         String dateFin = date.toString();
         dateFinTache.setText(dateFin);
         String listeEmploye = liste.toString();
-        listEmploye.setText(listeEmploye);
+        String employesString = "";
+        for (Employe employe : liste) {
+            employesString += employe.getNom() + " " + employe.getPrenom() + "\n";
+        }
+        listEmploye.setText(employesString);
     }
 
     @FXML

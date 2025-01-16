@@ -22,6 +22,9 @@
                </HBox.margin>
             </Label>
          </children>
+         <VBox.margin>
+            <Insets left="15.0" top="15.0" />
+         </VBox.margin>
       </HBox>
       <HBox prefHeight="3.0" prefWidth="600.0">
          <children>
@@ -37,7 +40,7 @@
             </Label>
          </children>
          <VBox.margin>
-            <Insets top="15.0" />
+            <Insets left="15.0" top="15.0" />
          </VBox.margin>
       </HBox>
       <HBox prefHeight="3.0" prefWidth="600.0">
@@ -54,7 +57,7 @@
             </Label>
          </children>
          <VBox.margin>
-            <Insets top="15.0" />
+            <Insets left="15.0" top="15.0" />
          </VBox.margin>
       </HBox>
       <HBox prefHeight="3.0" prefWidth="600.0">
@@ -71,7 +74,7 @@
             </Label>
          </children>
          <VBox.margin>
-            <Insets top="15.0" />
+            <Insets left="15.0" top="15.0" />
          </VBox.margin>
       </HBox>
       <HBox prefHeight="3.0" prefWidth="600.0">
@@ -88,7 +91,7 @@
             </Label>
          </children>
          <VBox.margin>
-            <Insets top="15.0" />
+            <Insets left="15.0" top="15.0" />
          </VBox.margin>
       </HBox>
       <HBox alignment="CENTER" prefHeight="302.0" prefWidth="600.0">

@@ -2,6 +2,7 @@ package org.example.trambleo;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -73,7 +74,7 @@ public class ControllerViewInpProject {
         loader.setLocation((this.getClass().getResource("hello-createtask.fxml")));
         Scene scene = new Scene(loader.load());
         HelloControllerCreateTask controllerCreateTask = loader.getController();
-        //controllerCreateTask.setControllerViewInpProject(this);
+        controllerCreateTask.setControllerViewInpProject(this);
         controllerCreateTask.setEtat("aFaire");
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -85,6 +86,7 @@ public class ControllerViewInpProject {
         loader.setLocation((this.getClass().getResource("hello-createtask.fxml")));
         Scene scene = new Scene(loader.load());
         HelloControllerCreateTask controllerCreateTask = loader.getController();
+        controllerCreateTask.setControllerViewInpProject(this);
         controllerCreateTask.setEtat("enCours");
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -96,6 +98,7 @@ public class ControllerViewInpProject {
         loader.setLocation((this.getClass().getResource("hello-createtask.fxml")));
         Scene scene = new Scene(loader.load());
         HelloControllerCreateTask controllerCreateTask = loader.getController();
+        controllerCreateTask.setControllerViewInpProject(this);
         controllerCreateTask.setEtat("fait");
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -117,6 +120,8 @@ public class ControllerViewInpProject {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("carteTache.fxml"));
                 VBox carte = loader.load();
+                VBox.setMargin(carte, new Insets(0, 25, 0, 25));
+
                 ControllerCarteTache controllerCarteTache = loader.getController();
                 controllerCarteTache.adapterNomTache(tache);
 
