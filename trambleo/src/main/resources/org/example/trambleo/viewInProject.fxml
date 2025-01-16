@@ -86,7 +86,12 @@
                      <Font name="System Bold" size="13.0" />
                   </font>
                </Label>
-               <Button mnemonicParsing="false" onAction="#onAddTacheEnCours" style="-fx-background-color: #847CAE;" text="Ajouter une tache" />
+               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="420.0">
+                  <children>
+                     <Button mnemonicParsing="false" onAction="#onAddTacheEnCours" style="-fx-background-color: #847CAE;" text="Ajouter une tache" />
+                  </children>
+               </HBox>
+               <VBox fx:id="VBoxEnCours" prefHeight="377.0" prefWidth="420.0" />
             </children>
             <opaqueInsets>
                <Insets />
